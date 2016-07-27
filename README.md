@@ -15,7 +15,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 </dict>
 ```
 也即：<br>
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/1.png" width="50%" height="50%" />
+<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/1.png" width="80%" height="80%" />
 
 
 #### 2. 如果想要在其他应用中打开，应该在info.plist 中添加<br>
@@ -56,7 +56,7 @@ CFBundleTypeName：文档的类型名称<br>
 LSHandlerRank：这里指是否拥有子文档<br>
 
 #### 3. info.plist 中，对应Localization native development region键值 加入Chinese<br>
-![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/2.png)
+<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/2.png" width="80%" height="80%" />
 #### 4. 在第三方调用我们的APP后，会调用如下方法<br>
 ```oc
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
@@ -74,7 +74,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
 ## how to use JhtDocViewerDemo.
 （1）DocListViewController 是文档列表；<br>
      tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
-     ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png)<br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png" width="50%" height="50%" />
 （2）JhtLoadDocViewController 是文档详情，<br>
      a.如果不需要下载，通过webView直接显示；<br>
      ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/6.png)<br>
