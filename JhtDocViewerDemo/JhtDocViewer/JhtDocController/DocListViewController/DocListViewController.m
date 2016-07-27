@@ -37,7 +37,7 @@
 #pragma mark - setNav
 /** 设置导航栏 */
 - (void)docLsSetNav {
-    // 如果是 从appDelegate里面，跳转过来， 主要用于打开别的软件的共享过来的文档；
+    // 如果是 从appDelegate里面，跳转过来添加返回按钮
     if (_appFilePath.length) {
         // 设置导航栏返回按钮
         [self bsCreateNavigationBarLeftBtn];

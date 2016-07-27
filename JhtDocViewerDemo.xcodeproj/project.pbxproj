@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
-		A52737691D44F04800CCAB67 /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A52737651D44F04800CCAB67 /* 1.xlsx */; };
-		A527376A1D44F04800CCAB67 /* 2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = A52737661D44F04800CCAB67 /* 2.pptx */; };
-		A527376B1D44F04800CCAB67 /* MX.docx in Resources */ = {isa = PBXBuildFile; fileRef = A52737671D44F04800CCAB67 /* MX.docx */; };
-		A527376C1D44F04800CCAB67 /* 信鸽推送说明书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A52737681D44F04800CCAB67 /* 信鸽推送说明书.pdf */; };
+		A525EF331D484809008B3178 /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF2F1D484809008B3178 /* 1.xlsx */; };
+		A525EF341D484809008B3178 /* 2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF301D484809008B3178 /* 2.pptx */; };
+		A525EF351D484809008B3178 /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF311D484809008B3178 /* CIImage.docx */; };
+		A525EF361D484809008B3178 /* 信鸽推送说明书.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A525EF321D484809008B3178 /* 信鸽推送说明书.pdf */; };
 		A55D70AF1D44EFEA001D675C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70AE1D44EFEA001D675C /* main.m */; };
 		A55D70B21D44EFEA001D675C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70B11D44EFEA001D675C /* AppDelegate.m */; };
 		A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55D70B61D44EFEA001D675C /* Main.storyboard */; };
@@ -52,10 +52,10 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		A52737651D44F04800CCAB67 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
-		A52737661D44F04800CCAB67 /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
-		A52737671D44F04800CCAB67 /* MX.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = MX.docx; sourceTree = "<group>"; };
-		A52737681D44F04800CCAB67 /* 信鸽推送说明书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "信鸽推送说明书.pdf"; sourceTree = "<group>"; };
+		A525EF2F1D484809008B3178 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
+		A525EF301D484809008B3178 /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
+		A525EF311D484809008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
+		A525EF321D484809008B3178 /* 信鸽推送说明书.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "信鸽推送说明书.pdf"; sourceTree = "<group>"; };
 		A55D70AA1D44EFEA001D675C /* JhtDocViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JhtDocViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55D70AE1D44EFEA001D675C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A55D70B01D44EFEA001D675C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,13 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A52737641D44F04800CCAB67 /* JhtDocTemp */ = {
+		A525EF2E1D484809008B3178 /* JhtDocTemp */ = {
 			isa = PBXGroup;
 			children = (
-				A52737651D44F04800CCAB67 /* 1.xlsx */,
-				A52737661D44F04800CCAB67 /* 2.pptx */,
-				A52737671D44F04800CCAB67 /* MX.docx */,
-				A52737681D44F04800CCAB67 /* 信鸽推送说明书.pdf */,
+				A525EF2F1D484809008B3178 /* 1.xlsx */,
+				A525EF301D484809008B3178 /* 2.pptx */,
+				A525EF311D484809008B3178 /* CIImage.docx */,
+				A525EF321D484809008B3178 /* 信鸽推送说明书.pdf */,
 			);
 			path = JhtDocTemp;
 			sourceTree = "<group>";
@@ -165,7 +165,6 @@
 				A55D70B01D44EFEA001D675C /* AppDelegate.h */,
 				A55D70B11D44EFEA001D675C /* AppDelegate.m */,
 				A57D5E271D473D7F00D10C1C /* JhtDocViewer */,
-				A52737641D44F04800CCAB67 /* JhtDocTemp */,
 				A55D70B61D44EFEA001D675C /* Main.storyboard */,
 				A55D70B91D44EFEA001D675C /* Assets.xcassets */,
 				A55D70BB1D44EFEA001D675C /* LaunchScreen.storyboard */,
@@ -208,6 +207,7 @@
 				A57D5E441D473D7F00D10C1C /* JhtDocModel */,
 				A57D5EAA1D4799F000D10C1C /* JhtDocToolsSDK */,
 				A57D5E321D473D7F00D10C1C /* JhtDocLibs */,
+				A525EF2E1D484809008B3178 /* JhtDocTemp */,
 			);
 			path = JhtDocViewer;
 			sourceTree = "<group>";
@@ -420,11 +420,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A527376B1D44F04800CCAB67 /* MX.docx in Resources */,
-				A527376C1D44F04800CCAB67 /* 信鸽推送说明书.pdf in Resources */,
-				A527376A1D44F04800CCAB67 /* 2.pptx in Resources */,
-				A52737691D44F04800CCAB67 /* 1.xlsx in Resources */,
+				A525EF341D484809008B3178 /* 2.pptx in Resources */,
+				A525EF361D484809008B3178 /* 信鸽推送说明书.pdf in Resources */,
+				A525EF331D484809008B3178 /* 1.xlsx in Resources */,
 				A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */,
+				A525EF351D484809008B3178 /* CIImage.docx in Resources */,
 				A55D70BA1D44EFEA001D675C /* Assets.xcassets in Resources */,
 				A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */,
 			);
