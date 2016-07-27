@@ -48,7 +48,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 			</array>
 		</dict>
 	</array>
-	```
+```
 属性说明：<br>
 CFBundleTypeName：文档的类型名称<br>
 LSHandlerRank：这里指是否拥有子文档<br>
