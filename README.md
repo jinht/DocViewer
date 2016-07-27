@@ -1,8 +1,8 @@
 # JhtDocViewerDemo
 
 ## Contents
-* 文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）<br>
-* 文件共享 (Network&amp;&amp;Local)<br>
+#### >>文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）<br>
+#### >>文件共享 (Network&amp;&amp;Local)<br>
 ## needed to pay attention.
 #### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
 App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
@@ -81,10 +81,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
       b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
       ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/5.png)
       c.资源共享;<br>
-  * ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>
-     ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png)
-  * “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
-   ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/7.png)
+        ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>
+        ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png)
+      “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
+      ![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/7.png)
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
 * If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
