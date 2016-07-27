@@ -75,3 +75,6 @@ tableView的数据源是 一个装有model的数组，model根据属性fileAbsol
 （2）JhtLoadDocViewController 是文档详情，<br>
       a.如果不需要下载，通过webView直接显示；<br>
       b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
+## Hope
+* If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
+* If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
