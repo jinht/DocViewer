@@ -3,7 +3,7 @@
 ## Contents
 文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）
 ## needed to pay attention.
-#### * 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
+ * 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
 App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
 系统会告诉我们不能直接使用HTTP进行请求，需要在Info.plist新增一段用于控制ATS的配置：<br>
 ```oc
