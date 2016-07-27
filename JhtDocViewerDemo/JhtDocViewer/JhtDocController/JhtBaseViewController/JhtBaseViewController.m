@@ -49,7 +49,9 @@
 /** 创建导航栏左侧自定义的返回按钮 */
 - (void)bsCreateNavigationBarLeftBtn {
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setImage:[UIImage imageNamed:@"nav-back"] forState:UIControlStateNormal];
+    NSString *leftBtnImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/nav-back"];
+    UIImage *leftBtnImage = [UIImage imageWithContentsOfFile:leftBtnImagePath];
+    [leftBtn setImage:leftBtnImage forState:UIControlStateNormal];
     [leftBtn sizeToFit];
     
     [leftBtn addTarget:self action:@selector(bsPopToFormerController) forControlEvents:UIControlEventTouchUpInside];

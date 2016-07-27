@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JhtDocTools.h"
+#import "UIViewController+Extension.h"
 
 /** controller父类 */
 @interface JhtBaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate> {

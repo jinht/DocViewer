@@ -10,4 +10,3 @@
 
 #import "JhtDownloadRequest.h"
 #import "JhtNetworkCheckTools.h"
-#import "UIViewController+Extension.h"

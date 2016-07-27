@@ -91,7 +91,7 @@
     } else {
         // 无网络连接
         netState = @"网络暂不可用";
-        [self JhtShowHint:netState];
+        [self JhtShowHint:@"网络暂不可用"];
     }
 }
 
@@ -568,7 +568,9 @@
         _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _closeBtn.frame = CGRectMake(FrameW - 65/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 19, 20, 20);
 //        _closeBtn.backgroundColor = [UIColor redColor];
-        [_closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+        NSString *closeImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/close"];
+        UIImage *closeBtnImage = [UIImage imageWithContentsOfFile:closeImagePath];
+        [_closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
         [self.view addSubview:_closeBtn];
         [_closeBtn addTarget:self action:@selector(ldCloseClick) forControlEvents:UIControlEventTouchUpInside];
     }
