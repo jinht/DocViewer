@@ -67,10 +67,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
 }
 ```
 #### 5. 添加库文件<br>
- WebKit.framework<br>
+     WebKit.framework<br>
 #### 6. 需要导入的三方库：<br>
- * AFNetworking3.0x<br>
- * MBProgressHUD <br>
+     a. AFNetworking3.0x<br>
+     b. MBProgressHUD <br>
 ## how to use JhtDocViewerDemo.
 （1）DocListViewController 是文档列表；<br>
      tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
