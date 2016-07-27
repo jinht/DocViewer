@@ -13,7 +13,8 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
     <true/>
 </dict>
 ```
-
+也即：<br>
+![image](https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/1.png）
 
 
 #### 2. 如果想要在其他应用中打开，应该在info.plist 中添加<br>
