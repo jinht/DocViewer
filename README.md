@@ -86,7 +86,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
        ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>  
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png" width="30%" height="20%" /> <br>
        “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/9.png" width="30%" height="20%" />
+       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/7.png" width="30%" height="20%" /> <br>
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
