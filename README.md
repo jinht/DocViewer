@@ -18,7 +18,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/1.png" width="80%" height="80%" />
 
 
-#### 2. 如果想要在其他应用中打开，应该在info.plist 中添加<br>
+#### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加<br>
 ```oc
 <key>CFBundleDocumentTypes</key>
 	<array>
@@ -72,10 +72,12 @@ LSHandlerRank：这里指是否拥有子文档<br>
      a. AFNetworking3.0x<br>
      b. MBProgressHUD <br>
 ## how to use JhtDocViewerDemo.
-（1）DocListViewController 是文档列表；<br>
+ (1) 使用时可直接拖拽下图文件夹即可：<br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/8.png" width="80%" height="80%" /> <br>
+（2）DocListViewController 是文档列表；<br>
      tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png" width="30%" height="20%" /> <br>
-（2）JhtLoadDocViewController 是文档详情，<br>
+（3）JhtLoadDocViewController 是文档详情，<br>
      a.如果不需要下载，通过webView直接显示；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/6.png" width="30%" height="20%" /> <br>
      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
