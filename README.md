@@ -75,10 +75,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
  (1) 使用时可直接拖拽下图文件夹即可：<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/8.png" width="50%" height="30%" /> <br>
 （2）DocListViewController 是文档列表；<br>
-     &ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
+     &ensp;&ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png" width="30%" height="20%" /> <br>
 （3）JhtLoadDocViewController 是文档详情，<br>
-     &ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示；<br>
+     &ensp;&ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/6.png" width="30%" height="20%" /> <br>
      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/5.png" width="30%" height="20%" /> <br>
