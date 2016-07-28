@@ -73,7 +73,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
      b. MBProgressHUD <br>
 ## how to use JhtDocViewerDemo.
  (1) 使用时可直接拖拽下图文件夹即可：<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/8.png" width="80%" height="80%" /> <br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/8.png" width="50%" height="30%" /> <br>
 （2）DocListViewController 是文档列表；<br>
      tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png" width="30%" height="20%" /> <br>
@@ -83,7 +83,8 @@ LSHandlerRank：这里指是否拥有子文档<br>
      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/5.png" width="30%" height="20%" /> <br>
      c.资源共享;<br>
-       ”JhtDocViewerDemo“ 文件用”其他应用“打开<br><img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png" width="30%" height="20%" /> <br>
+       ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>  
+       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png" width="30%" height="20%" /> <br>
        “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/7.png" width="30%" height="20%" /> <br>
 ## Hope
