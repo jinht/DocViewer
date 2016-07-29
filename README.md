@@ -15,7 +15,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 </dict>
 ```
 也即：<br>
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/1.png" width="80%" height="80%" />
+<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/1.png" width="80%" height="80%" />
 
 
 #### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加<br>
@@ -56,7 +56,7 @@ CFBundleTypeName：文档的类型名称<br>
 LSHandlerRank：这里指是否拥有子文档<br>
 
 #### 3. info.plist 中，对应Localization native development region键值 加入Chinese<br>
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/2.png" width="80%" height="80%" />
+<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/2.png" width="80%" height="80%" />
 #### 4. 在第三方调用我们的APP后，会调用如下方法<br>
 ```oc
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
@@ -73,21 +73,21 @@ LSHandlerRank：这里指是否拥有子文档<br>
      b. MBProgressHUD <br>
 ## how to use JhtDocViewerDemo.
  (1) 使用时可直接拖拽下图文件夹即可：<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/8.png" width="50%" height="30%" /> <br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
 （2）DocListViewController 是文档列表；<br>
      &ensp;&ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/3.png" width="30%" height="20%" /> <br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
 （3）JhtLoadDocViewController 是文档详情，<br>
      &ensp;&ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示；<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/6.png" width="30%" height="20%" /> <br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/5.png" width="30%" height="20%" /> <br>
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
      c.资源共享;<br>
        ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>  
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/4.png" width="30%" height="20%" /> <br>
+       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
        “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/9.png" width="30%" height="20%" />&emsp;&emsp;
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/JhtDocViewerImages/7.png" width="30%" height="20%" /> <br>
+       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
+       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
 * If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
