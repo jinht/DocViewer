@@ -87,9 +87,9 @@ LSHandlerRank：这里指是否拥有子文档<br>
      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
      c.资源共享;<br>
-       ”JhtDocViewerDemo“ 文件用”其他应用“打开<br>  
+       ”JhtDocViewer“ 文件用”其他应用“打开<br>  
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
-       “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
+       “其他应用”文件 用 “JhtDocViewer”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
        
