@@ -3,6 +3,7 @@
 ## Contents
 #### 文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）<br>
 #### 文件共享 (Network&amp;&amp;Local) <br>
+
 ## needed to pay attention.
 #### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
 App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
@@ -16,7 +17,6 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 ```
 也即：<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/1.png" width="80%" height="80%" />
-
 
 #### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加<br>
 ```oc
@@ -57,6 +57,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
 
 #### 3. info.plist 中，对应Localization native development region键值 加入Chinese<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/2.png" width="80%" height="80%" />
+
 #### 4. 在第三方调用我们的APP后，会调用如下方法<br>
 ```oc
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
@@ -66,11 +67,14 @@ LSHandlerRank：这里指是否拥有子文档<br>
     return YES;
 }
 ```
+
 #### 5. 添加库文件<br>
      WebKit.framework<br>
+     
 #### 6. 需要导入的三方库：<br>
      a. AFNetworking3.0x<br>
      b. MBProgressHUD <br>
+     
 ## how to use JhtDocViewerDemo.
  (1) 使用时可直接拖拽下图文件夹即可：<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
@@ -88,6 +92,12 @@ LSHandlerRank：这里指是否拥有子文档<br>
        “其他应用”文件 用 “JhtDocViewerDemo”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
+       
+##Remind
+# ARC
+# iOS >= 7.0
+# iPhone \ iPad 
+       
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
 * If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
