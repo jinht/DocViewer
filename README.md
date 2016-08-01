@@ -1,4 +1,4 @@
-# JhtDocViewerDemo
+# JhtDocViewer
 
 ## Contents
 #### 文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）<br>
@@ -75,7 +75,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
      a. AFNetworking3.0x<br>
      b. MBProgressHUD <br>
      
-## how to use JhtDocViewerDemo.
+## how to use JhtDocViewer.
  (1) 使用时可直接拖拽下图文件夹即可：<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
 （2）DocListViewController 是文档列表；<br>
@@ -93,10 +93,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
        
-##Remind
-# ARC
-# iOS >= 7.0
-# iPhone \ iPad 
+###Remind
+* ARC
+* iOS >= 7.0
+* iPhone \ iPad 
        
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
