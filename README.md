@@ -7,7 +7,7 @@
 ## needed to pay attention.
 #### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
 App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
-系统会告诉我们不能直接使用HTTP进行请求，需要在Info.plist新增一段用于控制ATS的配置：<br>
+系统会告诉我们不能直接使用HTTP进行请求，需要在Info.plist新增一段用于控制ATS的配置<br>
 ```oc
 <key>NSAppTransportSecurity</key>
 <dict>
@@ -76,7 +76,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
      b. MBProgressHUD <br>
      
 ## how to use JhtDocViewer.
- (1) 使用时可直接拖拽下图文件夹即可：<br>
+ (1) 使用时可直接拖拽下图文件夹即可<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
  (2)使用集成（以APPDelegate为例）<br>
  ```oc
@@ -129,53 +129,53 @@ LSHandlerRank：这里指是否拥有子文档<br>
     return YES;
 }    
 ```
-（3）DocListViewController 是文档列表；<br>
+（3）DocListViewController 是文档列表<br>
      &ensp;&ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
-（4）JhtLoadDocViewController 是文档详情，<br>
-     &ensp;&ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示；<br>
+（4）JhtLoadDocViewController 是文档详情VC<br>
+     &ensp;&ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
-      &ensp;&ensp;&ensp;&ensp;b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作；（注意：JhtFileModel属性：fileSize， 应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
+      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，        应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
-     &ensp;&ensp;&ensp;&ensp; c.资源共享;<br>
+     c.资源共享<br>
        ”JhtDocViewer“ 文件用”其他应用“打开<br>  
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
        “其他应用”文件 用 “JhtDocViewer”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
-     &ensp;&ensp;&ensp;&ensp; d.设置清除缓存文件时间;<br>
-     ```oc
-     #pragma mark 几天天后清理Download/Files里面文件
-     - (void)ldCleanFileAfterDays:(NSInteger)day {
-    	NSString *filePath = [self ldGetDownloadFilePath];
- 	NSString *path = @"";
+     d.设置清除缓存文件时间<br>
+```oc
+#pragma mark 几天天后清理Download/Files里面文件
+- (void)ldCleanFileAfterDays:(NSInteger)day {
+    NSString *filePath = [self ldGetDownloadFilePath];
+    NSString *path = @"";
     
-    	NSFileManager *fileManager = [NSFileManager defaultManager];
-    	NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:filePath];
-    	while ((path = [directoryEnumerator nextObject]) != nil) {
-        	NSString *subFilePath = [filePath stringByAppendingPathComponent:path];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:filePath];
+    while ((path = [directoryEnumerator nextObject]) != nil) {
+        NSString *subFilePath = [filePath stringByAppendingPathComponent:path];
         
-        	// 遍历文件属性
-        	NSError *error = nil;
-        	NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:subFilePath error:&error];
-        	if (fileAttributes != nil) {
-            	NSDate *fileCreateDate = [fileAttributes objectForKey:NSFileCreationDate];
-            	if (fileCreateDate) {
-                	NSDate *date2 = [NSDate date];
-                	NSTimeInterval aTimer = [date2 timeIntervalSinceDate:fileCreateDate];
-                
-                	// 如果文件创建时间间隔大于day天，则删除
-                	if (aTimer > day*24*60*60) {
-                    		if([fileManager fileExistsAtPath:subFilePath]) {
-                        	// 如果存在
-                        	[fileManager removeItemAtPath:subFilePath error:nil];
-                	 }
+        // 遍历文件属性
+        NSError *error = nil;
+       	NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:subFilePath error:&error];
+       	if (fileAttributes != nil) {
+            NSDate *fileCreateDate = [fileAttributes objectForKey:NSFileCreationDate];
+            if (fileCreateDate) {
+               	NSDate *date2 = [NSDate date];
+           	NSTimeInterval aTimer = [date2 timeIntervalSinceDate:fileCreateDate];
+         
+                // 如果文件创建时间间隔大于day天，则删除
+                if (aTimer > day*24*60*60) {
+                    if([fileManager fileExistsAtPath:subFilePath]) {
+                    	// 如果存在
+                      	[fileManager removeItemAtPath:subFilePath error:nil];
                     }
-            	}
+                }
             }
-    	}
-     }
-     ```
+        }
+    }
+}
+```
        
        
 ###Remind
