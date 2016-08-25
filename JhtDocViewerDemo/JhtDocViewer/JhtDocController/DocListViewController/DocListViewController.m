@@ -10,11 +10,6 @@
 #import "JhtFileModel.h"
 #import "JhtLoadDocViewController.h"
 
-@interface DocListViewController ()
-
-@end
-
-
 @implementation DocListViewController
 
 - (void)viewDidLoad {
@@ -58,9 +53,7 @@
         model.fileAbsolutePath = _appFilePath;
         [_baseSourceArray addObject:model];
     } else {
-        
-        
-        // 第一个是 网络的，需要下载的；
+        // 第一个是 网络的，需要下载的
         JhtFileModel *fileModel = [[JhtFileModel alloc] init];
         fileModel.fileId = @"577e2300c94f6e51316a299d";
         fileModel.vFileName = @"word.png";
@@ -75,13 +68,14 @@
         fileModel.attachmentFileSize = @"21906";
         [_baseSourceArray addObject:fileModel];
         
-        
         // 总文件夹
         NSString *folderPath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/JhtDoc/"]];
         
         // 文件管理器
         NSFileManager *manager = [NSFileManager defaultManager];
-        if (![manager fileExistsAtPath:folderPath]) return;
+        if (![manager fileExistsAtPath:folderPath]) {
+            return;
+        }
         // 从前向后枚举器
         NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
         // 详细内容

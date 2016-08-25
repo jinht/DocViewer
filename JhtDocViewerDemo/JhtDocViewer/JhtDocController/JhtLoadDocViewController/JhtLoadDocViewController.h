@@ -11,7 +11,6 @@
 
 /** 加载文本类 */
 @interface JhtLoadDocViewController : JhtBaseViewController
-
 /** 标题 */
 @property (nonatomic, copy) NSString *titleStr;
 
