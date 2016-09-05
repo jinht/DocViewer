@@ -25,7 +25,7 @@ typedef enum {
 + (instancetype)sharedInstance;
 
 /** 开启检查网络的监听
- * pollingInterval：轮询检查网络状态的时间间隔
+ *  pollingInterval：轮询检查网络状态的时间间隔
  */
 - (void)netStartNetworkNotifyWithPollingInterval:(CGFloat)pollingInterval;
 /** 停止检查网络的监听 */

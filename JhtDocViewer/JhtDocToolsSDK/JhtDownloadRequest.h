@@ -12,9 +12,7 @@
 @interface JhtDownloadRequest : NSObject
 
 + (id)sharedInstance;
-/**
- *  下载文件功能
- *
+/** 下载文件功能
  *  @param URLString                 要下载文件的URL
  *  @param downloadFileProgress      下载的进度条，百分比
  *  @param setupFilePath             设置下载的路径
