@@ -7,6 +7,7 @@
 //
 
 #import "JhtLoadDocViewController.h"
+#import "JhtFileModel.h"
 #import <WebKit/WebKit.h>
 
 @interface JhtLoadDocViewController () <UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, UIDocumentInteractionControllerDelegate, UIAlertViewDelegate> {

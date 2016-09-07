@@ -6,8 +6,6 @@
 //  Copyright © 2016年 靳海涛. All rights reserved.
 //
 
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 /** 用于下载文档的Model */

@@ -6,7 +6,6 @@
 //  Copyright © 2016年 靳海涛. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 // 网络监听返回枚举类
