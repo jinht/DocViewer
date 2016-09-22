@@ -39,6 +39,7 @@
 
 @end
 
+
 #define KB (1024)
 #define MB (KB * 1024)
 #define GB (MB * 1024)
@@ -222,9 +223,7 @@
     self.downloadingStateLabel.hidden = NO;
     self.closeBtn.hidden = NO;
     
-    /**
-     *  下载文件功能
-     *
+    /** 下载文件功能
      *  @param URLString                 要下载文件的URL
      *  @param downloadFileProgress      下载的进度条，百分比
      *  @param setupFilePath             设置下载的路径
