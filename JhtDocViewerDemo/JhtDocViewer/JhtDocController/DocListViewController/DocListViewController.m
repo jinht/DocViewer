@@ -40,6 +40,7 @@
         // 设置导航栏返回按钮
         [self bsCreateNavigationBarLeftBtn];
     }
+    
     // 设置导航栏标题
     [self bsCreateNavigationBarTitleViewWithLabelTitle:@"文件列表类"];
 }
@@ -49,7 +50,7 @@
 #pragma mark - 生成数据源
 /** 生成数据源 */
 - (void)docLsCreateSourceData {
-    // 如果是 从appDelegate里面，跳转过来， 主要用于打开别的软件的共享过来的文档；
+    // 如果是 从appDelegate里面，跳转过来，主要用于打开别的软件的共享过来的文档
     if (_appFilePath.length) {
         JhtFileModel *model = [[JhtFileModel alloc] init];
         model.fileName  = [[_appFilePath componentsSeparatedByString:@"/"] lastObject];
@@ -76,9 +77,7 @@
         
         // 文件管理器
         NSFileManager *manager = [NSFileManager defaultManager];
-        if (![manager fileExistsAtPath:folderPath]) {
-            return;
-        }
+        if (![manager fileExistsAtPath:folderPath]) return;
         // 从前向后枚举器
         NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
         // 详细内容
@@ -170,7 +169,7 @@
 
 
 #pragma mark -UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     // 避免dragImageView手势冲突 问题解决方法http://blog.sina.com.cn/s/blog_6b8c3d7a0101dxnc.html
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
         return NO;

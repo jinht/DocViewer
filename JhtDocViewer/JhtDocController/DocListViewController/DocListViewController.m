@@ -2,6 +2,9 @@
 //  DocListViewController.m
 //  JhtTools
 //
+//  github主页: https://github.com/jinht
+//  CSDN博客: http://blog.csdn.net/anticipate91
+//
 //  Created by Jht on 16/7/8.
 //  Copyright © 2016年 靳海涛. All rights reserved.
 //
@@ -9,11 +12,6 @@
 #import "DocListViewController.h"
 #import "JhtFileModel.h"
 #import "JhtLoadDocViewController.h"
-
-@interface DocListViewController ()
-
-@end
-
 
 @implementation DocListViewController
 
@@ -30,8 +28,6 @@
     
     // 创建UI界面
     [self docLsCreateUI];
-    
-    [self JhtShowHint:@"test"];
 }
 
 
@@ -44,6 +40,7 @@
         // 设置导航栏返回按钮
         [self bsCreateNavigationBarLeftBtn];
     }
+    
     // 设置导航栏标题
     [self bsCreateNavigationBarTitleViewWithLabelTitle:@"文件列表类"];
 }
@@ -53,16 +50,14 @@
 #pragma mark - 生成数据源
 /** 生成数据源 */
 - (void)docLsCreateSourceData {
-    // 如果是 从appDelegate里面，跳转过来， 主要用于打开别的软件的共享过来的文档；
+    // 如果是 从appDelegate里面，跳转过来，主要用于打开别的软件的共享过来的文档
     if (_appFilePath.length) {
         JhtFileModel *model = [[JhtFileModel alloc] init];
         model.fileName  = [[_appFilePath componentsSeparatedByString:@"/"] lastObject];
         model.fileAbsolutePath = _appFilePath;
         [_baseSourceArray addObject:model];
     } else {
-        
-        
-        // 第一个是 网络的，需要下载的；
+        // 第一个是 网络的，需要下载的
         JhtFileModel *fileModel = [[JhtFileModel alloc] init];
         fileModel.fileId = @"577e2300c94f6e51316a299d";
         fileModel.vFileName = @"word.png";
@@ -76,7 +71,6 @@
         fileModel.fileSize = @"21.39KB";
         fileModel.attachmentFileSize = @"21906";
         [_baseSourceArray addObject:fileModel];
-        
         
         // 总文件夹
         NSString *folderPath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/JhtDoc/"]];
@@ -175,7 +169,7 @@
 
 
 #pragma mark -UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     // 避免dragImageView手势冲突 问题解决方法http://blog.sina.com.cn/s/blog_6b8c3d7a0101dxnc.html
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
         return NO;

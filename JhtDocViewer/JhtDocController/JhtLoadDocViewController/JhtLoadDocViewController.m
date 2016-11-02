@@ -2,12 +2,17 @@
 //  JhtLoadDocViewController.m
 //  JhtTools
 //
+//  github主页: https://github.com/jinht
+//  CSDN博客: http://blog.csdn.net/anticipate91
+//
 //  Created by Jht on 16/7/10.
 //  Copyright © 2016年 靳海涛. All rights reserved.
 //
 
 #import "JhtLoadDocViewController.h"
 #import <WebKit/WebKit.h>
+#import "JhtFileModel.h"
+#import "JhtDownloadRequest.h"
 
 @interface JhtLoadDocViewController () <UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, UIDocumentInteractionControllerDelegate, UIAlertViewDelegate> {
     // 加载Doc的webView
@@ -91,7 +96,7 @@
     } else {
         // 无网络连接
         netState = @"网络暂不可用";
-        [self JhtShowHint:@"网络暂不可用"];
+        [self JhtShowHint:netState];
     }
 }
 
@@ -220,7 +225,6 @@
     
     /**
      *  下载文件功能
-     *
      *  @param URLString                 要下载文件的URL
      *  @param downloadFileProgress      下载的进度条，百分比
      *  @param setupFilePath             设置下载的路径
@@ -344,6 +348,97 @@
 
 
 
+#pragma mark - Get
+/** 进度条 */
+- (UIProgressView *)fileProgressView {
+    if (!_fileProgressView) {
+        _fileProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(45/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 29, FrameW - (45/2.f + 61/2.f), 10)];
+        [_fileProgressView setProgressViewStyle:UIProgressViewStyleDefault];
+        _fileProgressView.progressTintColor = UIColorFromRGB(0x61cbf5);
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
+        _fileProgressView.transform = transform;
+        _fileProgressView.layer.masksToBounds = YES;
+        _fileProgressView.layer.cornerRadius = 2.f;
+        [self.view addSubview:_fileProgressView];
+    }
+    return _fileProgressView;
+}
+
+/** 关闭按钮 */
+- (UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _closeBtn.frame = CGRectMake(FrameW - 65/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 19, 20, 20);
+        //        _closeBtn.backgroundColor = [UIColor redColor];
+        NSString *closeImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/close"];
+        UIImage *closeBtnImage = [UIImage imageWithContentsOfFile:closeImagePath];
+        [_closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
+        [self.view addSubview:_closeBtn];
+        [_closeBtn addTarget:self action:@selector(ldCloseClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeBtn;
+}
+
+/** 重试按钮 */
+- (UIButton *)retryBtn {
+    if (!_retryBtn) {
+        _retryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _retryBtn.frame = CGRectMake((FrameW - 80.f)/2.f, CGRectGetMaxY(_downloadingStateLabel.frame) + 10, 80, 30);
+        _retryBtn.backgroundColor = UIColorFromRGB(0x61cbf5);
+        [_retryBtn setTitle:@"重新加载" forState:UIControlStateNormal];
+        _retryBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+        [_retryBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _retryBtn.layer.cornerRadius = 3.f;
+        _retryBtn.layer.masksToBounds = YES;
+        
+        [_retryBtn addTarget:self action:@selector(ldRetryClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_retryBtn];
+    }
+    return _retryBtn;
+}
+
+/** 下载进度文案label */
+- (UILabel *)downloadingStateLabel {
+    if (!_downloadingStateLabel) {
+        _downloadingStateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _downloadingStateLabel.text = @"正在加载中...";
+        _downloadingStateLabel.font = [UIFont systemFontOfSize:14.f];
+        _downloadingStateLabel.textColor = UIColorFromRGB(0x808080);
+        [_downloadingStateLabel sizeToFit];
+        [self.view addSubview:_downloadingStateLabel];
+        _downloadingStateLabel.frame = CGRectMake((FrameW - CGRectGetWidth(_downloadingStateLabel.frame)) / 2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 29 + 19, _downloadingStateLabel.frame.size.width + 50, _downloadingStateLabel.frame.size.height);
+    }
+    return _downloadingStateLabel;
+}
+
+
+
+#pragma mark - Get Sel
+/** 重新加载按钮触发方法 */
+- (void)ldRetryClick {
+    NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+    NSString *netState = [defalts objectForKey:@"netStatus"];
+    if ([netState isEqualToString:@"0"]) {
+        netState = @"网络暂不可用，请稍后重试！";
+        [self JhtShowHint:netState];
+        return;
+    }
+    self.downloadingStateLabel.text = @"正在加载中...";
+    self.retryBtn.hidden = YES;
+    // 进行下载；
+    [self ldJudgeNetworkThenDownloadFile];
+}
+
+/** 红色那个关闭点击事件 */
+- (void)ldCloseClick {
+    [self ldRemoveFileWhenDownloadFileFailure];
+    // 停止 下载文件
+    [JhtDownloadRequest stopDownloadFile];
+    self.fileProgressView.progress = 0;
+}
+
+
+
 #pragma mark - UIDocumentInteractionControllerDelegate
 - (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
     return self;
@@ -384,16 +479,16 @@
 
 
 #pragma mark - UIWebViewDelegate
-- (void)webViewDidStartld:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     [self bsShowLoadingView];
 }
 
-- (void)webViewDidFinishld:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self bsStopLoadingView];
     
 }
 
-- (void)webView:(UIWebView *)webView didFailldWithError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nonnull NSError *)error {
     [self bsStopLoadingView];
 }
 
@@ -416,7 +511,7 @@
 }
 
 // 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error {
     [self bsStopLoadingView];
 }
 
@@ -463,16 +558,6 @@
 // 5.显示一个确认框（JS的）
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
     
-}
-
-
-
-#pragma mark - alertViewDelegate..
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 123) {
-        // 开始下载
-        [self ldDrawProgressUIForDowningFile];
-    }
 }
 
 
@@ -546,93 +631,12 @@
 
 
 
-#pragma mark - 懒加载方式创建文件下载UI控件
-/** 进度条 */
-- (UIProgressView *)fileProgressView {
-    if (!_fileProgressView) {
-        _fileProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(45/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 29, FrameW - (45/2.f + 61/2.f), 10)];
-        [_fileProgressView setProgressViewStyle:UIProgressViewStyleDefault];
-        _fileProgressView.progressTintColor = UIColorFromRGB(0x61cbf5);
-        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
-        _fileProgressView.transform = transform;
-        _fileProgressView.layer.masksToBounds = YES;
-        _fileProgressView.layer.cornerRadius = 2.f;
-        [self.view addSubview:_fileProgressView];
+#pragma mark - alertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 123) {
+        // 开始下载
+        [self ldDrawProgressUIForDowningFile];
     }
-    return _fileProgressView;
-}
-
-/** 关闭按钮 */
-- (UIButton *)closeBtn {
-    if (!_closeBtn) {
-        _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _closeBtn.frame = CGRectMake(FrameW - 65/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 19, 20, 20);
-//        _closeBtn.backgroundColor = [UIColor redColor];
-        NSString *closeImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/close"];
-        UIImage *closeBtnImage = [UIImage imageWithContentsOfFile:closeImagePath];
-        [_closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
-        [self.view addSubview:_closeBtn];
-        [_closeBtn addTarget:self action:@selector(ldCloseClick) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _closeBtn;
-}
-
-/** 重试按钮 */
-- (UIButton *)retryBtn {
-    if (!_retryBtn) {
-        _retryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _retryBtn.frame = CGRectMake((FrameW - 80.f)/2.f, CGRectGetMaxY(_downloadingStateLabel.frame) + 10, 80, 30);
-        _retryBtn.backgroundColor = UIColorFromRGB(0x61cbf5);
-        [_retryBtn setTitle:@"重新加载" forState:UIControlStateNormal];
-        _retryBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
-        [_retryBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _retryBtn.layer.cornerRadius = 3.f;
-        _retryBtn.layer.masksToBounds = YES;
-        
-        [_retryBtn addTarget:self action:@selector(ldRetryClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_retryBtn];
-    }
-    return _retryBtn;
-}
-
-/** 下载进度文案label */
-- (UILabel *)downloadingStateLabel {
-    if (!_downloadingStateLabel) {
-        _downloadingStateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _downloadingStateLabel.text = @"正在加载中...";
-        _downloadingStateLabel.font = [UIFont systemFontOfSize:14.f];
-        _downloadingStateLabel.textColor = UIColorFromRGB(0x808080);
-        [_downloadingStateLabel sizeToFit];
-        [self.view addSubview:_downloadingStateLabel];
-        _downloadingStateLabel.frame = CGRectMake((FrameW - CGRectGetWidth(_downloadingStateLabel.frame)) / 2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 29 + 19, _downloadingStateLabel.frame.size.width + 50, _downloadingStateLabel.frame.size.height);
-    }
-    return _downloadingStateLabel;
-}
-
-
-
-#pragma mark - 懒加载方式创建文件下载UI控件触发方法
-/** 重新加载按钮触发方法 */
-- (void)ldRetryClick {
-    NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
-    NSString *netState = [defalts objectForKey:@"netStatus"];
-    if ([netState isEqualToString:@"0"]) {
-        netState = @"网络暂不可用，请稍后重试！";
-        [self JhtShowHint:netState];
-        return;
-    }
-    self.downloadingStateLabel.text = @"正在加载中...";
-    self.retryBtn.hidden = YES;
-    // 进行下载；
-    [self ldJudgeNetworkThenDownloadFile];
-}
-
-/** 红色那个关闭点击事件 */
-- (void)ldCloseClick {
-    [self ldRemoveFileWhenDownloadFileFailure];
-    // 停止 下载文件
-    [JhtDownloadRequest stopDownloadFile];
-    self.fileProgressView.progress = 0;
 }
 
 

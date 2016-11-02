@@ -10,8 +10,9 @@
 //
 
 #import "JhtLoadDocViewController.h"
-#import "JhtFileModel.h"
 #import <WebKit/WebKit.h>
+#import "JhtFileModel.h"
+#import "JhtDownloadRequest.h"
 
 @interface JhtLoadDocViewController () <UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, UIDocumentInteractionControllerDelegate, UIAlertViewDelegate> {
     // 加载Doc的webView
@@ -38,7 +39,6 @@
 @property (nonatomic, strong) UIButton *retryBtn;
 
 @end
-
 
 #define KB (1024)
 #define MB (KB * 1024)
@@ -96,7 +96,7 @@
     } else {
         // 无网络连接
         netState = @"网络暂不可用";
-        [self JhtShowHint:@"网络暂不可用"];
+        [self JhtShowHint:netState];
     }
 }
 
@@ -223,7 +223,8 @@
     self.downloadingStateLabel.hidden = NO;
     self.closeBtn.hidden = NO;
     
-    /** 下载文件功能
+    /**
+     *  下载文件功能
      *  @param URLString                 要下载文件的URL
      *  @param downloadFileProgress      下载的进度条，百分比
      *  @param setupFilePath             设置下载的路径
@@ -272,75 +273,6 @@
             [self ldRemoveFileWhenDownloadFileFailure];
         }
     }];
-}
-
-
-
-#pragma  mark - 关于文件路径的操作
-#pragma mark 获取文件大小
-- (long long)ldFileSizeForPath:(NSString *)filePath {
-    NSFileManager *manager = [NSFileManager defaultManager];
-    if ([manager fileExistsAtPath:filePath]){
-        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
-    }
-    return 0;
-}
-
-#pragma mark 文件下载失败时，清除文件路径
-- (void)ldRemoveFileWhenDownloadFileFailure {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *fileName = [self ldGetLocalFilePath];
-    if ([fileManager fileExistsAtPath:fileName]) {
-        [fileManager removeItemAtPath:fileName error:nil];
-    }
-}
-
-#pragma mark 获取下载总沙盒路径
-- (NSString *)ldGetDownloadFilePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
-    NSString *filePath = [NSString stringWithFormat:@"%@/Download/Files", path];
-    return filePath;
-}
-
-#pragma mark 获取本地文件名
-- (NSString *)ldGetLocalFilePath {
-    // 获取下载总沙盒路径
-    NSString *filePath = [self ldGetDownloadFilePath];
-    
-    NSString *fileTypePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", _currentFileModel.fileName]];
-    return fileTypePath;
-}
-
-#pragma mark 几天天后清理Download/Files里面文件
-- (void)ldCleanFileAfterDays:(NSInteger)day {
-    NSString *filePath = [self ldGetDownloadFilePath];
-    NSString *path = @"";
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:filePath];
-    while ((path = [directoryEnumerator nextObject]) != nil) {
-        NSString *subFilePath = [filePath stringByAppendingPathComponent:path];
-        
-        // 遍历文件属性
-        NSError *error = nil;
-        NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:subFilePath error:&error];
-        if (fileAttributes != nil) {
-            NSDate *fileCreateDate = [fileAttributes objectForKey:NSFileCreationDate];
-            if (fileCreateDate) {
-                NSDate *date2 = [NSDate date];
-                NSTimeInterval aTimer = [date2 timeIntervalSinceDate:fileCreateDate];
-                
-                // 如果文件创建时间间隔大于day天，则删除
-                if (aTimer > day*24*60*60) {
-                    if([fileManager fileExistsAtPath:subFilePath]) {
-                        // 如果存在
-                        [fileManager removeItemAtPath:subFilePath error:nil];
-                    }
-                }
-            }
-        }
-    }
 }
 
 
@@ -437,7 +369,7 @@
     if (!_closeBtn) {
         _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _closeBtn.frame = CGRectMake(FrameW - 65/2.f, CGRectGetMaxY(self.iconFileDescribeLabel.frame) + 19, 20, 20);
-//        _closeBtn.backgroundColor = [UIColor redColor];
+        //        _closeBtn.backgroundColor = [UIColor redColor];
         NSString *closeImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/close"];
         UIImage *closeBtnImage = [UIImage imageWithContentsOfFile:closeImagePath];
         [_closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
@@ -547,16 +479,16 @@
 
 
 #pragma mark - UIWebViewDelegate
-- (void)webViewDidStartld:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     [self bsShowLoadingView];
 }
 
-- (void)webViewDidFinishld:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self bsStopLoadingView];
     
 }
 
-- (void)webView:(UIWebView *)webView didFailldWithError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nonnull NSError *)error {
     [self bsStopLoadingView];
 }
 
@@ -579,7 +511,7 @@
 }
 
 // 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error {
     [self bsStopLoadingView];
 }
 
@@ -626,6 +558,75 @@
 // 5.显示一个确认框（JS的）
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
     
+}
+
+
+
+#pragma  mark - 关于文件路径的操作
+#pragma mark 获取文件大小
+- (long long)ldFileSizeForPath:(NSString *)filePath {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+
+#pragma mark 文件下载失败时，清除文件路径
+- (void)ldRemoveFileWhenDownloadFileFailure {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *fileName = [self ldGetLocalFilePath];
+    if ([fileManager fileExistsAtPath:fileName]) {
+        [fileManager removeItemAtPath:fileName error:nil];
+    }
+}
+
+#pragma mark 获取下载总沙盒路径
+- (NSString *)ldGetDownloadFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths objectAtIndex:0];
+    NSString *filePath = [NSString stringWithFormat:@"%@/Download/Files", path];
+    return filePath;
+}
+
+#pragma mark 获取本地文件名
+- (NSString *)ldGetLocalFilePath {
+    // 获取下载总沙盒路径
+    NSString *filePath = [self ldGetDownloadFilePath];
+    
+    NSString *fileTypePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",_currentFileModel.fileName]];
+    return fileTypePath;
+}
+
+#pragma mark 几天天后清理Download/Files里面文件
+- (void)ldCleanFileAfterDays:(NSInteger)day {
+    NSString *filePath = [self ldGetDownloadFilePath];
+    NSString *path = @"";
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:filePath];
+    while ((path = [directoryEnumerator nextObject]) != nil) {
+        NSString *subFilePath = [filePath stringByAppendingPathComponent:path];
+        
+        // 遍历文件属性
+        NSError *error = nil;
+        NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:subFilePath error:&error];
+        if (fileAttributes != nil) {
+            NSDate *fileCreateDate = [fileAttributes objectForKey:NSFileCreationDate];
+            if (fileCreateDate) {
+                NSDate *date2 = [NSDate date];
+                NSTimeInterval aTimer = [date2 timeIntervalSinceDate:fileCreateDate];
+                
+                // 如果文件创建时间间隔大于day天，则删除
+                if (aTimer > day*24*60*60) {
+                    if([fileManager fileExistsAtPath:subFilePath]) {
+                        // 如果存在
+                        [fileManager removeItemAtPath:subFilePath error:nil];
+                    }
+                }
+            }
+        }
+    }
 }
 
 

@@ -11,6 +11,7 @@
 
 #import "AppDelegate.h"
 #import "DocListViewController.h"
+#import "JhtNetworkCheckTools.h"
 
 @interface AppDelegate () {
     UINavigationController *_nav;
@@ -45,7 +46,7 @@
     _nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = _nav;
     
-    // 跳转三方；
+    // 三方跳转
     if (launchOptions) {
         NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
         //返回的url， 转换成nsstring;
@@ -74,7 +75,6 @@
     }
     return YES;
 }
-
 
 
 #pragma mark - 模拟将 本地文件 的保存到 内存中
