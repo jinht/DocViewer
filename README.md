@@ -71,7 +71,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
 #### 5. 添加库文件<br>
      WebKit.framework<br>
      
-#### 6. 需要导入的三方库：<br>
+#### 6. 需要导入的三方库<br>
      a. AFNetworking3.0x<br>
      b. MBProgressHUD <br>
      
