@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
+		A53A40821E1640E60055372C /* JhtDocToolsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A53A407C1E1640E60055372C /* JhtDocToolsSDK.a */; };
+		A53A40831E1640E60055372C /* JhtDocViewerImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A53A407D1E1640E60055372C /* JhtDocViewerImages.bundle */; };
 		A55D70AF1D44EFEA001D675C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70AE1D44EFEA001D675C /* main.m */; };
 		A55D70B21D44EFEA001D675C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70B11D44EFEA001D675C /* AppDelegate.m */; };
 		A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55D70B61D44EFEA001D675C /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55D70BB1D44EFEA001D675C /* LaunchScreen.storyboard */; };
 		A55D70C81D44EFEA001D675C /* JhtDocViewerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70C71D44EFEA001D675C /* JhtDocViewerDemoTests.m */; };
 		A55D70D31D44EFEA001D675C /* JhtDocViewerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70D21D44EFEA001D675C /* JhtDocViewerDemoUITests.m */; };
-		A5CBA0E31DC9E1180048C2B4 /* JhtDocToolsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CBA0DE1DC9E1180048C2B4 /* JhtDocToolsSDK.a */; };
-		A5CBA1271DC9E3920048C2B4 /* JhtLoadDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBA1261DC9E3920048C2B4 /* JhtLoadDocViewController.m */; };
 		A5EA2E3F1D48A5D9007217DE /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A5EA2E3B1D48A5D9007217DE /* 1.xlsx */; };
 		A5EA2E401D48A5D9007217DE /* 2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = A5EA2E3C1D48A5D9007217DE /* 2.pptx */; };
 		A5EA2E411D48A5D9007217DE /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A5EA2E3D1D48A5D9007217DE /* CIImage.docx */; };
@@ -31,7 +31,6 @@
 		A5EA2ECC1D48A66A007217DE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2EB61D48A66A007217DE /* AFURLSessionManager.m */; };
 		A5EA2ECD1D48A66A007217DE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2EB91D48A66A007217DE /* MBProgressHUD.m */; };
 		A5EA2ECE1D48A66A007217DE /* JhtFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2EBD1D48A66A007217DE /* JhtFileModel.m */; };
-		A5EA2ED11D48A9BD007217DE /* JhtDocViewerImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5EA2ED01D48A9BD007217DE /* JhtDocViewerImages.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +52,13 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A53A407B1E1640E60055372C /* JhtDocTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDocTools.h; sourceTree = "<group>"; };
+		A53A407C1E1640E60055372C /* JhtDocToolsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JhtDocToolsSDK.a; sourceTree = "<group>"; };
+		A53A407D1E1640E60055372C /* JhtDocViewerImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewerImages.bundle; sourceTree = "<group>"; };
+		A53A407E1E1640E60055372C /* JhtDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDownloadRequest.h; sourceTree = "<group>"; };
+		A53A407F1E1640E60055372C /* JhtLoadDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtLoadDocViewController.h; sourceTree = "<group>"; };
+		A53A40801E1640E60055372C /* JhtNetworkCheckTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtNetworkCheckTools.h; sourceTree = "<group>"; };
+		A53A40811E1640E60055372C /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		A55D70AA1D44EFEA001D675C /* JhtDocViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JhtDocViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55D70AE1D44EFEA001D675C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A55D70B01D44EFEA001D675C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,13 +73,6 @@
 		A55D70CE1D44EFEA001D675C /* JhtDocViewerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtDocViewerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55D70D21D44EFEA001D675C /* JhtDocViewerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtDocViewerDemoUITests.m; sourceTree = "<group>"; };
 		A55D70D41D44EFEA001D675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5CBA0DD1DC9E1180048C2B4 /* JhtDocTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDocTools.h; sourceTree = "<group>"; };
-		A5CBA0DE1DC9E1180048C2B4 /* JhtDocToolsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JhtDocToolsSDK.a; sourceTree = "<group>"; };
-		A5CBA0DF1DC9E1180048C2B4 /* JhtDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDownloadRequest.h; sourceTree = "<group>"; };
-		A5CBA0E11DC9E1180048C2B4 /* JhtNetworkCheckTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtNetworkCheckTools.h; sourceTree = "<group>"; };
-		A5CBA0E21DC9E1180048C2B4 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
-		A5CBA1251DC9E3920048C2B4 /* JhtLoadDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtLoadDocViewController.h; sourceTree = "<group>"; };
-		A5CBA1261DC9E3920048C2B4 /* JhtLoadDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtLoadDocViewController.m; sourceTree = "<group>"; };
 		A5EA2E3B1D48A5D9007217DE /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
 		A5EA2E3C1D48A5D9007217DE /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
 		A5EA2E3D1D48A5D9007217DE /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		A5EA2EB91D48A66A007217DE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		A5EA2EBC1D48A66A007217DE /* JhtFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtFileModel.h; sourceTree = "<group>"; };
 		A5EA2EBD1D48A66A007217DE /* JhtFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtFileModel.m; sourceTree = "<group>"; };
-		A5EA2ED01D48A9BD007217DE /* JhtDocViewerImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JhtDocViewerImages.bundle; path = JhtDocViewer/JhtDocViewerImages.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CBA0E31DC9E1180048C2B4 /* JhtDocToolsSDK.a in Frameworks */,
+				A53A40821E1640E60055372C /* JhtDocToolsSDK.a in Frameworks */,
 				7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +127,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53A407A1E1640E60055372C /* JhtDocToolsSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A53A407B1E1640E60055372C /* JhtDocTools.h */,
+				A53A407E1E1640E60055372C /* JhtDownloadRequest.h */,
+				A53A40801E1640E60055372C /* JhtNetworkCheckTools.h */,
+				A53A407F1E1640E60055372C /* JhtLoadDocViewController.h */,
+				A53A40811E1640E60055372C /* UIViewController+Extension.h */,
+				A53A407C1E1640E60055372C /* JhtDocToolsSDK.a */,
+				A53A407D1E1640E60055372C /* JhtDocViewerImages.bundle */,
+			);
+			path = JhtDocToolsSDK;
+			sourceTree = "<group>";
+		};
 		A55D70A11D44EFEA001D675C = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +168,6 @@
 				A55D70B01D44EFEA001D675C /* AppDelegate.h */,
 				A55D70B11D44EFEA001D675C /* AppDelegate.m */,
 				A5EA2E9D1D48A66A007217DE /* JhtDocViewer */,
-				A5EA2ED01D48A9BD007217DE /* JhtDocViewerImages.bundle */,
 				A5EA2E3A1D48A5D9007217DE /* JhtDocTemp */,
 				A55D70B61D44EFEA001D675C /* Main.storyboard */,
 				A55D70B91D44EFEA001D675C /* Assets.xcassets */,
@@ -193,27 +204,6 @@
 			path = JhtDocViewerDemoUITests;
 			sourceTree = "<group>";
 		};
-		A5CBA0DC1DC9E1180048C2B4 /* JhtDocToolsSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A5CBA0DD1DC9E1180048C2B4 /* JhtDocTools.h */,
-				A5CBA0DF1DC9E1180048C2B4 /* JhtDownloadRequest.h */,
-				A5CBA0E11DC9E1180048C2B4 /* JhtNetworkCheckTools.h */,
-				A5CBA0E21DC9E1180048C2B4 /* UIViewController+Extension.h */,
-				A5CBA0DE1DC9E1180048C2B4 /* JhtDocToolsSDK.a */,
-			);
-			path = JhtDocToolsSDK;
-			sourceTree = "<group>";
-		};
-		A5CBA1241DC9E3920048C2B4 /* JhtLoadDocViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A5CBA1251DC9E3920048C2B4 /* JhtLoadDocViewController.h */,
-				A5CBA1261DC9E3920048C2B4 /* JhtLoadDocViewController.m */,
-			);
-			path = JhtLoadDocViewController;
-			sourceTree = "<group>";
-		};
 		A5EA2E3A1D48A5D9007217DE /* JhtDocTemp */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +220,8 @@
 			children = (
 				A5EA2E9E1D48A66A007217DE /* JhtDocController */,
 				A5EA2EBA1D48A66A007217DE /* JhtDocModel */,
-				A5CBA0DC1DC9E1180048C2B4 /* JhtDocToolsSDK */,
 				A5EA2EA81D48A66A007217DE /* JhtDocLibs */,
+				A53A407A1E1640E60055372C /* JhtDocToolsSDK */,
 			);
 			path = JhtDocViewer;
 			sourceTree = "<group>";
@@ -241,7 +231,6 @@
 			children = (
 				A5EA2EA21D48A66A007217DE /* JhtBaseViewController */,
 				A5EA2E9F1D48A66A007217DE /* DocListViewController */,
-				A5CBA1241DC9E3920048C2B4 /* JhtLoadDocViewController */,
 			);
 			path = JhtDocController;
 			sourceTree = "<group>";
@@ -428,7 +417,7 @@
 				A5EA2E3F1D48A5D9007217DE /* 1.xlsx in Resources */,
 				A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */,
 				A5EA2E411D48A5D9007217DE /* CIImage.docx in Resources */,
-				A5EA2ED11D48A9BD007217DE /* JhtDocViewerImages.bundle in Resources */,
+				A53A40831E1640E60055372C /* JhtDocViewerImages.bundle in Resources */,
 				A55D70BA1D44EFEA001D675C /* Assets.xcassets in Resources */,
 				A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */,
 			);
@@ -466,7 +455,6 @@
 				A5EA2EC91D48A66A007217DE /* AFSecurityPolicy.m in Sources */,
 				A5EA2EC71D48A66A007217DE /* AFHTTPSessionManager.m in Sources */,
 				A5EA2EC51D48A66A007217DE /* JhtBaseViewController.m in Sources */,
-				A5CBA1271DC9E3920048C2B4 /* JhtLoadDocViewController.m in Sources */,
 				A55D70AF1D44EFEA001D675C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -67,7 +67,7 @@
         fileModel.vFileId = @"570c5bb9ad34705d1a6874c1";
         fileModel.contentType = @"application/octet-stream";
         fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
-        fileModel.fileType = @"docx";
+        fileModel.viewFileType = Type_Docx;
         fileModel.fileSize = @"21.39KB";
         fileModel.attachmentFileSize = @"21906";
         [_baseSourceArray addObject:fileModel];
@@ -168,7 +168,7 @@
 
 
 
-#pragma mark -UIGestureRecognizerDelegate
+#pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     // 避免dragImageView手势冲突 问题解决方法http://blog.sina.com.cn/s/blog_6b8c3d7a0101dxnc.html
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {

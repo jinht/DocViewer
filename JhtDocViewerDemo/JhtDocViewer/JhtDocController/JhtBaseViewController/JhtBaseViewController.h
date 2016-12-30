@@ -49,16 +49,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 /** 创建Navigationbar的TitleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title;
 
-/** 创建导航栏右侧自定义的返回按钮(图标+文字) */
-- (void)bsCreateNavigationBarRightBtnWithRightImage:(UIImage *)RImage WithRightLabelText:(NSString *)RLText;
-/** 导航栏右侧按钮点击触发事件(图标+文字~子类可以重写) */
-- (void)bsRightItemTapGes:(UITapGestureRecognizer *)ges;
-
-/** 创建导航栏右侧侧自定义的按钮(仅文字) */
-- (void)bsCreateNavigationBarRightBtnWithLabelText:(NSString *)RLText;
-/** 默认导航栏右侧按钮点击触发事件(仅文字~子类可以重写) */
-- (void)bsRightItemNoImageTapGes:(UITapGestureRecognizer *)ges;
-
 
 
 #pragma mark - 工具方法
