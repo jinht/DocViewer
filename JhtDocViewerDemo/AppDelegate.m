@@ -49,7 +49,7 @@
     // 三方跳转
     if (launchOptions) {
         NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
-        //返回的url， 转换成nsstring;
+        //返回的url， 转换成nsstring
         NSString *appfilePath =[[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
         appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         DocListViewController *doc = [[DocListViewController alloc] init];
