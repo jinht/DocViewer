@@ -162,8 +162,7 @@
     JhtFileModel *model = [_baseSourceArray objectAtIndex:indexPath.row];
     load.titleStr = model.fileName;
     load.currentFileModel = model;
-    [self.navigationController pushViewController:load animated:YES];
-    
+    [self.navigationController pushViewController:load animated:YES]; 
 }
 
 

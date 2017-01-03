@@ -19,13 +19,13 @@
 
 @end
 
-
 #define OpenFileName0 @"2.pptx"
 #define OpenFileName1 @"1.xlsx"
 #define OpenFileName2 @"CIImage.docx"
 #define OpenFileName3 @"信鸽推送说明书.pdf"
 
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
@@ -49,7 +49,7 @@
     // 三方跳转
     if (launchOptions) {
         NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
-        //返回的url， 转换成nsstring
+        //返回的url，转换成nsstring
         NSString *appfilePath =[[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
         appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         DocListViewController *doc = [[DocListViewController alloc] init];
@@ -63,9 +63,9 @@
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     if (options) {
 //        NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
-        // 返回的url， 例如这样；
+        // 返回的url，例如这样
 //    	@"file:///private/var/mobile/Containers/Data/Application/A2E0485F-1341-48A3-BD40-6D09CB8559F5/Documents/Inbox/2-6.pptx"
-        // 返回的url， 转换成nsstring;
+        // 返回的url， 转换成nsstring
         NSString *appfilePath = [[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
         appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSLog(@"appfilePath:%@", appfilePath);
@@ -89,7 +89,7 @@
     
     if (![fileManager fileExistsAtPath:path]) {
         // 创建目录
-        [fileManager createDirectoryAtPath:[path componentsSeparatedByString:[NSString stringWithFormat:@"/%@",fileName]][0]  withIntermediateDirectories:YES attributes:nil error:&error];
+        [fileManager createDirectoryAtPath:[path componentsSeparatedByString:[NSString stringWithFormat:@"/%@", fileName]][0]  withIntermediateDirectories:YES attributes:nil error:&error];
         
         NSString *filename = [fileName componentsSeparatedByString:@"."][0];
         NSString *type = [fileName componentsSeparatedByString:@"."][1];
