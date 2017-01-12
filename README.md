@@ -16,7 +16,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
     <true/>
 </dict>
 ```
-也即：
+也即：<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/1.png" width="80%" height="80%" />
 
 
@@ -180,7 +180,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
 ```
 
 ### 3. DocListViewController：文档列表
-     &ensp;&ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
+	tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
      
 ### 4. JhtLoadDocViewController：文档详情VC
@@ -189,9 +189,9 @@ LSHandlerRank：这里指是否拥有子文档<br>
 #### b. 需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功
      &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
 #### c. 资源共享
-       ”JhtDocViewer“ 文件用”其他应用“打开<br>  
+	”JhtDocViewer“ 文件用”其他应用“打开 <br>  
        &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
-       &ensp;&ensp;&ensp;&ensp;“其他应用”文件 用 “JhtDocViewer”打开<br>
+“其他应用”文件 用 “JhtDocViewer”打开<br>
        &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
 #### d. 无网络弹框
