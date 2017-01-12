@@ -85,8 +85,40 @@ LSHandlerRank：这里指是否拥有子文档<br>
  
      
 ## how to use JhtDocViewer.
- (1) 使用时可直接拖拽下图文件夹即可<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
+ 
+ (1) 相关参数配置
+   a. JhtDocFileOperations :文件操作类  
+    ```oc
+    /** 文件操作类 */
+@interface JhtDocFileOperations : NSObject
+/** 文件名称 */
+@property (nonatomic, copy) NSString *fileName;
+#pragma mark - Public Method
+/** 单例 */
++ (instancetype)sharedInstance;
+/** 生成本地文件完整路径 */
+- (NSString *)stitchLocalFilePath;
+/** 生成下载文件沙盒路径 */
+- (NSString *)stitchDownloadFilePath;
+/** 文件下载失败时，清除文件路径 */
+- (void)removeFileWhenDownloadFileFailure;
+/** 清理几天前Download/Files里面文件 */
+- (void)cleanFileAfterDays:(NSInteger)day;
+/** “其他应用”===>“本应用”打开，通过传递过来的url，获得本地地址 */
+- (NSString *)findLocalPathFromAppLicationOpenUrl:(NSURL *)url;
+
+/** 将本地文件 保存到内存中
+ *  fileName：是以.为分割的格式       eg：哈哈哈.doc
+ *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
+ *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+ */
+- (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
+    ```
+    b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model
+    作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
+    c.JhtFileModel: 下载文档的Model
+    作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数
+    
  (2)使用集成（以APPDelegate为例）<br>
  ```oc
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -158,43 +190,8 @@ LSHandlerRank：这里指是否拥有子文档<br>
        “其他应用”文件 用 “JhtDocViewer”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
-     d.相关联的model<br>
-     (1) JhtDocFileOperations :文件操作类
-     
-```oc
-		/** 文件操作类 */
-		@interface JhtDocFileOperations : NSObject
-
-		#pragma mark - property
-		/** 文件名称 */
-		@property (nonatomic, copy) NSString *fileName;
-
-
-
-		#pragma mark - Public Method
-		/** 单例 */
-		+ (instancetype)sharedInstance;
-
-		/** 生成本地文件完整路径 */
-		- (NSString *)stitchLocalFilePath;
-		/** 生成下载文件沙盒路径 */
-		- (NSString *)stitchDownloadFilePath;
-
-		/** 文件下载失败时，清除文件路径 */
-		- (void)removeFileWhenDownloadFileFailure;
-		/** 清理几天前Download/Files里面文件 */
-		- (void)cleanFileAfterDays:(NSInteger)day;
-		/** “其他应用”===>“本应用”打开，通过传递过来的url，获得本地地址 */
-		- (NSString *)findLocalPathFromAppLicationOpenUrl:(NSURL *)url;
-
-		/** 将本地文件 保存到内存中
-		 *  fileName：是以.为分割的格式       eg：哈哈哈.doc
-		 *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
-		 *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
-		 */
-		- (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
-```
-       
+     d.无网络弹框
+     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
        
 ###Remind
 * ARC
