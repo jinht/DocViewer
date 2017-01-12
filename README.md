@@ -112,9 +112,9 @@ LSHandlerRank：这里指是否拥有子文档<br>
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
 ```
-b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model<br>
-  作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数<br>
-c.JhtFileModel: 下载文档的Model<br>
+  b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model<br>
+    作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数<br>
+  c.JhtFileModel: 下载文档的Model<br>
     作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数<br>
     
     
@@ -181,19 +181,20 @@ c.JhtFileModel: 下载文档的Model<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
 （4）JhtLoadDocViewController 是文档详情VC<br>
      &ensp;&ensp;&ensp;&ensp;a.如果不需要下载，通过webView直接显示<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
-      b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，        应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
-     c.资源共享<br>
+     &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
+      &ensp;&ensp;&ensp;&ensp;b.需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，        应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功）<br>
+     &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
+     &ensp;&ensp;&ensp;&ensp;c.资源共享<br>
        ”JhtDocViewer“ 文件用”其他应用“打开<br>  
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
-       “其他应用”文件 用 “JhtDocViewer”打开<br>
-       <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
+       &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
+       &ensp;&ensp;&ensp;&ensp;“其他应用”文件 用 “JhtDocViewer”打开<br>
+       &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
-     d.无网络弹框<br>
-     <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
+     &ensp;&ensp;&ensp;&ensp;d.无网络弹框<br>
+     &ensp;&ensp;&ensp;&ensp;<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
+       
        
-###Remind
+### Remind
 * ARC
 * iOS >= 8.0
 * iPhone \ iPad 
