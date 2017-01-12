@@ -10,7 +10,6 @@
 //
 
 #import "JhtBaseViewController.h"
-#import "MBProgressHUD.h"
 
 @implementation JhtBaseViewController
 
@@ -72,7 +71,7 @@
     navigationBarTitleLabel.text = title;
     navigationBarTitleLabel.font = [UIFont boldSystemFontOfSize:18];
     navigationBarTitleLabel.textAlignment = NSTextAlignmentCenter;
-    navigationBarTitleLabel.textColor = UIColorFromRGB(0x55AABB);;
+    navigationBarTitleLabel.textColor = UIColorFromRGB(0x55AABB);
     self.navigationItem.titleView = navigationBarTitleLabel;
 }
 
@@ -89,25 +88,6 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
     }
-}
-
-#pragma mark 《正在加载》的View
-/** 打开 《正在加载》的View */
-- (void)bsShowLoadingView {
-    __weak UIView *superView = self.view;
-    [MBProgressHUD showHUDAddedTo:superView animated:YES];
-    
-    // 启动系统状态栏加载动画
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-}
-
-/** 关闭 《正在加载》的View */
-- (void)bsStopLoadingView {
-    __weak UIView *superView = self.view;
-    [MBProgressHUD hideHUDForView:superView animated:YES];
-    
-    // 关闭系统状态栏加载动画
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 

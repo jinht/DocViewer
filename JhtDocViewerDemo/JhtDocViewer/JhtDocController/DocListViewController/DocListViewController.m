@@ -12,6 +12,7 @@
 #import "DocListViewController.h"
 #import "JhtFileModel.h"
 #import "JhtLoadDocViewController.h"
+#import "JhtShowDumpingViewParamModel.h"
 
 @implementation DocListViewController
 
@@ -60,12 +61,7 @@
         // 第一个是 网络的，需要下载的
         JhtFileModel *fileModel = [[JhtFileModel alloc] init];
         fileModel.fileId = @"577e2300c94f6e51316a299d";
-        fileModel.vFileName = @"word.png";
-        fileModel.vContentType = @"image/png";
-        fileModel.vUrl = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/570c5bb9ad34705d1a6874c1";
         fileModel.fileName = @"哈哈哈.docx";
-        fileModel.vFileId = @"570c5bb9ad34705d1a6874c1";
-        fileModel.contentType = @"application/octet-stream";
         fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
         fileModel.viewFileType = Type_Docx;
         fileModel.fileSize = @"21.39KB";
@@ -162,7 +158,15 @@
     JhtFileModel *model = [_baseSourceArray objectAtIndex:indexPath.row];
     load.titleStr = model.fileName;
     load.currentFileModel = model;
-    [self.navigationController pushViewController:load animated:YES]; 
+    // 提示框model相关参数
+    JhtShowDumpingViewParamModel *paramModel = [[JhtShowDumpingViewParamModel alloc] init];
+    paramModel.showTintColor = UIColorFromRGB(0x666666);
+    paramModel.showFont = [UIFont boldSystemFontOfSize:15];
+    paramModel.showBackgroundColor = [UIColor whiteColor];
+    paramModel.showBackgroundImageName = @"dumpView";
+    load.paramModel = paramModel;
+    
+    [self.navigationController pushViewController:load animated:YES];
 }
 
 

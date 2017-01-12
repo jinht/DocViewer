@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "DocListViewController.h"
 #import "JhtNetworkCheckTools.h"
+#import "JhtDocFileOperations.h"
 
 @interface AppDelegate () {
     UINavigationController *_nav;
@@ -26,10 +27,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
-    [[JhtNetworkCheckTools sharedInstance] netStartNetworkNotifyWithPollingInterval:3.0];
+    [[JhtNetworkCheckTools sharedInstance] startNetworkNotifyWithPollingInterval:2.0];
     
     // 模拟将 本地文件 的保存到 内存中
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
@@ -49,61 +49,48 @@
     // 三方跳转
     if (launchOptions) {
         NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
-        //返回的url，转换成nsstring
-        NSString *appfilePath =[[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
-        appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        DocListViewController *doc = [[DocListViewController alloc] init];
-        doc.appFilePath = appfilePath;
-        [_nav pushViewController:doc animated:YES];
+        // 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+        [self pushDocListViewControllerWithUrl:url];
     }
     
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
-    if (options) {
-//        NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
-        // 返回的url，例如这样
-//    	@"file:///private/var/mobile/Containers/Data/Application/A2E0485F-1341-48A3-BD40-6D09CB8559F5/Documents/Inbox/2-6.pptx"
-        // 返回的url， 转换成nsstring
-        NSString *appfilePath = [[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
-        appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSLog(@"appfilePath:%@", appfilePath);
-        DocListViewController *doc = [[DocListViewController alloc] init];
-        doc.appFilePath = appfilePath;
-        [_nav pushViewController:doc animated:YES];
-    }
-    return YES;
-}
 
 
 #pragma mark - 模拟将 本地文件 的保存到 内存中
-/** 模拟将 本地文件 的保存到 内存中 （如果以后是网络就可以将网络请求下来的保存到 内存中，然后从内存中读取） */
+/** 模拟将 本地文件 的保存到 内存中 （如果以后是网络就可以将网络请求下来的保存到 内存中，然后从内存中读取）*/
 - (void)copyLocalFile:(NSString *)fileName {
-    NSError *error;
-    // 储存方式
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/JhtDoc/%@", fileName]];
-//    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:self.fileName];
-    NSLog(@"path:%@", path);
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    if (![fileManager fileExistsAtPath:path]) {
-        // 创建目录
-        [fileManager createDirectoryAtPath:[path componentsSeparatedByString:[NSString stringWithFormat:@"/%@", fileName]][0]  withIntermediateDirectories:YES attributes:nil error:&error];
-        
-        NSString *filename = [fileName componentsSeparatedByString:@"."][0];
-        NSString *type = [fileName componentsSeparatedByString:@"."][1];
-        
-        NSString *bundle = [[NSBundle mainBundle] pathForResource:filename ofType:type];
-        
-        // 用nsdata保存到内存
-        NSData *fileData = [[NSData alloc] initWithContentsOfFile:bundle];
-        [fileData writeToFile:path atomically:YES];
-    }
+    /** 将本地文件 保存到内存中
+     *  fileName：是以.为分割的格式       eg：哈哈哈.doc
+     *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
+     *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+     */
+    [[JhtDocFileOperations sharedInstance] copyLocalWithFileName:fileName withBasePath:NSHomeDirectory() withLocalPath:@"Documents/JhtDoc"];
 }
 
 
 
+#pragma mark - 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+- (void)pushDocListViewControllerWithUrl:(NSURL *)url {
+    // 根据“其他应用” 用“本应用”打开, 通过要打开的url，获得本地地址
+    NSString *appfilePath = [[JhtDocFileOperations sharedInstance] findLocalPathFromAppLicationOpenUrl:url];
+    // 跳转页面
+    DocListViewController *doc = [[DocListViewController alloc] init];
+    doc.appFilePath = appfilePath;
+    [_nav pushViewController:doc animated:YES];
+}
+
+
+
+#pragma mark - application Delegate...
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
+    if (options) {
+        // 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+        [self pushDocListViewControllerWithUrl:url];
+    }
+    return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -126,5 +113,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 @end
 

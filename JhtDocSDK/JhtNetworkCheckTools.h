@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/** 获取UserDefaults中当前网络状态Key */
+#define JhtGetCurrentNetStateKey @"jhtGetCurrentNetStateKey"
+
 // 网络监听返回枚举类
 typedef enum {
     NETWORK_TYPE_NONE = 0,
@@ -29,12 +32,12 @@ typedef enum {
 /** 开启检查网络的监听
  *  pollingInterval：轮询检查网络状态的时间间隔（建议设的不要太小）
  */
-- (void)netStartNetworkNotifyWithPollingInterval:(CGFloat)pollingInterval;
+- (void)startNetworkNotifyWithPollingInterval:(CGFloat)pollingInterval;
 /** 停止检查网络的监听 */
-- (void)netStopNetworkNotify;
+- (void)stopNetworkNotify;
 
 /** 获取当前网络状态(类型) */
-- (NETWORK_TYPE)netGetCurrentNetworkType;
+- (NETWORK_TYPE)currentNetworkType;
 
 
 @end

@@ -26,16 +26,12 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 };
 
 
-/** 用于下载文档的Model */
+/** 下载文档的Model */
 @interface JhtFileModel : NSObject
-
+/** 文件ID */
 @property (nonatomic, copy) NSString *fileId;
-@property (nonatomic, copy) NSString *vFileName;
-@property (nonatomic, copy) NSString *vContentType;
-@property (nonatomic, copy) NSString *vUrl;
+/** 文件名 */
 @property (nonatomic, copy) NSString *fileName;
-@property (nonatomic, copy) NSString *vFileId;
-@property (nonatomic, copy) NSString *contentType;
 /** 文件下载路径 */
 @property (nonatomic, copy) NSString *url;
 /** 如果是本地的，绝对路径 */
@@ -54,12 +50,7 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 
 /** for example：
     fileModel.fileId = @"577e2300c94f6e51316a299d";
-    fileModel.vFileName = @"word.png";
-    fileModel.vContentType = @"image/png";
-    fileModel.vUrl = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/570c5bb9ad34705d1a6874c1";
     fileModel.fileName = @"哈哈哈.docx";
-    fileModel.vFileId = @"570c5bb9ad34705d1a6874c1";
-    fileModel.contentType = @"application/octet-stream";
     fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
     fileModel.fileType = @"docx";
     fileModel.fileSize = @"21.39KB";

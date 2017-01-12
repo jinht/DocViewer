@@ -18,8 +18,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 也即：<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/1.png" width="80%" height="80%" />
 
-
-#### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加以下内容<br>
+#### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加<br>
 ```oc
 <key>CFBundleDocumentTypes</key>
 	<array>
@@ -56,10 +55,8 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 CFBundleTypeName：文档的类型名称<br>
 LSHandlerRank：这里指是否拥有子文档<br>
 
-
 #### 3. info.plist 中，对应Localization native development region键值 加入Chinese<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/2.png" width="80%" height="80%" />
-
 
 #### 4. 在第三方调用我们的APP后，会调用如下方法<br>
 ```oc
@@ -71,15 +68,12 @@ LSHandlerRank：这里指是否拥有子文档<br>
 }
 ```
 
-
 #### 5. 添加库文件<br>
      WebKit.framework<br>
      
-     
-#### 6. 需要导入的三方库<br>
+#### 6. 需要导入的三方库：<br>
      a. AFNetworking3.0x<br>
      b. MBProgressHUD <br>
-     
      
 ## how to use JhtDocViewer.
  (1) 使用时可直接拖拽下图文件夹即可<br>

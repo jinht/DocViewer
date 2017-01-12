@@ -11,6 +11,7 @@
 
 #import "JhtBaseViewController.h"
 
+/** 文件列表类 */
 @interface DocListViewController : JhtBaseViewController
 
 /** 从appDelegate里面，跳转过来，主要用于打开别的软件的共享过来的文档 */

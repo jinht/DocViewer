@@ -11,16 +11,17 @@
 
 #import "JhtBaseViewController.h"
 @class JhtFileModel;
+@class JhtShowDumpingViewParamModel;
 
 /** 加载文本类 */
 @interface JhtLoadDocViewController : JhtBaseViewController
+
 #pragma mark required
 /** 标题 */
 @property (nonatomic, copy) NSString *titleStr;
 
 /** 用于下载的model */
 @property (nonatomic, strong) JhtFileModel *currentFileModel;
-
 
 
 #pragma mark optional
@@ -35,16 +36,11 @@
 
 /** 清理几天前的文件(默认0) */
 @property (nonatomic, assign) NSInteger daysAgo;
-
 /** 下载进度条填充颜色 */
 @property (nonatomic, strong) UIColor *downloadProgressTintColor;
 
-/** 用其他应用打开按钮 */
-@property (nonatomic, strong) UIButton *otherOpenButton;
-/** 关闭按钮 */
-@property (nonatomic, strong) UIButton *closeBtn;
-/** 重试按钮 */
-@property (nonatomic, strong) UIButton *retryBtn;
+/** 提示框model相关参数 */
+@property (nonatomic, strong) JhtShowDumpingViewParamModel *paramModel;
 
 
 @end

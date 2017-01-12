@@ -10,7 +10,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+Extension.h"
 
 /** controller父类 */
 @interface JhtBaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate> {
@@ -29,7 +28,6 @@
 /** 375的比例尺 */
 #define WidthScale375 ([UIScreen mainScreen].bounds.size.width/375)
 
-#pragma mark - 颜色转换
 /** 颜色转换  例:#000000 UIColorFromRGB(0x000000) */
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -48,16 +46,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 /** 创建Navigationbar的TitleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title;
-
-
-
-#pragma mark - 工具方法
-#pragma mark 《正在加载》的View
-/** 打开 《正在加载》的View */
-- (void)bsShowLoadingView;
-
-/** 关闭 《正在加载》的View */
-- (void)bsStopLoadingView;
 
 
 @end
