@@ -86,7 +86,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
      
 ## how to use JhtDocViewer.
  
-（1） 相关参数配置
+（1） 相关参数配置<br>
  a. JhtDocFileOperations :文件操作类 
 ```oc
 /** 文件操作类 */
