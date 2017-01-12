@@ -118,7 +118,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
     c.JhtFileModel: 下载文档的Model<br>
     作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数<br>
     
- (2)使用集成（以APPDelegate为例）<br>
+(2)使用集成（以APPDelegate为例）<br>
  ```oc
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
