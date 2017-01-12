@@ -112,7 +112,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
  *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
- ```
+```
     b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model
     作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
     c.JhtFileModel: 下载文档的Model
@@ -189,7 +189,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
        “其他应用”文件 用 “JhtDocViewer”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
-     d.无网络弹框
+     d.无网络弹框<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
        
 ###Remind
