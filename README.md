@@ -88,12 +88,11 @@ LSHandlerRank：这里指是否拥有子文档<br>
  
  (1) 相关参数配置
    a. JhtDocFileOperations :文件操作类  
-    ```oc
-    /** 文件操作类 */
+```oc
+/** 文件操作类 */
 @interface JhtDocFileOperations : NSObject
 /** 文件名称 */
 @property (nonatomic, copy) NSString *fileName;
-#pragma mark - Public Method
 /** 单例 */
 + (instancetype)sharedInstance;
 /** 生成本地文件完整路径 */
@@ -113,7 +112,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
  *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
-    ```
+ ```
     b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model
     作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
     c.JhtFileModel: 下载文档的Model
