@@ -86,8 +86,8 @@ LSHandlerRank：这里指是否拥有子文档<br>
      
 ## how to use JhtDocViewer.
  
-####（1) 相关参数配置
-   #####a. JhtDocFileOperations :文件操作类 <br> 
+####（1） 相关参数配置
+ a. JhtDocFileOperations :文件操作类 <br> 
 ```oc
 /** 文件操作类 */
 @interface JhtDocFileOperations : NSObject
@@ -105,7 +105,6 @@ LSHandlerRank：这里指是否拥有子文档<br>
 - (void)cleanFileAfterDays:(NSInteger)day;
 /** “其他应用”===>“本应用”打开，通过传递过来的url，获得本地地址 */
 - (NSString *)findLocalPathFromAppLicationOpenUrl:(NSURL *)url;
-
 /** 将本地文件 保存到内存中
  *  fileName：是以.为分割的格式       eg：哈哈哈.doc
  *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
@@ -113,15 +112,14 @@ LSHandlerRank：这里指是否拥有子文档<br>
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
 ```
-    #####b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model<br>
-    作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数<br>
-    #####c.JhtFileModel: 下载文档的Model<br>
+b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model<br>
+  作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数<br>
+c.JhtFileModel: 下载文档的Model<br>
     作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数<br>
     
     
     
-####（2)使用集成（以APPDelegate为例）<br>
-
+####（2）使用集成（以APPDelegate为例）<br>
  ```oc
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
