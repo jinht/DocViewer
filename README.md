@@ -184,7 +184,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 
 
 ### 3. DocListViewController：文档列表
-  tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
+  tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载 <br>
   <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
      
      
