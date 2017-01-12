@@ -87,7 +87,7 @@ LSHandlerRank：这里指是否拥有子文档<br>
 ## how to use JhtDocViewer.
  
  (1) 相关参数配置
-   a. JhtDocFileOperations :文件操作类  
+   a. JhtDocFileOperations :文件操作类 <br> 
 ```oc
 /** 文件操作类 */
 @interface JhtDocFileOperations : NSObject
@@ -113,10 +113,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
 ```
-    b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model
-    作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
-    c.JhtFileModel: 下载文档的Model
-    作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数
+    b.JhtShowDumpingViewParamModel: 下滑提示框配置参数model<br>
+    作用: 提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数<br>
+    c.JhtFileModel: 下载文档的Model<br>
+    作用: 文件ID,文件名,如果是本地的，绝对路径, 文件大小等参数<br>
     
  (2)使用集成（以APPDelegate为例）<br>
  ```oc
