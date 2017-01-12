@@ -68,11 +68,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
 }
 ```
 
-#### 5. 添加库文件<br>
-	WebKit.framework <br>
-     
-#### 6. 三方库<br>
-	 AFNetworking3.0x <br>
+#### 5. 库文件<br>
+	系统库：WebKit.framework <br>
+	三方库：AFNetworking3.0x <br>
+	 
      
 ## how to use JhtDocViewer.
  (1) 使用时可直接拖拽下图文件夹即可<br>
