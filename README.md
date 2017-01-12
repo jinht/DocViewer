@@ -62,9 +62,20 @@ LSHandlerRank：这里指是否拥有子文档<br>
 ```oc
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     if (options) {
-         NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];        
+         // 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+        [self pushDocListViewControllerWithUrl:url];    
     }
     return YES;
+}
+
+
+- (void)pushDocListViewControllerWithUrl:(NSURL *)url {
+    // 根据“其他应用” 用“本应用”打开, 通过要打开的url，获得本地地址
+    NSString *appfilePath = [[JhtDocFileOperations sharedInstance] findLocalPathFromAppLicationOpenUrl:url];
+    // 跳转页面
+    DocListViewController *doc = [[DocListViewController alloc] init];
+    doc.appFilePath = appfilePath;
+    [_nav pushViewController:doc animated:YES];
 }
 ```
 
@@ -78,9 +89,9 @@ LSHandlerRank：这里指是否拥有子文档<br>
      <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/8.png" width="50%" height="30%" /> <br>
  (2)使用集成（以APPDelegate为例）<br>
  ```oc
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
-    [[JhtNetworkCheckTools sharedInstance] netStartNetworkNotifyWithPollingInterval:3.0];
+    [[JhtNetworkCheckTools sharedInstance] startNetworkNotifyWithPollingInterval:2.0];
     
     // 模拟将 本地文件 的保存到 内存中
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
@@ -100,32 +111,38 @@ LSHandlerRank：这里指是否拥有子文档<br>
     // 三方跳转
     if (launchOptions) {
         NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
-        //返回的url， 转换成nsstring;
-        NSString *appfilePath =[[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
-        appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        DocListViewController *doc = [[DocListViewController alloc] init];
-        doc.appFilePath = appfilePath;
-        [_nav pushViewController:doc animated:YES];
+        // 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+        [self pushDocListViewControllerWithUrl:url];
     }
     
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
-    if (options) {
-//        NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
-        // 返回的url， 例如这样；
-//    	@"file:///private/var/mobile/Containers/Data/Application/A2E0485F-1341-48A3-BD40-6D09CB8559F5/Documents/Inbox/2-6.pptx"
-        // 返回的url， 转换成nsstring;
-        NSString *appfilePath = [[[url description] componentsSeparatedByString:@"file:///private"] lastObject];
-        appfilePath = [appfilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSLog(@"appfilePath:%@", appfilePath);
-        DocListViewController *doc = [[DocListViewController alloc] init];
-        doc.appFilePath = appfilePath;
-        [_nav pushViewController:doc animated:YES];
-    }
-    return YES;
-}    
+
+
+#pragma mark - 模拟将 本地文件 的保存到 内存中
+/** 模拟将 本地文件 的保存到 内存中 （如果以后是网络就可以将网络请求下来的保存到 内存中，然后从内存中读取）*/
+- (void)copyLocalFile:(NSString *)fileName {
+    /** 将本地文件 保存到内存中
+     *  fileName：是以.为分割的格式       eg：哈哈哈.doc
+     *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
+     *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+     */
+    [[JhtDocFileOperations sharedInstance] copyLocalWithFileName:fileName withBasePath:NSHomeDirectory() withLocalPath:@"Documents/JhtDoc"];
+}
+
+
+
+#pragma mark - 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
+- (void)pushDocListViewControllerWithUrl:(NSURL *)url {
+    // 根据“其他应用” 用“本应用”打开, 通过要打开的url，获得本地地址
+    NSString *appfilePath = [[JhtDocFileOperations sharedInstance] findLocalPathFromAppLicationOpenUrl:url];
+    // 跳转页面
+    DocListViewController *doc = [[DocListViewController alloc] init];
+    doc.appFilePath = appfilePath;
+    [_nav pushViewController:doc animated:YES];
+}
+    
 ```
 （3）DocListViewController 是文档列表<br>
      &ensp;&ensp;&ensp;&ensp;tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载；<br>
@@ -141,38 +158,41 @@ LSHandlerRank：这里指是否拥有子文档<br>
        “其他应用”文件 用 “JhtDocViewer”打开<br>
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
        <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
-     d.设置清除缓存文件时间<br>
+     d.相关联的model<br>
+     (1) JhtDocFileOperations :文件操作类
+     
 ```oc
-#pragma mark 几天天后清理Download/Files里面文件
-- (void)ldCleanFileAfterDays:(NSInteger)day {
-    NSString *filePath = [self ldGetDownloadFilePath];
-    NSString *path = @"";
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *directoryEnumerator = [fileManager enumeratorAtPath:filePath];
-    while ((path = [directoryEnumerator nextObject]) != nil) {
-        NSString *subFilePath = [filePath stringByAppendingPathComponent:path];
-        
-        // 遍历文件属性
-        NSError *error = nil;
-       	NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:subFilePath error:&error];
-       	if (fileAttributes != nil) {
-            NSDate *fileCreateDate = [fileAttributes objectForKey:NSFileCreationDate];
-            if (fileCreateDate) {
-               	NSDate *date2 = [NSDate date];
-           	NSTimeInterval aTimer = [date2 timeIntervalSinceDate:fileCreateDate];
-         
-                // 如果文件创建时间间隔大于day天，则删除
-                if (aTimer > day*24*60*60) {
-                    if([fileManager fileExistsAtPath:subFilePath]) {
-                    	// 如果存在
-                      	[fileManager removeItemAtPath:subFilePath error:nil];
-                    }
-                }
-            }
-        }
-    }
-}
+		/** 文件操作类 */
+		@interface JhtDocFileOperations : NSObject
+
+		#pragma mark - property
+		/** 文件名称 */
+		@property (nonatomic, copy) NSString *fileName;
+
+
+
+		#pragma mark - Public Method
+		/** 单例 */
+		+ (instancetype)sharedInstance;
+
+		/** 生成本地文件完整路径 */
+		- (NSString *)stitchLocalFilePath;
+		/** 生成下载文件沙盒路径 */
+		- (NSString *)stitchDownloadFilePath;
+
+		/** 文件下载失败时，清除文件路径 */
+		- (void)removeFileWhenDownloadFileFailure;
+		/** 清理几天前Download/Files里面文件 */
+		- (void)cleanFileAfterDays:(NSInteger)day;
+		/** “其他应用”===>“本应用”打开，通过传递过来的url，获得本地地址 */
+		- (NSString *)findLocalPathFromAppLicationOpenUrl:(NSURL *)url;
+
+		/** 将本地文件 保存到内存中
+		 *  fileName：是以.为分割的格式       eg：哈哈哈.doc
+		 *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
+		 *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+		 */
+		- (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
 ```
        
        
