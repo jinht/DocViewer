@@ -1,11 +1,11 @@
 # JhtDocViewer
 
 ## Contents
-* 文档查看器（Word&amp;&amp;Excel&amp;&amp;PDF&amp;&amp;Rft || Network&amp;&amp;Local || self&amp;&amp;other App）
-* 文件共享 (Network&amp;&amp;Local) 
+* 文档查看器（Word && Excel && PDF && Rft || Network && Local || self && other App）
+* 文件共享 (Network && Local) 
 
 
-## needed to pay attention.
+## needed to pay attention
 ### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示：
 App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
 系统会告诉我们不能直接使用HTTP进行请求，需要在Info.plist新增一段用于控制ATS的配置
@@ -54,12 +54,12 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 	</array>
 ```
 属性说明：<br>
-CFBundleTypeName：文档的类型名称<br>
-LSHandlerRank：这里指是否拥有子文档<br>
+* CFBundleTypeName：文档的类型名称
+* LSHandlerRank：这里指是否拥有子文档 <br>
 
 
 ### 3. info.plist 中，对应Localization native development region键值 加入Chinese
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/2.png" width="80%" height="80%" />
+<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/2.png" width="80%" height="80%" /> <br>
 
 
 ### 4. 在第三方调用我们的APP后，会调用如下方法
@@ -83,9 +83,10 @@ LSHandlerRank：这里指是否拥有子文档<br>
 }
 ```
 
-### 5. 库文件<br>
-	系统库：WebKit.framework
-	三方库：AFNetworking3.x <br>	
+
+### 5. 库文件 <br>
+  系统库：WebKit.framework
+  三方库：AFNetworking3.x
  
      
 ## how to use
