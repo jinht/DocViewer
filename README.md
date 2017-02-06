@@ -20,7 +20,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/1.png" width="80%" height="80%" />
 
 
-### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加
+### 2. 如果想共享自己app的文档查看功能，需在info.plist 中添加如下信息
 ```oc
 <key>CFBundleDocumentTypes</key>
 	<array>
