@@ -57,4 +57,3 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
     fileModel.attachmentFileSize = @"21906";
  */
 
-
