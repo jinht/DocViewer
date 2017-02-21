@@ -107,7 +107,7 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
     用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数 <br>
     
     
-### 2. 使用集成：详见demo，注意AppDelegate中的先关配置
+### 2. 使用集成：详见demo，注意AppDelegate和DocListViewController相关代码
 
 
 ### 3. DocListViewController：文档列表
