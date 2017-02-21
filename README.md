@@ -66,117 +66,6 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
 ```oc
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     if (options) {
-         // 根据“其他应用” 用“本应用”打开, 通过url，进入列表页
-        [self pushDocListViewControllerWithUrl:url];    
-    }
-    return YES;
-}
-
-
-- (void)pushDocListViewControllerWithUrl:(NSURL *)url {
-    // 根据“其他应用” 用“本应用”打开, 通过要打开的url，获得本地地址
-    NSString *appfilePath = [[JhtDocFileOperations sharedInstance] findLocalPathFromAppLicationOpenUrl:url];
-    // 跳转页面
-    DocListViewController *doc = [[DocListViewController alloc] init];
-    doc.appFilePath = appfilePath;
-    [_nav pushViewController:doc animated:YES];
-}
-```
-
-
-### 5. 库文件 <br>
-  系统库：WebKit.framework <br>
-  三方库：AFNetworking3.x <br>
- 
-     
-## how to use
-### 1. 相关参数配置
-#### a. JhtDocFileOperations：文件操作类 
-```oc
-#pragma mark - Public Method
-/** 单例 */
-+ (instancetype)sharedInstance;
-
-
-#pragma mark 保存
-/** 将本地文件 保存到内存中
- *  fileName：是以.为分割的格式       eg：哈哈哈.doc
- *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
- *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
- */
-- (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
-
-
-#pragma mark 生成路径
-/** 生成本地文件完整路径 */
-- (NSString *)stitchLocalFilePath;
-/** 生成下载文件沙盒路径 */
-- (NSString *)stitchDownloadFilePath;
-/** “其他应用”===>“本应用”打开，通过传递过来的url，获得本地地址 */
-- (NSString *)findLocalPathFromAppLicationOpenUrl:(NSURL *)url;
-
-
-#pragma mark 清理
-/** 文件下载失败时，清除文件路径 */
-- (void)removeFileWhenDownloadFileFailure;
-/** 清理几天前Download/Files里面文件 */
-- (void)cleanFileAfterDays:(NSInteger)day;
-```
-
-#### b. JhtShowDumpingViewParamModel：下滑提示框配置参数model
-    用于设置提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数 <br>
-    
-#### c. JhtFileModel：下载文档的Model
-    用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数 <br>
-    
-    
-### 2. 使用集成（以APPDelegate为例）
- ```oc
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 开启网络监听
-    [[JhtNetworkCheckTools sharedInstance] startNetworkNotifyWithPollingInterval:2.0];
-    
-    // 模拟将 本地文件 的保存到 内存中
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    if (![def objectForKey:@"first"]) {
-        // 模拟将 本地文件 的保存到 内存中
-        [self copyLocalFile:OpenFileName0];
-        [self copyLocalFile:OpenFileName1];
-        [self copyLocalFile:OpenFileName2];
-        [self copyLocalFile:OpenFileName3];
-        [def setObject:@"1" forKey:@"first"];
-        [def synchronize];
-    }
-    DocListViewController *vc = [[DocListViewController alloc] init];
-    _nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = _nav;
-    
-    // 三方跳转
-    if (launchOptions) {
-        NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
-        // 根据“其他应用” 用“本应用”打开，通过url，进入列表页
-        [self pushDocListViewControllerWithUrl:url];
-    }
-    return YES;
-}
-
-
-#pragma mark 模拟将 本地文件 的保存到 内存中
-/** 模拟将 本地文件 的保存到 内存中（如果以后是网络就可以将网络请求下来的保存到 内存中，然后从内存中读取）*/
-- (void)copyLocalFile:(NSString *)fileName {
-    /** 将本地文件 保存到内存中
-     *  fileName：是以.为分割的格式       eg：哈哈哈.doc
-     *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
-     *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
-     */
-    [[JhtDocFileOperations sharedInstance] copyLocalWithFileName:fileName withBasePath:NSHomeDirectory() withLocalPath:@"Documents/JhtDoc"];
-}
-
-
-
-#pragma mark - ApplicationDelegate
-- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
-    if (options) {
         NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
         NSLog(@"%@", str);
         
@@ -199,8 +88,26 @@ App Transport Security has blocked a cleartext HTTP (http://) resource load sinc
     doc.appFilePath = appFilePath;
     [_nav pushViewController:doc animated:YES];
 }
-    
 ```
+
+
+### 5. 库文件 <br>
+  系统库：WebKit.framework <br>
+  三方库：AFNetworking3.x <br>
+ 
+     
+## how to use
+### 1. 相关参数配置
+#### a. JhtDocFileOperations：文件操作类：包含文件保存 && 清理等方法
+
+#### b. JhtShowDumpingViewParamModel：下滑提示框配置参数model
+    用于设置提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数 <br>
+    
+#### c. JhtFileModel：下载文档的Model
+    用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数 <br>
+    
+    
+### 2. 使用集成：详见demo，注意AppDelegate中的先关配置
 
 
 ### 3. DocListViewController：文档列表
