@@ -54,7 +54,8 @@
     // 如果是 从appDelegate里面，跳转过来，主要用于打开别的软件的共享过来的文档
     if (_appFilePath.length) {
         JhtFileModel *model = [[JhtFileModel alloc] init];
-        model.fileName  = [[_appFilePath componentsSeparatedByString:@"/"] lastObject];
+        NSString *fileName = [_appFilePath lastPathComponent];
+        model.fileName = fileName;
         model.fileAbsolutePath = _appFilePath;
         [_baseSourceArray addObject:model];
     } else {
@@ -102,7 +103,7 @@
 
 
 
-#pragma mark - tableViewDelegate...
+#pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

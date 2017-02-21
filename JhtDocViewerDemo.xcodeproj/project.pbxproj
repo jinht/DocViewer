@@ -29,7 +29,6 @@
 		A57D5E581D473D7F00D10C1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E3C1D473D7F00D10C1C /* AFURLRequestSerialization.m */; };
 		A57D5E591D473D7F00D10C1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E3E1D473D7F00D10C1C /* AFURLResponseSerialization.m */; };
 		A57D5E5A1D473D7F00D10C1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */; };
-		A57D5E5C1D473D7F00D10C1C /* JhtFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E471D473D7F00D10C1C /* JhtFileModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +93,6 @@
 		A57D5E3E1D473D7F00D10C1C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		A57D5E3F1D473D7F00D10C1C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		A57D5E461D473D7F00D10C1C /* JhtFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtFileModel.h; sourceTree = "<group>"; };
-		A57D5E471D473D7F00D10C1C /* JhtFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtFileModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				A57D5E281D473D7F00D10C1C /* JhtDocController */,
-				A57D5E441D473D7F00D10C1C /* JhtDocModel */,
 				A568051D1E27574700A72497 /* JhtDocSDK */,
 				A57D5E321D473D7F00D10C1C /* JhtDocLibs */,
 			);
@@ -278,23 +274,6 @@
 				A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */,
 			);
 			path = "AFNetworking~160624";
-			sourceTree = "<group>";
-		};
-		A57D5E441D473D7F00D10C1C /* JhtDocModel */ = {
-			isa = PBXGroup;
-			children = (
-				A57D5E451D473D7F00D10C1C /* JhtFileModel */,
-			);
-			path = JhtDocModel;
-			sourceTree = "<group>";
-		};
-		A57D5E451D473D7F00D10C1C /* JhtFileModel */ = {
-			isa = PBXGroup;
-			children = (
-				A57D5E461D473D7F00D10C1C /* JhtFileModel.h */,
-				A57D5E471D473D7F00D10C1C /* JhtFileModel.m */,
-			);
-			path = JhtFileModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57D5E5C1D473D7F00D10C1C /* JhtFileModel.m in Sources */,
 				A57D5E571D473D7F00D10C1C /* AFSecurityPolicy.m in Sources */,
 				A55D70B21D44EFEA001D675C /* AppDelegate.m in Sources */,
 				A57D5E591D473D7F00D10C1C /* AFURLResponseSerialization.m in Sources */,
