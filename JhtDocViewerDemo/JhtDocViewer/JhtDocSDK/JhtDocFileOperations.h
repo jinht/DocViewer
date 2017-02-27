@@ -16,7 +16,7 @@
 
 #pragma mark - property
 /** 文件名称 */
-@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, strong) NSString *fileName;
 
 
 

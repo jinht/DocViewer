@@ -29,7 +29,7 @@
 /** 提示框背景颜色 */
 @property (nonatomic, strong) UIColor *showBackgroundColor;
 /** 提示框背景图片 */
-@property (nonatomic, copy) NSString *showBackgroundImageName;
+@property (nonatomic, strong) NSString *showBackgroundImageName;
 /** 是否隐藏警示小图标  Yes：隐藏  NO：不隐藏(Default) */
 @property (nonatomic, assign) BOOL isHiddenSignImageView;
 

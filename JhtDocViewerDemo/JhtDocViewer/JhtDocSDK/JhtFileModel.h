@@ -29,21 +29,21 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 /** 下载文档的Model */
 @interface JhtFileModel : NSObject
 /** 文件ID */
-@property (nonatomic, copy) NSString *fileId;
+@property (nonatomic, strong) NSString *fileId;
 /** 文件名 */
-@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, strong) NSString *fileName;
 /** 文件下载路径 */
-@property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong) NSString *url;
 /** 如果是本地的，绝对路径 */
-@property (nonatomic, copy) NSString *fileAbsolutePath;
+@property (nonatomic, strong) NSString *fileAbsolutePath;
 
 /** 文件类型 */
 @property (nonatomic, assign) JhtFileType viewFileType;
 
 /** 注意单位一定要是：KB,MB,GB,Bytes */
-@property (nonatomic, copy) NSString *fileSize;
+@property (nonatomic, strong) NSString *fileSize;
 /** 附件文件大小 */
-@property (nonatomic, copy) NSString *attachmentFileSize;
+@property (nonatomic, strong) NSString *attachmentFileSize;
 
 
 @end

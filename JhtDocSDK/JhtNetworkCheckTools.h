@@ -2,7 +2,7 @@
 //  JhtNetworkCheckTools.h
 //  JhtTools
 //
-//  github主页: https://github.com/jinht
+//  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/5/19.
@@ -30,14 +30,14 @@ typedef enum {
 + (instancetype)sharedInstance;
 
 /** 开启检查网络的监听
- *  pollingInterval：轮询检查网络状态的时间间隔（建议设的不要太小）
+ *  pollingInterval：轮询检查网络状态的时间间隔
  */
-- (void)startNetworkNotifyWithPollingInterval:(CGFloat)pollingInterval;
+- (void)netStartNetworkNotifyWithPollingInterval:(CGFloat)pollingInterval;
 /** 停止检查网络的监听 */
-- (void)stopNetworkNotify;
+- (void)netStopNetworkNotify;
 
 /** 获取当前网络状态(类型) */
-- (NETWORK_TYPE)currentNetworkType;
+- (NETWORK_TYPE)netGetCurrentNetworkType;
 
 
 @end

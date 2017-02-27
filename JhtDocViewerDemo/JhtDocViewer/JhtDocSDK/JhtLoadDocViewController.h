@@ -18,7 +18,7 @@
 
 #pragma mark required
 /** 标题 */
-@property (nonatomic, copy) NSString *titleStr;
+@property (nonatomic, strong) NSString *titleStr;
 
 /** 用于下载的model */
 @property (nonatomic, strong) JhtFileModel *currentFileModel;
@@ -26,13 +26,13 @@
 
 #pragma mark optional
 /** 无网络连接提示语 */
-@property (nonatomic, copy) NSString *lostNetHint;
+@property (nonatomic, strong) NSString *lostNetHint;
 /** 内存不足提示语 */
-@property (nonatomic, copy) NSString *notEnoughMemoryHint;
+@property (nonatomic, strong) NSString *notEnoughMemoryHint;
 /** 文件正在下载中的提示语 */
-@property (nonatomic, copy) NSString *downloadingHint;
+@property (nonatomic, strong) NSString *downloadingHint;
 /** 文件下载失败提示语 */
-@property (nonatomic, copy) NSString *downloadFailedHint;
+@property (nonatomic, strong) NSString *downloadFailedHint;
 
 /** 清理几天前的文件(默认0) */
 @property (nonatomic, assign) NSInteger daysAgo;
