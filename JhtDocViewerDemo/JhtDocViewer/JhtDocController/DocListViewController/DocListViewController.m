@@ -93,7 +93,7 @@
 
 
 
-#pragma mark - 创建UI界面
+#pragma mark - UI
 /** 创建UI界面 */
 - (void)docLsCreateUI {
     _baseTableView.frame = CGRectMake(0, 0, FrameW, FrameH - 64);
@@ -159,6 +159,9 @@
     JhtFileModel *model = [_baseSourceArray objectAtIndex:indexPath.row];
     load.titleStr = model.fileName;
     load.currentFileModel = model;
+    [load finishedDownloadCompletionHandler:^(NSString *urlStr) {
+        NSLog(@"网络下载文件成功之后保存在本地的路径：\n%@", urlStr);
+    }];
     // 提示框model相关参数
     JhtShowDumpingViewParamModel *paramModel = [[JhtShowDumpingViewParamModel alloc] init];
     paramModel.showTintColor = UIColorFromRGB(0x666666);

@@ -2,6 +2,9 @@
 //  JhtDocSDK.h
 //  JhtDocSDK
 //
+//  github主页: https://github.com/jinht
+//  CSDN博客: http://blog.csdn.net/anticipate91
+//
 //  Created by Jht on 2017/1/12.
 //  Copyright © 2017年 Jht. All rights reserved.
 //

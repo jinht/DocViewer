@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 /** 文件类型 */
-typedef NS_ENUM(NSUInteger, JhtFileType) {
+typedef NS_ENUM(NSUInteger, Jht_FileType) {
     // word || doc || docx
     Type_Docx = 0,
     // excel || xls || xlsx
@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 
 /** 下载文档的Model */
 @interface JhtFileModel : NSObject
+#pragma mark required
 /** 文件ID */
 @property (nonatomic, strong) NSString *fileId;
 /** 文件名 */
@@ -38,7 +39,7 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 @property (nonatomic, strong) NSString *fileAbsolutePath;
 
 /** 文件类型 */
-@property (nonatomic, assign) JhtFileType viewFileType;
+@property (nonatomic, assign) Jht_FileType viewFileType;
 
 /** 注意单位一定要是：KB,MB,GB,Bytes */
 @property (nonatomic, strong) NSString *fileSize;
@@ -51,7 +52,7 @@ typedef NS_ENUM(NSUInteger, JhtFileType) {
 /** for example：
     fileModel.fileId = @"577e2300c94f6e51316a299d";
     fileModel.fileName = @"哈哈哈.docx";
-    fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
+    fileModel.url = @"http://inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
     fileModel.fileType = @"docx";
     fileModel.fileSize = @"21.39KB";
     fileModel.attachmentFileSize = @"21906";

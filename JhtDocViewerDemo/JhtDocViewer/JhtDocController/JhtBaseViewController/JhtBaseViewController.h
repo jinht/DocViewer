@@ -28,7 +28,7 @@
 /** 375的比例尺 */
 #define WidthScale375 ([UIScreen mainScreen].bounds.size.width/375)
 
-/** 颜色转换  例:#000000 UIColorFromRGB(0x000000) */
+/** 颜色转换  例：#000000 UIColorFromRGB(0x000000) */
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \

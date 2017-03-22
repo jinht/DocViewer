@@ -29,7 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
-    [[JhtNetworkCheckTools sharedInstance] netStartNetworkNotifyWithPollingInterval:2.0];
+    [[JhtNetworkCheckTools sharedInstance] netStartNetworkNotifyWithPollingInterval:1.0];
     
     // 模拟将 本地文件 的保存到 内存中
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
