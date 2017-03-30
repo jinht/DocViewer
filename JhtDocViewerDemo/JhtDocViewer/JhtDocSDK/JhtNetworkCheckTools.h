@@ -12,7 +12,8 @@
 #import <UIKit/UIKit.h>
 
 /** 获取UserDefaults中当前网络状态Key */
-#define JhtGetCurrentNetStateKey @"jhtGetCurrentNetStateKey"
+extern NSString *const NCTGetCurrentNetStateKey;
+
 
 // 网络监听返回枚举类
 typedef enum {

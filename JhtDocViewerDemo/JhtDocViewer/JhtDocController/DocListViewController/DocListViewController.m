@@ -10,9 +10,7 @@
 //
 
 #import "DocListViewController.h"
-#import "JhtFileModel.h"
-#import "JhtLoadDocViewController.h"
-#import "JhtShowDumpingViewParamModel.h"
+#import "JhtDocSDK.h"
 
 @implementation DocListViewController
 

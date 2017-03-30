@@ -18,6 +18,7 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 
 /** 加载文本类 */
 @interface JhtLoadDocViewController : JhtBaseViewController
+#pragma mark - property
 #pragma mark required
 /** 标题 */
 @property (nonatomic, strong) NSString *titleStr;

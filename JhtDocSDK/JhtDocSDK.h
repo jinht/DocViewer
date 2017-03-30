@@ -13,7 +13,10 @@
 
 
 
-#import "JhtNetworkCheckTools.h"
 #import "JhtDocFileOperations.h"
 #import "JhtLoadDocViewController.h"
-#import "UIViewController+Extension.h"
+#import "JhtShowDumpingViewParamModel.h"
+
+
+#import "JhtFileModel.h"
+#import "JhtShowDumpingViewParamModel.h"
