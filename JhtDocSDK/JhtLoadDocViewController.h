@@ -2,7 +2,7 @@
 //  JhtLoadDocViewController.h
 //  JhtTools
 //
-//  github主页: https://github.com/jinht
+//  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/7/10.
@@ -13,7 +13,7 @@
 @class JhtFileModel;
 @class JhtShowDumpingViewParamModel;
 
-/** 网络数据下载完成路径 */
+/** 网络数据下载完成路径（NSUTF8StringEncoding） */
 typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 
 /** 加载文本类 */
