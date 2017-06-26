@@ -17,28 +17,26 @@
 
 
 #### 2. DocListViewController：文档列表
-	tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
-      
+	tableView的数据源是一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否需要下载
+	
       
 #### 3. JhtLoadDocViewController：文档详情VC
 ##### a. 如果不需要下载，通过webView直接显示
-<img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
 
 ##### b. 需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
 
 ##### c. 资源共享
-	”JhtDocViewer“ 文件用”其他应用“打开
+《JhtDocViewer》文件用”其他应用“打开
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
-	“其他应用”文件 用 “JhtDocViewer”打开<br>
+“其他应用”文件用《JhtDocViewer》打开<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/7.png" width="30%" height="20%" /> <br>
   
 ##### d. 无网络弹框
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
       
-* 注 详见demo，注意AppDelegate和DocListViewController相关代码
+* 具体使用详见demo，注意AppDelegate和DocListViewController相关代码
 
 
 ### needed to pay attention
