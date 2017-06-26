@@ -27,7 +27,7 @@
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
 
 ##### c. 资源共享
-《JhtDocViewer》文件用”其他应用“打开
+《JhtDocViewer》文件用”其他应用“打开 <br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
 “其他应用”文件用《JhtDocViewer》打开<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
