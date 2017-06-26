@@ -23,7 +23,7 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 /** 标题 */
 @property (nonatomic, strong) NSString *titleStr;
 
-/** 用于下载的model */
+/** 下载文件的model */
 @property (nonatomic, strong) JhtFileModel *currentFileModel;
 
 
@@ -37,7 +37,7 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
  */
 @property (nonatomic, strong) NSString *notEnoughMemoryHint;
 /** 文件正在下载中的提示语 
- *  default：@"正在加载中..."
+ *  default：@"玩命加载中..."
  */
 @property (nonatomic, strong) NSString *downloadingHint;
 /** 文件下载失败提示语 
@@ -60,7 +60,7 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 
 
 #pragma mark - Public Method
-/** 网络下载完成之后 本地存储的路径 */
+/** 网络下载完成之后 本地存储的路径（NSUTF8StringEncoding） */
 - (void)finishedDownloadCompletionHandler:(finishedDownloadCompletionHandler)block;
 
 

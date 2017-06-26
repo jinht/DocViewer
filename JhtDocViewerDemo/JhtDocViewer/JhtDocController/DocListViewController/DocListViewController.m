@@ -2,7 +2,7 @@
 //  DocListViewController.m
 //  JhtTools
 //
-//  github主页: https://github.com/jinht
+//  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/7/8.
@@ -10,12 +10,15 @@
 //
 
 #import "DocListViewController.h"
-#import "JhtDocSDK.h"
+#import "JhtFileModel.h"
+#import "JhtLoadDocViewController.h"
+#import "JhtShowDumpingViewParamModel.h"
 
 @implementation DocListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // 设置背景颜色
     self.view.backgroundColor = [UIColor colorWithRed:0.97f green:0.91f blue:0.89f alpha:1.00f];
     
@@ -138,7 +141,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"UITableViewCellEditingStyleDelete");
     JhtFileModel *model = [_baseSourceArray objectAtIndex:indexPath.row];
-    // 如果是本地的，从本地删除；
+    // 如果是本地的，从本地删除
     if (model.fileAbsolutePath) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:model.fileAbsolutePath error:nil];
@@ -158,12 +161,12 @@
     load.titleStr = model.fileName;
     load.currentFileModel = model;
     [load finishedDownloadCompletionHandler:^(NSString *urlStr) {
-        NSLog(@"网络下载文件成功之后保存在本地的路径：\n%@", urlStr);
+        NSLog(@"网络下载文件成功后保存在《本地的路径》：\n%@", urlStr);
     }];
+    
     // 提示框model相关参数
     JhtShowDumpingViewParamModel *paramModel = [[JhtShowDumpingViewParamModel alloc] init];
-    paramModel.showTintColor = UIColorFromRGB(0x666666);
-    paramModel.showFont = [UIFont boldSystemFontOfSize:15];
+    paramModel.showTextFont = [UIFont boldSystemFontOfSize:15];
     paramModel.showBackgroundColor = [UIColor whiteColor];
     paramModel.showBackgroundImageName = @"dumpView";
     load.paramModel = paramModel;

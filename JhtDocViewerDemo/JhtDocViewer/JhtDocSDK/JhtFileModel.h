@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, Jht_FileType) {
 };
 
 
-/** 下载文档的Model */
+/** 下载文件的Model */
 @interface JhtFileModel : NSObject
 #pragma mark required
 /** 文件ID */
