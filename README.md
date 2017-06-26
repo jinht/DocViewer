@@ -10,16 +10,19 @@
 	文件保存 && 清理等方法
 	
 ##### b. JhtShowDumpingViewParamModel：下滑提示框配置参数model
-	用于设置提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数 <br>
+	用于设置提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
     
 ##### c. JhtFileModel：下载文档的Model
-	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数 <br>
+	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数
     
+    
 #### 2. 使用集成：详见demo，注意AppDelegate和DocListViewController相关代码
 
+
 #### 3. DocListViewController：文档列表
-	tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载 <br>
+	tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
+      
       
 #### 4. JhtLoadDocViewController：文档详情VC
 ##### a. 如果不需要下载，通过webView直接显示
@@ -29,7 +32,7 @@
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/5.png" width="30%" height="20%" /> <br>
 
 ##### c. 资源共享
-	”JhtDocViewer“ 文件用”其他应用“打开 <br>  
+	”JhtDocViewer“ 文件用”其他应用“打开
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/4.png" width="30%" height="20%" /> <br>
 	“其他应用”文件 用 “JhtDocViewer”打开<br>
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/9.png" width="30%" height="20%" />&emsp;&emsp;
@@ -37,11 +40,12 @@
   
 ##### d. 无网络弹框
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
-       
+    
+    
 
 ### needed to pay attention
 #### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示
-	App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.<br>
+	App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
 系统会告诉我们不能直接使用HTTP进行请求，需要在Info.plist新增一段用于控制ATS的配置
 ```oc
 <key>NSAppTransportSecurity</key>
