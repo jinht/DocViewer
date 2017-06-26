@@ -14,17 +14,14 @@
     
 ##### c. JhtFileModel：下载文档的Model
 	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数
-    
-    
-#### 2. 使用集成：详见demo，注意AppDelegate和DocListViewController相关代码
 
 
-#### 3. DocListViewController：文档列表
+#### 2. DocListViewController：文档列表
 	tableView的数据源是 一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否用下载
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/3.png" width="30%" height="20%" /> <br>
       
       
-#### 4. JhtLoadDocViewController：文档详情VC
+#### 3. JhtLoadDocViewController：文档详情VC
 ##### a. 如果不需要下载，通过webView直接显示
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/6.png" width="30%" height="20%" /> <br>
 
@@ -40,8 +37,9 @@
   
 ##### d. 无网络弹框
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
-    
-    
+      
+* 注 详见demo，注意AppDelegate和DocListViewController相关代码
+
 
 ### needed to pay attention
 #### 1. 如果我们在iOS9下直接进行HTTP请求是会收到如下错误提示
