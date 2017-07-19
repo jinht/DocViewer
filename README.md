@@ -1,8 +1,8 @@
 ## JhtDocViewer
 
 ### Function Description
-* 文档查看器（Word && Excel && PDF && Rft || Network && Local || self && other App）
-* 文件共享 && 查看 (Network && Local) 
+1. 文档查看器（Word && Excel && PDF && Rft || Network && Local || self && other App）
+2. 文件共享 && 查看 (Network && Local) 
      
 ### how to use
 #### 1. 相关参数配置
