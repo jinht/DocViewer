@@ -6,11 +6,13 @@
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/7/10.
-//  Copyright © 2016年 靳海涛. All rights reserved.
+//  Copyright © 2016年 JhtDocViewerDemo. All rights reserved.
 //
 
 #import "JhtBaseViewController.h"
+
 @class JhtFileModel;
+@class OtherOpenButtonParamModel;
 @class JhtShowDumpingViewParamModel;
 
 /** 网络数据下载完成路径（NSUTF8StringEncoding） */
@@ -56,6 +58,9 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 
 /** 提示框model相关参数 */
 @property (nonatomic, strong) JhtShowDumpingViewParamModel *paramModel;
+
+/** 《用其他应用打开按钮》配置Model */
+@property (nonatomic, strong) OtherOpenButtonParamModel *otherOpenButtonParamModel;
 
 
 

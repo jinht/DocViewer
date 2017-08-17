@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A50CBDBD1F452C1500CE3ED9 /* OtherOpenButtonParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherOpenButtonParamModel.h; sourceTree = "<group>"; };
 		A525EF2C1D48468E008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
 		A52737651D44F04800CCAB67 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
 		A52737661D44F04800CCAB67 /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
@@ -201,10 +202,11 @@
 			children = (
 				A56805201E27574700A72497 /* JhtDocSDK.h */,
 				A56805221E27574700A72497 /* JhtLoadDocViewController.h */,
-				A568051E1E27574700A72497 /* JhtDocFileOperations.h */,
-				A56805231E27574700A72497 /* JhtNetworkCheckTools.h */,
 				A56805211E27574700A72497 /* JhtFileModel.h */,
 				A56805241E27574700A72497 /* JhtShowDumpingViewParamModel.h */,
+				A50CBDBD1F452C1500CE3ED9 /* OtherOpenButtonParamModel.h */,
+				A568051E1E27574700A72497 /* JhtDocFileOperations.h */,
+				A56805231E27574700A72497 /* JhtNetworkCheckTools.h */,
 				A568051F1E27574700A72497 /* JhtDocSDK.a */,
 				A56805261E2757D300A72497 /* JhtDocViewerImages.bundle */,
 			);

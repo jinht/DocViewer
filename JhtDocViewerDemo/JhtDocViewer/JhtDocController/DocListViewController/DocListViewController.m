@@ -6,12 +6,13 @@
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/7/8.
-//  Copyright © 2016年 靳海涛. All rights reserved.
+//  Copyright © 2016年 JhtDocViewerDemo. All rights reserved.
 //
 
 #import "DocListViewController.h"
 #import "JhtFileModel.h"
 #import "JhtLoadDocViewController.h"
+#import "OtherOpenButtonParamModel.h"
 #import "JhtShowDumpingViewParamModel.h"
 
 @implementation DocListViewController
@@ -63,9 +64,11 @@
         // 第一个是 网络的，需要下载的
         JhtFileModel *fileModel = [[JhtFileModel alloc] init];
         fileModel.fileId = @"577e2300c94f6e51316a299d";
+        // **后缀就是文件格式，切记**
         fileModel.fileName = @"哈哈哈.docx";
-        fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
         fileModel.viewFileType = Type_Docx;
+        
+        fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
         fileModel.fileSize = @"21.39KB";
         fileModel.attachmentFileSize = @"21906";
         [_baseSourceArray addObject:fileModel];
@@ -164,12 +167,18 @@
         NSLog(@"网络下载文件成功后保存在《本地的路径》：\n%@", urlStr);
     }];
     
-    // 提示框model相关参数
+    // 提示框Model
     JhtShowDumpingViewParamModel *paramModel = [[JhtShowDumpingViewParamModel alloc] init];
     paramModel.showTextFont = [UIFont boldSystemFontOfSize:15];
     paramModel.showBackgroundColor = [UIColor whiteColor];
     paramModel.showBackgroundImageName = @"dumpView";
     load.paramModel = paramModel;
+    
+    // 《用其他应用打开按钮》配置Model
+    OtherOpenButtonParamModel *otherOpenButtonParamModel = [[OtherOpenButtonParamModel alloc] init];
+    otherOpenButtonParamModel.titleFont = [UIFont boldSystemFontOfSize:20.0];
+    otherOpenButtonParamModel.backgroundColor = [UIColor purpleColor];
+    load.otherOpenButtonParamModel = otherOpenButtonParamModel;
     
     [self.navigationController pushViewController:load animated:YES];
 }
