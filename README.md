@@ -6,13 +6,16 @@
      
 ### how to use
 #### 1. 相关参数配置
-##### a. JhtDocFileOperations 文件操作类
+##### a. JhtLoadDocViewParamModel：文本加载 View 配置Model
+	JhtLoadDocView内部相关属性的修改可通过修改此model实现
+	
+##### b. JhtDocFileOperations：文件操作类
 	文件保存 && 清理等方法
 	
-##### b. JhtShowDumpingViewParamModel：下滑提示框配置参数model
+##### c. JhtShowDumpingViewParamModel：下滑提示框配置参数model
 	用于设置提示框中的 文字的大小，颜色，位置，背景图，是否包含警示小图标等参数
     
-##### c. JhtFileModel：下载文档的Model
+##### d. JhtFileModel：下载文档的Model
 	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数
 
 
@@ -20,7 +23,10 @@
 	tableView的数据源是一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否需要下载
 	
       
-#### 3. JhtLoadDocViewController：文档详情VC
+#### 3. LoadDocViewController：文档详情VC，内部使用JhtLoadDocView
+
+
+#### 4. JhtLoadDocView：文本加载 View
 ##### a. 如果不需要下载，通过webView直接显示
 
 ##### b. 需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功
@@ -126,8 +132,10 @@
 
 #### 5. 库文件 <br>
 	系统库：WebKit.framework <br>
-	三方库：AFNetworking3.x <br>
-      
+	三方库：AFNetworking3.x：自行添加 <br>
+               Reachability：framwork内部已添加<br>
+	
+      
       
 ### Remind
 * ARC
