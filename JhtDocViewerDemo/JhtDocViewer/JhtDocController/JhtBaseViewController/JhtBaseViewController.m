@@ -2,11 +2,11 @@
 //  JhtBaseViewController.m
 //  JhtTools
 //
-//  github主页: https://github.com/jinht
+//  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/5/15.
-//  Copyright © 2016年 JhtDocViewerDemo. All rights reserved.
+//  Copyright © 2016年 JhtTools. All rights reserved.
 //
 
 #import "JhtBaseViewController.h"
@@ -46,8 +46,7 @@
 
 
 
-#pragma mark - 父类封装的便捷函数
-#pragma mark Navigation
+#pragma mark - Navigation Tools
 /** 创建导航栏左侧自定义的返回按钮 */
 - (void)bsCreateNavigationBarLeftBtn {
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];

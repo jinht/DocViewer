@@ -1,48 +1,34 @@
 //
-//  JhtLoadDocViewController.h
-//  JhtTools
+//  JhtLoadDocViewParamModel.h
+//  JhtDocViewerDemo
 //
 //  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
-//  Created by Jht on 16/7/10.
-//  Copyright © 2016年 JhtDocViewerDemo. All rights reserved.
+//  Created by Jht on 2017/10/19.
+//  Copyright © 2017年 JhtDocViewerDemo. All rights reserved.
 //
 
-#import "JhtBaseViewController.h"
-
-@class JhtFileModel;
+#import <UIKit/UIKit.h>
 @class OtherOpenButtonParamModel;
 @class JhtShowDumpingViewParamModel;
 
-/** 网络数据下载完成路径（NSUTF8StringEncoding） */
-typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
+/** 文本加载 View 配置Model */
+@interface JhtLoadDocViewParamModel : NSObject
 
-/** 加载文本类 */
-@interface JhtLoadDocViewController : JhtBaseViewController
-#pragma mark - property
-#pragma mark required
-/** 标题 */
-@property (nonatomic, strong) NSString *titleStr;
-
-/** 下载文件的model */
-@property (nonatomic, strong) JhtFileModel *currentFileModel;
-
-
-#pragma mark optional
 /** 无网络连接提示语
  *  default：@"当前网络暂不可用，请检查网络设置"
  */
 @property (nonatomic, strong) NSString *lostNetHint;
-/** 内存不足提示语 
+/** 内存不足提示语
  *  default：@"手内内存不足，请进行清理"
  */
 @property (nonatomic, strong) NSString *notEnoughMemoryHint;
-/** 文件正在下载中的提示语 
+/** 文件正在下载中的提示语
  *  default：@"玩命加载中..."
  */
 @property (nonatomic, strong) NSString *downloadingHint;
-/** 文件下载失败提示语 
+/** 文件下载失败提示语
  *  default：@"文件下载失败"
  */
 @property (nonatomic, strong) NSString *downloadFailedHint;
@@ -57,16 +43,10 @@ typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 @property (nonatomic, strong) UIColor *downloadProgressTintColor;
 
 /** 提示框model相关参数 */
-@property (nonatomic, strong) JhtShowDumpingViewParamModel *paramModel;
+@property (nonatomic, strong) JhtShowDumpingViewParamModel *showDumpingViewParamModelparamModel;
 
 /** 《用其他应用打开按钮》配置Model */
 @property (nonatomic, strong) OtherOpenButtonParamModel *otherOpenButtonParamModel;
-
-
-
-#pragma mark - Public Method
-/** 网络下载完成之后 本地存储的路径（NSUTF8StringEncoding） */
-- (void)finishedDownloadCompletionHandler:(finishedDownloadCompletionHandler)block;
 
 
 @end

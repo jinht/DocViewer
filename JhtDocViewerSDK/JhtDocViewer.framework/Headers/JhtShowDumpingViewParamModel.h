@@ -6,7 +6,7 @@
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 2017/1/11.
-//  Copyright © 2017年 JhtDocViewerDemo. All rights reserved.
+//  Copyright © 2017年 JhtDocViewer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

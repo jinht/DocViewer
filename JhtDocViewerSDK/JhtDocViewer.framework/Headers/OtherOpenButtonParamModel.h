@@ -6,7 +6,7 @@
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 2017/8/16.
-//  Copyright © 2017年 JhtDocViewerDemo. All rights reserved.
+//  Copyright © 2017年 JhtDocViewer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +14,7 @@
 /** 《用其他应用打开按钮》配置Model */
 @interface OtherOpenButtonParamModel : NSObject
 
-#pragma mark -property
+#pragma mark - property
 #pragma mark optional
 /** btnFrame 
  *	default：CGRectMake(0, CGRectGetHeight(self.frame) - 45, CGRectGetWidth(self.frame), 45)

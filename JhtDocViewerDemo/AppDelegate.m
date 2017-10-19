@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  JhtDocViewerDemo
 //
-//  github主页: https://github.com/jinht
+//  GitHub主页: https://github.com/jinht
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/7/24.
@@ -10,9 +10,12 @@
 //
 
 #import "AppDelegate.h"
-#import "JhtNetworkCheckTools.h"
-#import "JhtDocFileOperations.h"
 #import "DocListViewController.h"
+#import <JhtDocViewer/JhtNetworkCheckTools.h>
+#import <JhtDocViewer/JhtDocFileOperations.h>
+//#import "JhtNetworkCheckTools.h"
+//#import "JhtDocFileOperations.h"
+
 
 @interface AppDelegate () {
     UINavigationController *_nav;
@@ -29,7 +32,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听
-    [[JhtNetworkCheckTools sharedInstance] netStartNetworkNotifyWithPollingInterval:1.0];
+    [JhtNetworkCheckTools startMonitoringWithListener:nil];
     
     // 模拟将 本地文件 的保存到 内存中
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
