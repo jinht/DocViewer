@@ -42,7 +42,7 @@
 ##### d. 无网络弹框
 <img src="https://raw.githubusercontent.com/jinht/JhtDocViewer/master/ReadMEImages/10.png" width="30%" height="20%" /> <br>
       
-* 具体使用详见demo，注意AppDelegate和DocListViewController相关代码
+* 具体使用详见demo
 
 
 ### needed to pay attention
