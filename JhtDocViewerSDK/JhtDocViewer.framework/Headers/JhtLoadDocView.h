@@ -11,9 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class JhtLoadDocViewParamModel;
-
 @class JhtFileModel;
+@class JhtLoadDocViewParamModel;
 @class OtherOpenButtonParamModel;
 @class JhtShowDumpingViewParamModel;
 

@@ -55,6 +55,7 @@
     OtherOpenButtonParamModel *otherOpenButtonParamModel = [[OtherOpenButtonParamModel alloc] init];
     otherOpenButtonParamModel.titleFont = [UIFont boldSystemFontOfSize:20.0];
     otherOpenButtonParamModel.backgroundColor = [UIColor purpleColor];
+//    otherOpenButtonParamModel.isHiddenBtn = YES;
     
     JhtLoadDocView *docView = [[JhtLoadDocView alloc] initWithFrame:self.view.frame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:nil withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
     

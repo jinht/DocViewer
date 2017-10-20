@@ -27,6 +27,11 @@
 /** btn cornerRadius */
 @property (nonatomic, assign) CGFloat cornerRadius;
 
+/** 是否隐藏btn
+ *  default：NO
+ */
+@property (nonatomic, assign) BOOL isHiddenBtn;
+
 /** btnTitle_Normal 
  *	default：@"用其他应用打开"
  */
