@@ -30,7 +30,7 @@
 }
 
 
-#pragma mark - setNav
+#pragma mark - SetNav
 /** 设置导航栏 */
 - (void)ldSetNav {
     // 设置导航栏返回按钮

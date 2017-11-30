@@ -16,6 +16,8 @@
 /** 文本加载 View 配置Model */
 @interface JhtLoadDocViewParamModel : NSObject
 
+#pragma mark - property
+#pragma mark optional
 /** 无网络连接提示语
  *  default：@"当前网络暂不可用，请检查网络设置"
  */

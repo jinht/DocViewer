@@ -17,6 +17,8 @@ static const NSInteger KSDPMShowLabelHeight = 25;
 
 /** 下滑提示框配置参数model */
 @interface JhtShowDumpingViewParamModel : NSObject
+
+#pragma mark - property
 #pragma mark optional
 /** 提示框下拉整体坐标 
  *  default：CGRectMake(0, 0, FrameW, 65)
