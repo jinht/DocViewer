@@ -21,11 +21,11 @@
 
 #pragma mark - Public Method
 /** 初始化
- *	fileModel：当前展示文件的model
- *	errorFView：展示错误提示View 父View（一般为self.navigationController.view）
- *	loadDocViewParamModel：文本加载 View 配置Model（内部均有default值，可传nil）
- *	showDumpingViewParamModelparamModel：提示框model相关参数（内部均有default值，可传nil）
- *	otherOpenButtonParamModel：《用其他应用打开按钮》配置Model（内部均有default值，可传nil）
+ *	fileModel：当前 文件 model
+ *	errorFView：errorView 父View（一般为self.navigationController.view）
+ *	loadDocViewParamModel：loadDocView 配置Model（内部均有default值，可传nil）
+ *	showDumpingViewParamModelparamModel：showDumpingView 配置Model（内部均有default值，可传nil）
+ *	otherOpenButtonParamModel：otherOpenButton 配置Model（内部均有default值，可传nil）
  */
 - (instancetype)initWithFrame:(CGRect)frame withFileModel:(JhtFileModel *)fileModel withShowErrorViewOfFatherView:(UIView *)errorFView withLoadDocViewParamModel:(JhtLoadDocViewParamModel *)loadDocViewParamModel withShowDumpingViewParamModel:(JhtShowDumpingViewParamModel *)showDumpingViewParamModel withOtherOpenButtonParamModel:(OtherOpenButtonParamModel *)otherOpenButtonParamModel;
 

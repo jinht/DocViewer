@@ -35,7 +35,7 @@
  */
 @property (nonatomic, strong) NSString *downloadFailedHint;
 
-/** 清理几天前的文件
+/** 清理？天前的文件
  *  default：0
  */
 @property (nonatomic, assign) NSInteger daysAgo;

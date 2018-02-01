@@ -173,7 +173,6 @@
 
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    // 避免dragImageView手势冲突 问题解决方法http://blog.sina.com.cn/s/blog_6b8c3d7a0101dxnc.html
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
         return NO;
         
