@@ -133,7 +133,7 @@
 #### 5. 库文件 <br>
 	系统库：WebKit.framework
 	三方库：AFNetworking3.x：自行添加
-	注 * Reachability：framwork内部已添加
+	**Reachability**：framwork内部已添加
 	
       
       
