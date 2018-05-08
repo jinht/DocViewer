@@ -132,8 +132,8 @@
 
 #### 5. 库文件 <br>
 	系统库：WebKit.framework
-	三方库：AFNetworking3.x：自行添加</br>
-               Reachability：framwork内部已添加
+	三方库：AFNetworking3.x：自行添加
+	Reachability：framwork内部已添加
 	
       
       
