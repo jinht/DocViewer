@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-/** 《用其他应用打开按钮》配置Model */
+/** 《用其他应用打开》按钮 配置Model */
 @interface OtherOpenButtonParamModel : NSObject
 
 #pragma mark - property

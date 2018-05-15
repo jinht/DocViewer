@@ -11,10 +11,15 @@
 
 #import "LoadDocViewController.h"
 #import <JhtDocViewer/JhtLoadDocView.h>
+#import <JhtDocViewer/JhtDocFileOperations.h>
+#import <JhtDocViewer/JhtLoadDocViewParamModel.h>
 #import <JhtDocViewer/OtherOpenButtonParamModel.h>
 #import <JhtDocViewer/JhtShowDumpingViewParamModel.h>
 
-@implementation LoadDocViewController
+@implementation LoadDocViewController {
+    // 文本加载 View
+    JhtLoadDocView *_docView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,9 +30,12 @@
     // 设置导航栏
     [self ldSetNav];
     
-    // 创建UI界面
+    // CreateUI
     [self ldCreateUI];
+    
+    NSLog(@"\n downloadFilesPath) => %@ \n otherAppFilesPath => %@", [JhtDocFileOperations sharedInstance].downloadFilesPath, [JhtDocFileOperations sharedInstance].otherAppFilesPath);
 }
+
 
 
 #pragma mark - SetNav
@@ -42,26 +50,31 @@
 
 
 
-#pragma mark - UI界面
-/** 创建UI界面 */
+#pragma mark - UI
+/** CreateUI */
 - (void)ldCreateUI {
+    // 文本加载 View 配置Model
+    JhtLoadDocViewParamModel *loadDocViewParamModel = [[JhtLoadDocViewParamModel  alloc] init];
+    // 清理？天前的文件
+    loadDocViewParamModel.daysAgo = 1;
+    
     // 提示框Model
     JhtShowDumpingViewParamModel *showDumpingViewParamModel = [[JhtShowDumpingViewParamModel alloc] init];
     showDumpingViewParamModel.showTextFont = [UIFont boldSystemFontOfSize:15];
     showDumpingViewParamModel.showBackgroundColor = [UIColor whiteColor];
     showDumpingViewParamModel.showBackgroundImageName = @"dumpView";
     
-    // 《用其他应用打开按钮》配置Model
+    // 《用其他应用打开》按钮 配置Model
     OtherOpenButtonParamModel *otherOpenButtonParamModel = [[OtherOpenButtonParamModel alloc] init];
     otherOpenButtonParamModel.titleFont = [UIFont boldSystemFontOfSize:20.0];
     otherOpenButtonParamModel.backgroundColor = [UIColor purpleColor];
 //    otherOpenButtonParamModel.isHiddenBtn = YES;
     
-    JhtLoadDocView *docView = [[JhtLoadDocView alloc] initWithFrame:self.view.frame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:nil withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
+    _docView = [[JhtLoadDocView alloc] initWithFrame:self.view.frame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:loadDocViewParamModel withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
     
-    [self.view addSubview:docView];
+    [self.view addSubview:_docView];
     
-    [docView finishedDownloadCompletionHandler:^(NSString *urlStr) {
+    [_docView finishedDownloadCompletionHandler:^(NSString *urlStr) {
         NSLog(@"网络下载文件成功后保存在《本地的路径》：\n%@", urlStr);
     }];
 }

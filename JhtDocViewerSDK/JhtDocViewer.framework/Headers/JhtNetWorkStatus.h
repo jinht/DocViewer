@@ -12,7 +12,7 @@
 #ifndef JhtNetWorkStatus_h
 #define JhtNetWorkStatus_h
 
-/** 网络监听_网络状态声明类 */
+/** 网络监听_网络状态_声明类 */
 
 /** 网络状态 */
 typedef NS_ENUM(NSUInteger, JhtNetWorkStatus) {

@@ -19,10 +19,9 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
     
-    // 实例化数据源数组
     _baseSourceArray = [[NSMutableArray alloc] init];
     
-    // 创建父类的UI界面
+    // CreateUI
     [self bsCreateGrowthBaseUI];
     
     // 右滑返回
@@ -32,7 +31,7 @@
 
 
 #pragma mark - UI
-/** 创建父类的UI界面 */
+/** CreateUI */
 - (void)bsCreateGrowthBaseUI {
     _baseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, FrameW, FrameH) style:UITableViewStylePlain];
     _baseTableView.dataSource = self;
@@ -47,7 +46,7 @@
 
 
 #pragma mark - Navigation Tools
-/** 创建导航栏左侧自定义的返回按钮 */
+/** nav_leftBarButtonItem */
 - (void)bsCreateNavigationBarLeftBtn {
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     NSString *leftBtnImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/nav-back"];
@@ -64,7 +63,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-/** 创建Navigationbar的TitleView */
+/** nav_titleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title {
     UILabel *navigationBarTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 44, 80)];
     navigationBarTitleLabel.text = title;
@@ -105,7 +104,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // 去除选中之后的效果
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

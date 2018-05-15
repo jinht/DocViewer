@@ -13,22 +13,15 @@
 #import "DocListViewController.h"
 #import <JhtDocViewer/JhtNetworkCheckTools.h>
 #import <JhtDocViewer/JhtDocFileOperations.h>
-//#import "JhtNetworkCheckTools.h"
-//#import "JhtDocFileOperations.h"
-
-
-@interface AppDelegate () {
-    UINavigationController *_nav;
-}
-
-@end
 
 #define OpenFileName0 @"2.pptx"
 #define OpenFileName1 @"1.xlsx"
 #define OpenFileName2 @"CIImage.docx"
 #define OpenFileName3 @"信鸽推送说明书.pdf"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    UINavigationController *_nav;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 开启网络监听

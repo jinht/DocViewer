@@ -10,11 +10,11 @@
 #define JhtDocViewer_Define_h
 
 
-/** 屏幕的宽度 */
+/** 屏幕 宽度 */
 #define FrameW [UIScreen mainScreen].bounds.size.width
-/** 屏幕的高度 */
+/** 屏幕 高度 */
 #define FrameH [UIScreen mainScreen].bounds.size.height
-/** 375的比例尺 */
+/** 375 比例尺 */
 #define WidthScale375 ([UIScreen mainScreen].bounds.size.width/375)
 
 /** 状态栏(StatusBar) 高度 */

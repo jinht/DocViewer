@@ -47,7 +47,7 @@
 /** 提示框model相关参数 */
 @property (nonatomic, strong) JhtShowDumpingViewParamModel *showDumpingViewParamModelparamModel;
 
-/** 《用其他应用打开按钮》配置Model */
+/** 《用其他应用打开》按钮 配置Model */
 @property (nonatomic, strong) OtherOpenButtonParamModel *otherOpenButtonParamModel;
 
 
