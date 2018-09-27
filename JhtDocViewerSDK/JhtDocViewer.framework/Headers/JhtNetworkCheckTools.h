@@ -22,19 +22,19 @@ extern const NSString *KNCTNetworkStatusChangedNotKey;
 
 #pragma mark - Public Method
 #pragma mark Check
-/** 获取当前网络状态：枚举 */
+/** 获取当前网络状态: 枚举 */
 + (JhtNetWorkStatus)currentNetWork_Status;
-/** 获取当前网络状态：字符串 */
+/** 获取当前网络状态: 字符串 */
 + (NSString *)currentNetWork_StatusString;
 
 
 #pragma mark start/stop
 /** 开始网络监听
- *	listener：监听对象，可为nil
+ *	listener: 监听对象，可为nil
  */
 + (void)startMonitoringWithListener:(id<JhtNetworkCheckToolsProtocol>)listener;
 /** 停止网络监听
- *  listener：监听对象，可为nil
+ *  listener: 监听对象，可为nil
  */
 + (void)stopMonitoringWithListener:(id<JhtNetworkCheckToolsProtocol>)listener;
 
@@ -44,7 +44,7 @@ extern const NSString *KNCTNetworkStatusChangedNotKey;
 + (BOOL)isNetworkEnable;
 /** 是否为WIFI */
 + (BOOL)isWIFI;
-/** 是否处于高速网络环境：3G/4G/WIFI */
+/** 是否处于高速网络环境: 3G/4G/WIFI */
 + (BOOL)isHighSpeedNetwork;
 
 

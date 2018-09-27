@@ -32,9 +32,9 @@
 
 #pragma mark 保存
 /** 将本地文件 加载至内存
- *  fileName：是以.为分割的格式       eg：哈哈哈.doc
- *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
- *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+ *  fileName: 是以.为分割的格式       eg: 哈哈哈.doc
+ *  basePath: 是本地路径的基地址      eg: NSHomeDirectory()
+ *  localPath: 本地路径中存储的文件夹  eg: Documents/JhtDoc
  */
 - (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
 
@@ -52,8 +52,8 @@
 /** 文件下载失败时，清除文件路径 */
 - (void)removeFileWhenDownloadFileFailure;
 /** 清理几天前文件
- *  filePathArray：需要 额外 清理的文件路径，可为nil
- *  注：downloadFilesPath && otherAppFilesPath 路径下文件always clean（与filePathArray无关）
+ *  filePathArray: 需要 额外 清理的文件路径，可为nil
+ *  注: downloadFilesPath && otherAppFilesPath 路径下文件always clean（与filePathArray无关）
  */
 - (void)cleanFileAfterDays:(CGFloat)day withFilePathArray:(NSArray *)filePathArray;
 

@@ -10,7 +10,7 @@ build
 *.perspectivev3
 !default.perspectivev3
 !default.xcworkspace
-xcuserdata
+*.xcuserdata
 *.moved-aside
 *.mobileprovision
 DerivedData

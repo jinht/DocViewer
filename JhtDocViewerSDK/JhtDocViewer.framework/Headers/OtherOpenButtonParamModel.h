@@ -17,40 +17,40 @@
 #pragma mark - property
 #pragma mark optional
 /** btnFrame 
- *	default：CGRectMake(0, CGRectGetHeight(self.frame) - 45, CGRectGetWidth(self.frame), 45)
+ *	default: CGRectMake(0, CGRectGetHeight(self.frame) - 45 - JhtSafeAreaInsetsBottom, CGRectGetWidth(self.frame), 45)
  */
 @property (nonatomic, assign) CGRect btnFrame;
 /** backgroundColor 
- *	default：[UIFont systemFontOfSize:17.f]
+ *	default: [UIFont systemFontOfSize:17.f]
  */
 @property (nonatomic, strong) UIColor *backgroundColor;
 /** btn cornerRadius */
 @property (nonatomic, assign) CGFloat cornerRadius;
 
 /** 是否隐藏btn
- *  default：NO
+ *  default: NO
  */
 @property (nonatomic, assign) BOOL isHiddenBtn;
 
 /** btnTitle_Normal 
- *	default：@"用其他应用打开"
+ *	default: @"用其他应用打开"
  */
 @property (nonatomic, strong) NSString *title_Normal;
 /** titleColor_Normal 
- *	default：[UIColor whiteColor]
+ *	default: [UIColor whiteColor]
  */
 @property (nonatomic, strong) UIColor *titleColor_Normal;
 /** btnTitle_hlighted 
- *	default：@"用其他应用打开"
+ *	default: @"用其他应用打开"
  */
 @property (nonatomic, strong) NSString *title_Hlighted;
 /** titleColor_Normal 
- *	default：[UIColor whiteColor]
+ *	default: [UIColor whiteColor]
  */
 @property (nonatomic, strong) UIColor *titleColor_Hlighted;
 
 /** titleFont 
- *	default：[UIFont systemFontOfSize:17.f]
+ *	default: [UIFont systemFontOfSize:17.f]
  */
 @property (nonatomic, strong) UIFont *titleFont;
 

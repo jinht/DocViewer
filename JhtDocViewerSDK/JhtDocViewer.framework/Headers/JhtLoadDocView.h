@@ -11,6 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class WKWebView;
 @class JhtFileModel;
 @class JhtDocFileOperations;
 @class JhtLoadDocViewParamModel;
@@ -21,6 +22,9 @@
 @interface JhtLoadDocView : UIView
 
 #pragma mark - property(optional)
+/** 加载Doc的webView */
+@property (nonatomic, strong, readonly) WKWebView *wkWebView;
+
 /** otherOpenButton 配置Model */
 @property (nonatomic, strong) OtherOpenButtonParamModel *otherOpenButtonParamModel;
 
@@ -28,11 +32,11 @@
 
 #pragma mark - Public Method
 /** 初始化
- *  fileModel：当前 文件model
- *  errorFView：errorView 父View（一般为self.navigationController.view）
- *  loadDocViewParamModel：loadDocView 配置Model（内部均有default值，可为nil）
- *  showDumpingViewParamModelparamModel：showDumpingView 配置Model（内部均有default值，可为nil）
- *  otherOpenButtonParamModel：otherOpenButton 配置Model（内部均有default值，可为nil）
+ *  fileModel: 当前 文件model
+ *  errorFView: errorView 父View（一般为self.navigationController.view）
+ *  loadDocViewParamModel: loadDocView 配置Model（内部均有default值，可为nil）
+ *  showDumpingViewParamModelparamModel: showDumpingView 配置Model（内部均有default值，可为nil）
+ *  otherOpenButtonParamModel: otherOpenButton 配置Model（内部均有default值，可为nil）
  */
 - (instancetype)initWithFrame:(CGRect)frame withFileModel:(JhtFileModel *)fileModel withShowErrorViewOfFatherView:(UIView *)errorFView withLoadDocViewParamModel:(JhtLoadDocViewParamModel *)loadDocViewParamModel withShowDumpingViewParamModel:(JhtShowDumpingViewParamModel *)showDumpingViewParamModel withOtherOpenButtonParamModel:(OtherOpenButtonParamModel *)otherOpenButtonParamModel;
 

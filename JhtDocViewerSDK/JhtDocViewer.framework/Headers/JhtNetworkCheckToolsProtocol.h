@@ -17,7 +17,7 @@
 @property (nonatomic, assign) JhtNetWorkStatus currentStatus;
 
 /** 网络状态变更
- *  注：注册的 listener 需要实现此方法
+ *  注: 注册的 listener 需要实现此方法
  */
 - (void)networkChangedNot:(NSNotification *)not;
 

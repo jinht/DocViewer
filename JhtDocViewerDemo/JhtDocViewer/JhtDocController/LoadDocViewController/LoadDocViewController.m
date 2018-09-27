@@ -70,8 +70,9 @@
     otherOpenButtonParamModel.backgroundColor = [UIColor purpleColor];
 //    otherOpenButtonParamModel.isHiddenBtn = YES;
     
-    _docView = [[JhtLoadDocView alloc] initWithFrame:self.view.frame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:loadDocViewParamModel withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
-    
+    CGRect tempFrame = self.view.frame;
+    tempFrame.size.height -= JhtSafeAreaInsetsBottom;
+    _docView = [[JhtLoadDocView alloc] initWithFrame:tempFrame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:loadDocViewParamModel withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
     [self.view addSubview:_docView];
     
     [_docView finishedDownloadCompletionHandler:^(NSString *urlStr) {
