@@ -11,9 +11,7 @@
 
 #import "DocListViewController.h"
 #import "LoadDocViewController.h"
-#import <JhtDocViewer/JhtFileModel.h>
-#import <JhtDocViewer/OtherOpenButtonParamModel.h>
-#import <JhtDocViewer/JhtShowDumpingViewParamModel.h>
+#import <JhtDocViewer/JhtDocSDK.h>
 
 /** 状态栏 + 导航栏的高度 */
 #define KDLVCStatusAndNavBarHeight (KStatusBarHeight + KNavBarHeight)

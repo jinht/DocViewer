@@ -15,7 +15,7 @@
 #import "JhtNetworkCheckToolsProtocol.h"
 
 /** 网络状态变化通知Key */
-extern const NSString *KNCTNetworkStatusChangedNotKey;
+extern NSString *const KNCTNetworkStatusChangedNotKey;
 
 /** 网络监听类 */
 @interface JhtNetworkCheckTools : NSObject

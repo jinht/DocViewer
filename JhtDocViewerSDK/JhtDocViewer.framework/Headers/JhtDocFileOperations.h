@@ -36,7 +36,7 @@
  *  basePath: 是本地路径的基地址      eg: NSHomeDirectory()
  *  localPath: 本地路径中存储的文件夹  eg: Documents/JhtDoc
  */
-- (void)copyLocalWithFileName:(NSString *)fileName withBasePath:(NSString *)basePath withLocalPath:(NSString *)localPath;
+- (void)copyLocalWithFileName:(NSString *)fileName basePath:(NSString *)basePath localPath:(NSString *)localPath;
 
 
 #pragma mark 生成路径
@@ -55,7 +55,7 @@
  *  filePathArray: 需要 额外 清理的文件路径，可为nil
  *  注: downloadFilesPath && otherAppFilesPath 路径下文件always clean（与filePathArray无关）
  */
-- (void)cleanFileAfterDays:(CGFloat)day withFilePathArray:(NSArray *)filePathArray;
+- (void)cleanFileAfterDays:(CGFloat)day filePathArray:(NSArray *)filePathArray;
 
 
 @end

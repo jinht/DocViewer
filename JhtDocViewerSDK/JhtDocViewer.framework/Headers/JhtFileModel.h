@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, Jht_FileType) {
 /** 文件类型 */
 @property (nonatomic, assign) Jht_FileType viewFileType;
 
-/** 注意单位一定要是: KB,MB,GB,Bytes */
+/** 注意单位一定要是: KB || MB || GB || Bytes */
 @property (nonatomic, strong) NSString *fileSize;
 /** 附件文件大小 */
 @property (nonatomic, strong) NSString *attachmentFileSize;

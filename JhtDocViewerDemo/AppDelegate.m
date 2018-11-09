@@ -11,8 +11,7 @@
 
 #import "AppDelegate.h"
 #import "DocListViewController.h"
-#import <JhtDocViewer/JhtNetworkCheckTools.h>
-#import <JhtDocViewer/JhtDocFileOperations.h>
+#import <JhtDocViewer/JhtDocSDK.h>
 
 #define OpenFileName0 @"2.pptx"
 #define OpenFileName1 @"1.xlsx"
@@ -56,11 +55,11 @@
 /** 模拟将 本地文件 的保存到 内存中（如果以后是网络就可以将网络请求下来的保存到 内存中，然后从内存中读取）*/
 - (void)copyLocalFile:(NSString *)fileName {
     /** 将本地文件 保存到内存中
-     *  fileName：是以.为分割的格式       eg：哈哈哈.doc
-     *  basePath：是本地路径的基地址      eg：NSHomeDirectory()
-     *  localPath：本地路径中存储的文件夹  eg：Documents/JhtDoc
+     *  fileName: 是以.为分割的格式       eg: 哈哈哈.doc
+     *  basePath: 是本地路径的基地址      eg: NSHomeDirectory()
+     *  localPath: 本地路径中存储的文件夹  eg: Documents/JhtDoc
      */
-    [[JhtDocFileOperations sharedInstance] copyLocalWithFileName:fileName withBasePath:NSHomeDirectory() withLocalPath:@"Documents/JhtDoc"];
+    [[JhtDocFileOperations sharedInstance] copyLocalWithFileName:fileName basePath:NSHomeDirectory() localPath:@"Documents/JhtDoc"];
 }
 
 

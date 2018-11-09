@@ -38,7 +38,7 @@
  *  showDumpingViewParamModelparamModel: showDumpingView 配置Model（内部均有default值，可为nil）
  *  otherOpenButtonParamModel: otherOpenButton 配置Model（内部均有default值，可为nil）
  */
-- (instancetype)initWithFrame:(CGRect)frame withFileModel:(JhtFileModel *)fileModel withShowErrorViewOfFatherView:(UIView *)errorFView withLoadDocViewParamModel:(JhtLoadDocViewParamModel *)loadDocViewParamModel withShowDumpingViewParamModel:(JhtShowDumpingViewParamModel *)showDumpingViewParamModel withOtherOpenButtonParamModel:(OtherOpenButtonParamModel *)otherOpenButtonParamModel;
+- (instancetype)initWithFrame:(CGRect)frame fileModel:(JhtFileModel *)fileModel showErrorViewOfFatherView:(UIView *)errorFView loadDocViewParamModel:(JhtLoadDocViewParamModel *)loadDocViewParamModel showDumpingViewParamModel:(JhtShowDumpingViewParamModel *)showDumpingViewParamModel otherOpenButtonParamModel:(OtherOpenButtonParamModel *)otherOpenButtonParamModel;
 
 typedef void(^finishedDownloadCompletionHandler)(NSString *urlStr);
 /** 网络下载完成之后 本地存储的路径（NSUTF8StringEncoding） */

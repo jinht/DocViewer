@@ -10,11 +10,6 @@
 //
 
 #import "LoadDocViewController.h"
-#import <JhtDocViewer/JhtLoadDocView.h>
-#import <JhtDocViewer/JhtDocFileOperations.h>
-#import <JhtDocViewer/JhtLoadDocViewParamModel.h>
-#import <JhtDocViewer/OtherOpenButtonParamModel.h>
-#import <JhtDocViewer/JhtShowDumpingViewParamModel.h>
 
 @implementation LoadDocViewController {
     // 文本加载 View
@@ -33,7 +28,7 @@
     // CreateUI
     [self ldCreateUI];
     
-    NSLog(@"\n downloadFilesPath) => %@ \n otherAppFilesPath => %@", [JhtDocFileOperations sharedInstance].downloadFilesPath, [JhtDocFileOperations sharedInstance].otherAppFilesPath);
+    NSLog(@"\n downloadFilesPath => %@ \n otherAppFilesPath => %@", [JhtDocFileOperations sharedInstance].downloadFilesPath, [JhtDocFileOperations sharedInstance].otherAppFilesPath);
 }
 
 
@@ -72,7 +67,7 @@
     
     CGRect tempFrame = self.view.frame;
     tempFrame.size.height -= JhtSafeAreaInsetsBottom;
-    _docView = [[JhtLoadDocView alloc] initWithFrame:tempFrame withFileModel:self.currentFileModel withShowErrorViewOfFatherView:self.navigationController.view withLoadDocViewParamModel:loadDocViewParamModel withShowDumpingViewParamModel:showDumpingViewParamModel withOtherOpenButtonParamModel:otherOpenButtonParamModel];
+    _docView = [[JhtLoadDocView alloc] initWithFrame:tempFrame fileModel:self.currentFileModel showErrorViewOfFatherView:self.navigationController.view loadDocViewParamModel:loadDocViewParamModel showDumpingViewParamModel:showDumpingViewParamModel otherOpenButtonParamModel:otherOpenButtonParamModel];
     [self.view addSubview:_docView];
     
     [_docView finishedDownloadCompletionHandler:^(NSString *urlStr) {
