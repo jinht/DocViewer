@@ -140,7 +140,8 @@
 ### Remind
 * ARC
 * iOS >= 8.0
-* iPhone \ iPad 
+* iPhone \ iPad
+* Xcode version >= 9.0
        
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
