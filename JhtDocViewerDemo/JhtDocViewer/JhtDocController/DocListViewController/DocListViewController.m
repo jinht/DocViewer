@@ -65,12 +65,12 @@
         JhtFileModel *fileModel = [[JhtFileModel alloc] init];
         fileModel.fileId = @"577e2300c94f6e51316a299d";
         // **后缀就是文件格式，切记**
-        fileModel.fileName = @"哈哈哈.docx";
-        fileModel.viewFileType = Type_Docx;
-        fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
+        fileModel.fileName = @"赤壁.rtf";
+        fileModel.viewFileType = Type_Txt;
+        fileModel.url = @"http://pi4m2edox.bkt.clouddn.com/%E8%B5%A4%E5%A3%81.rtf";
 //        fileModel.url = @"http://osyeryz0j.bkt.clouddn.com/jht-hljf-text/IPHONE%E6%89%8B%E6%9C%BAVPN%E9%85%8D%E7%BD%AE%E6%8C%87%E5%AF%BC.pdf";
-        fileModel.fileSize = @"21.39KB";
-        fileModel.attachmentFileSize = @"21906";
+        fileModel.fileSize = @"715B";
+        fileModel.attachmentFileSize = @"715";
         [_baseSourceArray addObject:fileModel];
         
         // 总文件夹
