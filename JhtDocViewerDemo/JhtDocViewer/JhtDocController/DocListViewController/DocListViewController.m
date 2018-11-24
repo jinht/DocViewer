@@ -11,7 +11,6 @@
 
 #import "DocListViewController.h"
 #import "LoadDocViewController.h"
-#import <JhtDocViewer/JhtDocSDK.h>
 
 /** 状态栏 + 导航栏的高度 */
 #define KDLVCStatusAndNavBarHeight (KStatusBarHeight + KNavBarHeight)
@@ -20,9 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // 设置背景颜色
-    self.view.backgroundColor = [UIColor colorWithRed:0.97f green:0.91f blue:0.89f alpha:1.00f];
     
     // 设置导航栏
     [self docLsSetNav];

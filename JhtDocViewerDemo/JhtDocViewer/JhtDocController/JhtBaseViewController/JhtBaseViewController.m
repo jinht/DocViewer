@@ -16,6 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.97f green:0.91f blue:0.89f alpha:1.00f];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
     
@@ -49,7 +51,7 @@
 /** nav_leftBarButtonItem */
 - (void)bsCreateNavigationBarLeftBtn {
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    NSString *leftBtnImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/nav-back"];
+    NSString *leftBtnImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewer.bundle/images/nav-back"];
     UIImage *leftBtnImage = [UIImage imageWithContentsOfFile:leftBtnImagePath];
     [leftBtn setImage:leftBtnImage forState:UIControlStateNormal];
     [leftBtn sizeToFit];

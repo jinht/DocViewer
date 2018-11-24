@@ -36,7 +36,8 @@
 @property (nonatomic, strong) NSString *downloadFailedHint;
 
 /** 清理？天前的文件
- *  default: 0
+ *  default: 3
+ *  建议不要频繁清理，且文件过大可能存在且仅一次 错误读取上一次缓存文件
  */
 @property (nonatomic, assign) NSInteger daysAgo;
 /** 下载进度条填充颜色

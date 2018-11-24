@@ -12,6 +12,8 @@
 
 #import "JhtLoadDocView.h"
 
+#import "JhtDocViewer_Define.h"
+
 #import "JhtDocFileOperations.h"
 #import "JhtNetworkCheckTools.h"
 

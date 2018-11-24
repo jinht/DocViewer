@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>item 0</key>
+	<dict>
+		<key>daysAgo</key>
+		<string>3</string>
+		<key>downloadFailedHint</key>
+		<string>文件下载失败</string>
+		<key>downloadingHint</key>
+		<string>玩命加载中...</string>
+		<key>notEnoughMemoryHint</key>
+		<string>手内内存不足，请进行清理</string>
+		<key>lostNetHint</key>
+		<string>当前网络暂不可用，请检查网络设置</string>
+	</dict>
+	<key>item 1</key>
+	<dict>
+		<key>titleFont</key>
+		<string>17.0</string>
+		<key>isHiddenBtn</key>
+		<false/>
+		<key>title_Normal</key>
+		<string>用其他应用打开</string>
+		<key>title_Hlighted</key>
+		<string>用其他应用打开</string>
+	</dict>
+</dict>
+</plist>

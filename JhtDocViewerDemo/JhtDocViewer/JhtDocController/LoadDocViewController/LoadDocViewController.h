@@ -10,8 +10,6 @@
 //
 
 #import "JhtBaseViewController.h"
-#import <JhtDocViewer/JhtDocSDK.h>
-@class JhtFileModel;
 
 /** 加载文本类 */
 @interface LoadDocViewController : JhtBaseViewController

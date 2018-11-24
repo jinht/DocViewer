@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
+		8E7001A621A9489F001364AE /* JhtDocViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7001A521A9489F001364AE /* JhtDocViewer.bundle */; };
 		A525EF2D1D48468E008B3178 /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF2C1D48468E008B3178 /* CIImage.docx */; };
 		A52737691D44F04800CCAB67 /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A52737651D44F04800CCAB67 /* 1.xlsx */; };
 		A527376A1D44F04800CCAB67 /* 2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = A52737661D44F04800CCAB67 /* 2.pptx */; };
@@ -29,7 +30,6 @@
 		A57D5E5A1D473D7F00D10C1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */; };
 		A5F2A12F1F9891890034EC52 /* LoadDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F2A12E1F9891890034EC52 /* LoadDocViewController.m */; };
 		A5F2A1331F9891980034EC52 /* JhtDocViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */; };
-		A5F2A1341F9891980034EC52 /* JhtDocViewerImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5F2A1321F9891980034EC52 /* JhtDocViewerImages.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8E7001A521A9489F001364AE /* JhtDocViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewer.bundle; sourceTree = "<group>"; };
 		A525EF2C1D48468E008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
 		A52737651D44F04800CCAB67 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
 		A52737661D44F04800CCAB67 /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		A5F2A12D1F9891890034EC52 /* LoadDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDocViewController.h; sourceTree = "<group>"; };
 		A5F2A12E1F9891890034EC52 /* LoadDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDocViewController.m; sourceTree = "<group>"; };
 		A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtDocViewer.framework; sourceTree = "<group>"; };
-		A5F2A1321F9891980034EC52 /* JhtDocViewerImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewerImages.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,8 +271,8 @@
 		A5F2A1301F9891980034EC52 /* JhtDocViewerSDK */ = {
 			isa = PBXGroup;
 			children = (
+				8E7001A521A9489F001364AE /* JhtDocViewer.bundle */,
 				A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */,
-				A5F2A1321F9891980034EC52 /* JhtDocViewerImages.bundle */,
 			);
 			path = JhtDocViewerSDK;
 			sourceTree = "<group>";
@@ -344,7 +344,6 @@
 				TargetAttributes = {
 					A55D70A91D44EFEA001D675C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = BY48QUJK83;
 					};
 					A55D70C21D44EFEA001D675C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -382,11 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A527376C1D44F04800CCAB67 /* 信鸽推送说明书.pdf in Resources */,
+				8E7001A621A9489F001364AE /* JhtDocViewer.bundle in Resources */,
 				A527376A1D44F04800CCAB67 /* 2.pptx in Resources */,
 				A52737691D44F04800CCAB67 /* 1.xlsx in Resources */,
 				A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */,
 				A55D70BA1D44EFEA001D675C /* Assets.xcassets in Resources */,
-				A5F2A1341F9891980034EC52 /* JhtDocViewerImages.bundle in Resources */,
 				A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */,
 				A525EF2D1D48468E008B3178 /* CIImage.docx in Resources */,
 			);
@@ -567,7 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BY48QUJK83;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",
@@ -587,7 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BY48QUJK83;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",

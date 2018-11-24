@@ -30,7 +30,7 @@ static const NSInteger KSDPMShowLabelHeight = 25;
  */
 @property (nonatomic, strong) UIColor *showBackgroundColor;
 /** 提示框背景图片
- *  default: [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewerImages.bundle/dumpView"]
+ *  default: [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewer.bundle/images/dumpView"]
  */
 @property (nonatomic, strong) NSString *showBackgroundImageName;
 

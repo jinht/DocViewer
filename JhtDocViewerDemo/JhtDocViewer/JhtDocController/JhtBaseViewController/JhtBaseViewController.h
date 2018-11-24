@@ -10,7 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <JhtDocViewer/JhtDocViewer_Define.h>
+#import <JhtDocViewer/JhtDocSDK.h>
 
 /** VC父类 */
 @interface JhtBaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
