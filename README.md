@@ -17,7 +17,7 @@
     
 #### d. JhtFileModel：下载文档的Model
 	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数
-* 文本类 default 亦可通过修改*JhtDocViewer_Default.plist*相应值进行修改
+* 文本类 default值 亦可通过修改 **JhtDocViewer_Default.plist** 相应键值对进行修改
 
 
 ### 2. DocListViewController：文档列表
