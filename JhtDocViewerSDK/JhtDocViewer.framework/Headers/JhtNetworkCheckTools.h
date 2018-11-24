@@ -10,11 +10,34 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachability.h"
-#import "JhtNetWorkStatus.h"
-#import "JhtNetworkCheckToolsProtocol.h"
 
-/** 网络状态变化通知Key */
+@protocol JhtNetworkCheckToolsProtocol <NSObject>
+@optional
+/** 网络状态变更
+ *  注: 注册的 listener 需要实现此方法
+ */
+- (void)networkChangedNot:(NSNotification *)not;
+
+@end
+
+typedef NS_ENUM(NSUInteger, JhtNetWorkStatus) {
+    // 无网络
+    NetWorkStatus_None = 0,
+    
+    // WIFI
+    NetWorkStatus_WIFI,
+    
+    // 蜂窝网络
+    NetWorkStatus_2G,
+    NetWorkStatus_3G,
+    NetWorkStatus_4G,
+    
+    // 未知网络
+    NetWorkStatus_Unkhow
+};
+
+
+/** 网络状态变化通知 Key */
 extern NSString *const KNCTNetworkStatusChangedNotKey;
 
 /** 网络监听类 */

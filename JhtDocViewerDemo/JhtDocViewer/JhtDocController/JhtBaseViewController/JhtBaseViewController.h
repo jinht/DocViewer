@@ -26,7 +26,7 @@
 /** 导航栏左侧返回按钮触发事件 */
 - (void)bsPopToFormerController;
 
-/** 创建Navigationbar的TitleView */
+/** 创建Navigationbar TitleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title;
 
 

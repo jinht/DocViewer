@@ -344,6 +344,7 @@
 				TargetAttributes = {
 					A55D70A91D44EFEA001D675C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8C4D9692Z4;
 					};
 					A55D70C21D44EFEA001D675C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -566,7 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",
@@ -586,7 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",
