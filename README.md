@@ -17,6 +17,7 @@
     
 ##### d. JhtFileModel：下载文档的Model
 	用于设置文件ID，文件名，绝对路径（本地文件），文件大小等参数
+* 文本类 default 亦可通过修改*JhtDocViewer_Default.plist*相应值进行修改
 
 
 #### 2. DocListViewController：文档列表
@@ -133,7 +134,6 @@
 #### 5. 库文件 <br>
 	系统库：WebKit.framework
 	三方库：AFNetworking3.x：自行添加
-	Reachability：framwork内部已添加
 	
       
       
