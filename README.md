@@ -5,19 +5,7 @@
 2. 文件共享 && 查看 (Network && Local) 
      
 ## how to use
-### 1. podfile 
-```oc
-platform:ios, '8.0'
-
-target '*****' do
-
-pod 'JhtMarquee', '~> 1.0.0'
-        
-end
-```
-
-
-### 2. 相关参数配置
+### 1. 相关参数配置
 #### a. JhtLoadDocViewParamModel：文本加载 View 配置Model
 	JhtLoadDocView内部相关属性的修改可通过修改此model实现
 	
@@ -33,14 +21,14 @@ end
 
 
 
-### 3. DocListViewController：文档列表
+### 2. DocListViewController：文档列表
 	tableView的数据源是一个装有model的数组，model根据属性fileAbsolutePath（本地绝对路径），判断是否需要下载
 	
       
-### 4. LoadDocViewController：文档详情VC，内部使用JhtLoadDocView
+### 3. LoadDocViewController：文档详情VC，内部使用JhtLoadDocView
 
 
-### 5. JhtLoadDocView：文本加载 View
+### 4. JhtLoadDocView：文本加载 View
 #### a. 如果不需要下载，通过webView直接显示
 
 #### b. 需要下载，则通过JhtDownloadRequest函数中的类方法进行下载，暂停等操作（注意：JhtFileModel属性：fileSize，应写成这种式“KB,MB,GB,Bytes”，为了计算手机剩余内存，关系是否能下载成功
@@ -147,9 +135,6 @@ end
 ### 5. 库文件 <br>
 	系统库：WebKit.framework
 	三方库：AFNetworking3.x：自行添加
-	
-	
-* 在demo中可以查看具体使用方法（使用demo之前请先 **pod install** ）
 	
       
       
