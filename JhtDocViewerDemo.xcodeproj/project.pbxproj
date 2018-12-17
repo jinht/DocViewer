@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
-		8E7001A621A9489F001364AE /* JhtDocViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7001A521A9489F001364AE /* JhtDocViewer.bundle */; };
+		8EC6892821C7CD2C00B4AB3D /* JhtDocViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */; };
+		8EC6892921C7CD2C00B4AB3D /* JhtDocViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */; };
 		A525EF2D1D48468E008B3178 /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF2C1D48468E008B3178 /* CIImage.docx */; };
 		A52737691D44F04800CCAB67 /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A52737651D44F04800CCAB67 /* 1.xlsx */; };
 		A527376A1D44F04800CCAB67 /* 2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = A52737661D44F04800CCAB67 /* 2.pptx */; };
@@ -18,8 +19,6 @@
 		A55D70B81D44EFEA001D675C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55D70B61D44EFEA001D675C /* Main.storyboard */; };
 		A55D70BA1D44EFEA001D675C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55D70B91D44EFEA001D675C /* Assets.xcassets */; };
 		A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55D70BB1D44EFEA001D675C /* LaunchScreen.storyboard */; };
-		A55D70C81D44EFEA001D675C /* JhtDocViewerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70C71D44EFEA001D675C /* JhtDocViewerDemoTests.m */; };
-		A55D70D31D44EFEA001D675C /* JhtDocViewerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A55D70D21D44EFEA001D675C /* JhtDocViewerDemoUITests.m */; };
 		A57D5E521D473D7F00D10C1C /* DocListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E2B1D473D7F00D10C1C /* DocListViewController.m */; };
 		A57D5E531D473D7F00D10C1C /* JhtBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E2E1D473D7F00D10C1C /* JhtBaseViewController.m */; };
 		A57D5E551D473D7F00D10C1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E351D473D7F00D10C1C /* AFHTTPSessionManager.m */; };
@@ -29,7 +28,6 @@
 		A57D5E591D473D7F00D10C1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E3E1D473D7F00D10C1C /* AFURLResponseSerialization.m */; };
 		A57D5E5A1D473D7F00D10C1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */; };
 		A5F2A12F1F9891890034EC52 /* LoadDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F2A12E1F9891890034EC52 /* LoadDocViewController.m */; };
-		A5F2A1331F9891980034EC52 /* JhtDocViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +49,8 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		8E7001A521A9489F001364AE /* JhtDocViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewer.bundle; sourceTree = "<group>"; };
+		8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtDocViewer.framework; sourceTree = "<group>"; };
+		8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewer.bundle; sourceTree = "<group>"; };
 		A525EF2C1D48468E008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
 		A52737651D44F04800CCAB67 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
 		A52737661D44F04800CCAB67 /* 2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.pptx; sourceTree = "<group>"; };
@@ -65,11 +64,7 @@
 		A55D70BC1D44EFEA001D675C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A55D70BE1D44EFEA001D675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A55D70C31D44EFEA001D675C /* JhtDocViewerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtDocViewerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A55D70C71D44EFEA001D675C /* JhtDocViewerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtDocViewerDemoTests.m; sourceTree = "<group>"; };
-		A55D70C91D44EFEA001D675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A55D70CE1D44EFEA001D675C /* JhtDocViewerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtDocViewerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A55D70D21D44EFEA001D675C /* JhtDocViewerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtDocViewerDemoUITests.m; sourceTree = "<group>"; };
-		A55D70D41D44EFEA001D675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57D5E2A1D473D7F00D10C1C /* DocListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocListViewController.h; sourceTree = "<group>"; };
 		A57D5E2B1D473D7F00D10C1C /* DocListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocListViewController.m; sourceTree = "<group>"; };
 		A57D5E2D1D473D7F00D10C1C /* JhtBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBaseViewController.h; sourceTree = "<group>"; };
@@ -89,7 +84,6 @@
 		A57D5E401D473D7F00D10C1C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		A5F2A12D1F9891890034EC52 /* LoadDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDocViewController.h; sourceTree = "<group>"; };
 		A5F2A12E1F9891890034EC52 /* LoadDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDocViewController.m; sourceTree = "<group>"; };
-		A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtDocViewer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F2A1331F9891980034EC52 /* JhtDocViewer.framework in Frameworks */,
+				8EC6892821C7CD2C00B4AB3D /* JhtDocViewer.framework in Frameworks */,
 				7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EC6892521C7CD2C00B4AB3D /* JhtDocViewer_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */,
+				8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */,
+			);
+			path = JhtDocViewer_SDK;
+			sourceTree = "<group>";
+		};
 		A52737641D44F04800CCAB67 /* JhtDocTemp */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +136,9 @@
 		A55D70A11D44EFEA001D675C = {
 			isa = PBXGroup;
 			children = (
-				A5F2A1301F9891980034EC52 /* JhtDocViewerSDK */,
 				789927791D45C34F0041F551 /* WebKit.framework */,
+				8EC6892521C7CD2C00B4AB3D /* JhtDocViewer_SDK */,
 				A55D70AC1D44EFEA001D675C /* JhtDocViewerDemo */,
-				A55D70C61D44EFEA001D675C /* JhtDocViewerDemoTests */,
-				A55D70D11D44EFEA001D675C /* JhtDocViewerDemoUITests */,
 				A55D70AB1D44EFEA001D675C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,24 +175,6 @@
 				A55D70AE1D44EFEA001D675C /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A55D70C61D44EFEA001D675C /* JhtDocViewerDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				A55D70C71D44EFEA001D675C /* JhtDocViewerDemoTests.m */,
-				A55D70C91D44EFEA001D675C /* Info.plist */,
-			);
-			path = JhtDocViewerDemoTests;
-			sourceTree = "<group>";
-		};
-		A55D70D11D44EFEA001D675C /* JhtDocViewerDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A55D70D21D44EFEA001D675C /* JhtDocViewerDemoUITests.m */,
-				A55D70D41D44EFEA001D675C /* Info.plist */,
-			);
-			path = JhtDocViewerDemoUITests;
 			sourceTree = "<group>";
 		};
 		A57D5E271D473D7F00D10C1C /* JhtDocViewer */ = {
@@ -266,15 +249,6 @@
 				A5F2A12E1F9891890034EC52 /* LoadDocViewController.m */,
 			);
 			path = LoadDocViewController;
-			sourceTree = "<group>";
-		};
-		A5F2A1301F9891980034EC52 /* JhtDocViewerSDK */ = {
-			isa = PBXGroup;
-			children = (
-				8E7001A521A9489F001364AE /* JhtDocViewer.bundle */,
-				A5F2A1311F9891980034EC52 /* JhtDocViewer.framework */,
-			);
-			path = JhtDocViewerSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A527376C1D44F04800CCAB67 /* 信鸽推送说明书.pdf in Resources */,
-				8E7001A621A9489F001364AE /* JhtDocViewer.bundle in Resources */,
+				8EC6892921C7CD2C00B4AB3D /* JhtDocViewer.bundle in Resources */,
 				A527376A1D44F04800CCAB67 /* 2.pptx in Resources */,
 				A52737691D44F04800CCAB67 /* 1.xlsx in Resources */,
 				A55D70BD1D44EFEA001D675C /* LaunchScreen.storyboard in Resources */,
@@ -431,7 +405,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55D70C81D44EFEA001D675C /* JhtDocViewerDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55D70D31D44EFEA001D675C /* JhtDocViewerDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +543,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",
+					"$(PROJECT_DIR)/JhtDocViewer_SDK",
 				);
 				INFOPLIST_FILE = JhtDocViewerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -591,6 +564,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtDocViewerSDK",
+					"$(PROJECT_DIR)/JhtDocViewer_SDK",
 				);
 				INFOPLIST_FILE = JhtDocViewerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
