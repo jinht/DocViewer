@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
+		8E0C437F225F1D2900F84032 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C437D225F1D2800F84032 /* Reachability.m */; };
 		8EC6892821C7CD2C00B4AB3D /* JhtDocViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */; };
 		8EC6892921C7CD2C00B4AB3D /* JhtDocViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */; };
 		A525EF2D1D48468E008B3178 /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF2C1D48468E008B3178 /* CIImage.docx */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8E0C437D225F1D2800F84032 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8E0C437E225F1D2800F84032 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtDocViewer.framework; sourceTree = "<group>"; };
 		8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewer.bundle; sourceTree = "<group>"; };
 		A525EF2C1D48468E008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
@@ -113,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0C437C225F1D2800F84032 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8E0C437D225F1D2800F84032 /* Reachability.m */,
+				8E0C437E225F1D2800F84032 /* Reachability.h */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		8EC6892521C7CD2C00B4AB3D /* JhtDocViewer_SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 		A57D5E321D473D7F00D10C1C /* JhtDocLibs */ = {
 			isa = PBXGroup;
 			children = (
+				8E0C437C225F1D2800F84032 /* Reachability */,
 				A57D5E331D473D7F00D10C1C /* AFNetworking~160624 */,
 			);
 			path = JhtDocLibs;
@@ -397,6 +410,7 @@
 				A5F2A12F1F9891890034EC52 /* LoadDocViewController.m in Sources */,
 				A57D5E5A1D473D7F00D10C1C /* AFURLSessionManager.m in Sources */,
 				A57D5E561D473D7F00D10C1C /* AFNetworkReachabilityManager.m in Sources */,
+				8E0C437F225F1D2900F84032 /* Reachability.m in Sources */,
 				A57D5E531D473D7F00D10C1C /* JhtBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
