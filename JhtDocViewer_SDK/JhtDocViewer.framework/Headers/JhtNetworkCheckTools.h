@@ -50,7 +50,6 @@ extern NSString *const KNCTNetworkStatusChangedNotKey;
 /** 获取当前网络状态: 字符串 */
 + (NSString *)currentNetWork_StatusString;
 
-
 #pragma mark start/stop
 /** 开始网络监听
  *	listener: 监听对象，可为nil
@@ -60,7 +59,6 @@ extern NSString *const KNCTNetworkStatusChangedNotKey;
  *  listener: 监听对象，可为nil
  */
 + (void)stopMonitoringWithListener:(id<JhtNetworkCheckToolsProtocol>)listener;
-
 
 #pragma mark Judge
 /** 是否有网络 */

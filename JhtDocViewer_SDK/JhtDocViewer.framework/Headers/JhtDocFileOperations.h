@@ -24,11 +24,9 @@
 @property (nonatomic, strong, readonly) NSString *otherAppFilesPath;
 
 
-
 #pragma mark - Public Method
 /** 单例 */
 + (instancetype)sharedInstance;
-
 
 #pragma mark 保存
 /** 将本地文件 加载至内存
@@ -37,7 +35,6 @@
  *  localPath: 本地路径中存储的文件夹  eg: Documents/JhtDoc
  */
 - (void)copyLocalWithFileName:(NSString *)fileName basePath:(NSString *)basePath localPath:(NSString *)localPath;
-
 
 #pragma mark 生成路径
 /** 生成 本地文件 完整路径 */

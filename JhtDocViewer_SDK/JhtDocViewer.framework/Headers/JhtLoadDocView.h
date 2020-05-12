@@ -29,7 +29,6 @@
 @property (nonatomic, strong) OtherOpenButtonParamModel *otherOpenButtonParamModel;
 
 
-
 #pragma mark - Public Method
 /** 初始化
  *  fileModel: 当前 文件model
