@@ -10,7 +10,10 @@
 //
 
 #import "DocListViewController.h"
+#import "JhtFileModel.h"
 #import "LoadDocViewController.h"
+#import "OtherOpenButtonParamModel.h"
+#import "JhtShowDumpingViewParamModel.h"
 
 /** 状态栏 + 导航栏的高度 */
 #define KDLVCStatusAndNavBarHeight (KStatusBarHeight + KNavBarHeight)
@@ -26,15 +29,15 @@
     // 生成数据源
     [self docLsCreateSourceData];
     
-    // 创建UI界面
+    // CreateUI
     [self docLsCreateUI];
 }
-
 
 
 #pragma mark - SetNav
 /** 设置导航栏 */
 - (void)docLsSetNav {
+    // 如果是 从appDelegate里面，跳转过来添加返回按钮
     if (_appFilePath.length) {
         // 设置导航栏返回按钮
         [self bsCreateNavigationBarLeftBtn];
@@ -45,10 +48,10 @@
 }
 
 
-
 #pragma mark - Data
 /** 生成数据源 */
 - (void)docLsCreateSourceData {
+    // 如果是 从appDelegate里面，跳转过来，主要用于打开别的软件的共享过来的文档
     if (_appFilePath.length) {
         JhtFileModel *model = [[JhtFileModel alloc] init];
         NSString *fileName = [_appFilePath lastPathComponent];
@@ -64,6 +67,11 @@
         fileModel.fileName = @"哈哈哈.docx";
         fileModel.viewFileType = Type_Docx;
         fileModel.url = @"http://mexue-inform-file.oss-cn-beijing.aliyuncs.com/577e2300c94f6e51316a299d";
+//        fileModel.url = @"http://osyeryz0j.bkt.clouddn.com/jht-hljf-text/IPHONE%E6%89%8B%E6%9C%BAVPN%E9%85%8D%E7%BD%AE%E6%8C%87%E5%AF%BC.pdf";
+        
+        /*fileModel.fileName = @"赤壁.rtf";
+        fileModel.viewFileType = Type_Txt;
+        fileModel.url = @"http://pi4m2edox.bkt.clouddn.com/%E8%B5%A4%E5%A3%81.rtf";*/
         
         fileModel.fileSize = @"21.39KB";
         fileModel.attachmentFileSize = @"21906";
@@ -80,9 +88,9 @@
         // 详细内容
         NSString *fileName;
         while ((fileName = [childFilesEnumerator nextObject]) != nil) {
-            NSLog(@"fileName ==== %@", fileName);
+//            NSLog(@"fileName ==== %@", fileName);
             NSString *fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
-            NSLog(@"fileAbsolutePath ==== %@", fileAbsolutePath);
+//            NSLog(@"fileAbsolutePath ==== %@", fileAbsolutePath);
             JhtFileModel *model = [[JhtFileModel alloc] init];
             model.fileName  = fileName;
             model.fileAbsolutePath = fileAbsolutePath;
@@ -92,15 +100,14 @@
 }
 
 
-
 #pragma mark - UI
-/** 创建UI界面 */
+/** CreateUI */
 - (void)docLsCreateUI {
     _baseTableView.frame = CGRectMake(0, 0, FrameW, FrameH - KDLVCStatusAndNavBarHeight);
+    
     _baseTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _baseTableView.backgroundColor = [UIColor colorWithRed:0.97f green:0.91f blue:0.89f alpha:1.00f];
 }
-
 
 
 #pragma mark - UITableViewDelegate
@@ -159,13 +166,31 @@
     load.titleStr = model.fileName;
     load.currentFileModel = model;
     
+    /*[load finishedDownloadCompletionHandler:^(NSString *urlStr) {
+        NSLog(@"网络下载文件成功后保存在《本地的路径》: \n%@", urlStr);
+    }];
+    
+    // 提示框Model
+    JhtShowDumpingViewParamModel *paramModel = [[JhtShowDumpingViewParamModel alloc] init];
+    paramModel.showTextFont = [UIFont boldSystemFontOfSize:15];
+    paramModel.showBackgroundColor = [UIColor whiteColor];
+    paramModel.showBackgroundImageName = @"dumpView";
+    load.paramModel = paramModel;
+    
+    // 《用其他应用打开》按钮 配置Model
+    OtherOpenButtonParamModel *otherOpenButtonParamModel = [[OtherOpenButtonParamModel alloc] init];
+    otherOpenButtonParamModel.titleFont = [UIFont boldSystemFontOfSize:20.0];
+    otherOpenButtonParamModel.backgroundColor = [UIColor purpleColor];
+    load.otherOpenButtonParamModel = otherOpenButtonParamModel;
+     */
+    
     [self.navigationController pushViewController:load animated:YES];
 }
 
 
-
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    // 避免dragImageView手势冲突 问题解决方法http://blog.sina.com.cn/s/blog_6b8c3d7a0101dxnc.html
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
         return NO;
         
@@ -174,24 +199,5 @@
     }
 }
 
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

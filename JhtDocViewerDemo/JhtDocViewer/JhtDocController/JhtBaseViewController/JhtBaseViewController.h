@@ -10,7 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <JhtDocViewer/JhtDocSDK.h>
+#import "JhtDocViewer_Define.h"
 
 /** VC父类 */
 @interface JhtBaseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
@@ -19,14 +19,13 @@
 }
 
 
-
 #pragma mark - Navigation Tools
 /** 创建导航栏左侧自定义的返回按钮 */
 - (void)bsCreateNavigationBarLeftBtn;
 /** 导航栏左侧返回按钮触发事件 */
 - (void)bsPopToFormerController;
 
-/** 创建Navigationbar TitleView */
+/** 创建Navigationbar的TitleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title;
 
 

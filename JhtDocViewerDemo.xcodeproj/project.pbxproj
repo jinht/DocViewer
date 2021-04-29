@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AB0106263984B300CC4120 /* OtherOpenButtonParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00E1263984B200CC4120 /* OtherOpenButtonParamModel.m */; };
+		65AB0107263984B300CC4120 /* JhtLoadDocViewParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00E5263984B200CC4120 /* JhtLoadDocViewParamModel.m */; };
+		65AB0108263984B300CC4120 /* JhtFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00E7263984B200CC4120 /* JhtFileModel.m */; };
+		65AB0109263984B300CC4120 /* JhtDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00EC263984B200CC4120 /* JhtDownloadRequest.m */; };
+		65AB010A263984B300CC4120 /* JhtDocFileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00EF263984B200CC4120 /* JhtDocFileOperations.m */; };
+		65AB010B263984B300CC4120 /* JhtNetworkCheckTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00F2263984B200CC4120 /* JhtNetworkCheckTools.m */; };
+		65AB010C263984B300CC4120 /* JhtDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00F4263984B200CC4120 /* JhtDefaultManager.m */; };
+		65AB010D263984B300CC4120 /* JhtDownTipsDumpingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00F8263984B200CC4120 /* JhtDownTipsDumpingView.m */; };
+		65AB010E263984B300CC4120 /* JhtShowDumpingViewParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00FC263984B200CC4120 /* JhtShowDumpingViewParamModel.m */; };
+		65AB010F263984B300CC4120 /* JhtDocWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB00FF263984B200CC4120 /* JhtDocWebView.m */; };
+		65AB0110263984B300CC4120 /* JhtDownloadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB0101263984B300CC4120 /* JhtDownloadView.m */; };
+		65AB0111263984B300CC4120 /* JhtLoadDocView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB0105263984B300CC4120 /* JhtLoadDocView.m */; };
 		7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789927791D45C34F0041F551 /* WebKit.framework */; };
 		8E0C437F225F1D2900F84032 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C437D225F1D2800F84032 /* Reachability.m */; };
-		8EC6892821C7CD2C00B4AB3D /* JhtDocViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */; };
 		8EC6892921C7CD2C00B4AB3D /* JhtDocViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */; };
 		A525EF2D1D48468E008B3178 /* CIImage.docx in Resources */ = {isa = PBXBuildFile; fileRef = A525EF2C1D48468E008B3178 /* CIImage.docx */; };
 		A52737691D44F04800CCAB67 /* 1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = A52737651D44F04800CCAB67 /* 1.xlsx */; };
@@ -49,10 +60,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65AB00E1263984B200CC4120 /* OtherOpenButtonParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherOpenButtonParamModel.m; sourceTree = "<group>"; };
+		65AB00E2263984B200CC4120 /* OtherOpenButtonParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherOpenButtonParamModel.h; sourceTree = "<group>"; };
+		65AB00E4263984B200CC4120 /* JhtLoadDocViewParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtLoadDocViewParamModel.h; sourceTree = "<group>"; };
+		65AB00E5263984B200CC4120 /* JhtLoadDocViewParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtLoadDocViewParamModel.m; sourceTree = "<group>"; };
+		65AB00E7263984B200CC4120 /* JhtFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtFileModel.m; sourceTree = "<group>"; };
+		65AB00E8263984B200CC4120 /* JhtFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtFileModel.h; sourceTree = "<group>"; };
+		65AB00EB263984B200CC4120 /* JhtDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDownloadRequest.h; sourceTree = "<group>"; };
+		65AB00EC263984B200CC4120 /* JhtDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDownloadRequest.m; sourceTree = "<group>"; };
+		65AB00EE263984B200CC4120 /* JhtDocFileOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDocFileOperations.h; sourceTree = "<group>"; };
+		65AB00EF263984B200CC4120 /* JhtDocFileOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDocFileOperations.m; sourceTree = "<group>"; };
+		65AB00F1263984B200CC4120 /* JhtNetworkCheckTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtNetworkCheckTools.h; sourceTree = "<group>"; };
+		65AB00F2263984B200CC4120 /* JhtNetworkCheckTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtNetworkCheckTools.m; sourceTree = "<group>"; };
+		65AB00F4263984B200CC4120 /* JhtDefaultManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDefaultManager.m; sourceTree = "<group>"; };
+		65AB00F5263984B200CC4120 /* JhtDefaultManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDefaultManager.h; sourceTree = "<group>"; };
+		65AB00F8263984B200CC4120 /* JhtDownTipsDumpingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDownTipsDumpingView.m; sourceTree = "<group>"; };
+		65AB00F9263984B200CC4120 /* JhtDownTipsDumpingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDownTipsDumpingView.h; sourceTree = "<group>"; };
+		65AB00FB263984B200CC4120 /* JhtShowDumpingViewParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtShowDumpingViewParamModel.h; sourceTree = "<group>"; };
+		65AB00FC263984B200CC4120 /* JhtShowDumpingViewParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtShowDumpingViewParamModel.m; sourceTree = "<group>"; };
+		65AB00FE263984B200CC4120 /* JhtDocWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDocWebView.h; sourceTree = "<group>"; };
+		65AB00FF263984B200CC4120 /* JhtDocWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDocWebView.m; sourceTree = "<group>"; };
+		65AB0101263984B300CC4120 /* JhtDownloadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtDownloadView.m; sourceTree = "<group>"; };
+		65AB0102263984B300CC4120 /* JhtDownloadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDownloadView.h; sourceTree = "<group>"; };
+		65AB0104263984B300CC4120 /* JhtLoadDocView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtLoadDocView.h; sourceTree = "<group>"; };
+		65AB0105263984B300CC4120 /* JhtLoadDocView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtLoadDocView.m; sourceTree = "<group>"; };
+		65AB01122639856400CC4120 /* JhtDocViewer_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtDocViewer_Define.h; sourceTree = "<group>"; };
 		789927791D45C34F0041F551 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8E0C437D225F1D2800F84032 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8E0C437E225F1D2800F84032 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtDocViewer.framework; sourceTree = "<group>"; };
 		8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtDocViewer.bundle; sourceTree = "<group>"; };
 		A525EF2C1D48468E008B3178 /* CIImage.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CIImage.docx; sourceTree = "<group>"; };
 		A52737651D44F04800CCAB67 /* 1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.xlsx; sourceTree = "<group>"; };
@@ -94,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EC6892821C7CD2C00B4AB3D /* JhtDocViewer.framework in Frameworks */,
 				7899277A1D45C34F0041F551 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +150,147 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65AB00DF263984B200CC4120 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00E6263984B200CC4120 /* JhtFileModel */,
+				65AB00E3263984B200CC4120 /* JhtLoadDocViewParamModel */,
+				65AB00E0263984B200CC4120 /* OtherOpenButtonParamModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65AB00E0263984B200CC4120 /* OtherOpenButtonParamModel */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00E1263984B200CC4120 /* OtherOpenButtonParamModel.m */,
+				65AB00E2263984B200CC4120 /* OtherOpenButtonParamModel.h */,
+			);
+			path = OtherOpenButtonParamModel;
+			sourceTree = "<group>";
+		};
+		65AB00E3263984B200CC4120 /* JhtLoadDocViewParamModel */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00E4263984B200CC4120 /* JhtLoadDocViewParamModel.h */,
+				65AB00E5263984B200CC4120 /* JhtLoadDocViewParamModel.m */,
+			);
+			path = JhtLoadDocViewParamModel;
+			sourceTree = "<group>";
+		};
+		65AB00E6263984B200CC4120 /* JhtFileModel */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00E7263984B200CC4120 /* JhtFileModel.m */,
+				65AB00E8263984B200CC4120 /* JhtFileModel.h */,
+			);
+			path = JhtFileModel;
+			sourceTree = "<group>";
+		};
+		65AB00E9263984B200CC4120 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00F3263984B200CC4120 /* JhtDefaultManager */,
+				65AB00EA263984B200CC4120 /* JhtDownloadRequest */,
+				65AB00ED263984B200CC4120 /* JhtDocFileOperations */,
+				65AB00F0263984B200CC4120 /* JhtNetworkCheckTools */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		65AB00EA263984B200CC4120 /* JhtDownloadRequest */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00EB263984B200CC4120 /* JhtDownloadRequest.h */,
+				65AB00EC263984B200CC4120 /* JhtDownloadRequest.m */,
+			);
+			path = JhtDownloadRequest;
+			sourceTree = "<group>";
+		};
+		65AB00ED263984B200CC4120 /* JhtDocFileOperations */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00EE263984B200CC4120 /* JhtDocFileOperations.h */,
+				65AB00EF263984B200CC4120 /* JhtDocFileOperations.m */,
+			);
+			path = JhtDocFileOperations;
+			sourceTree = "<group>";
+		};
+		65AB00F0263984B200CC4120 /* JhtNetworkCheckTools */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00F1263984B200CC4120 /* JhtNetworkCheckTools.h */,
+				65AB00F2263984B200CC4120 /* JhtNetworkCheckTools.m */,
+			);
+			path = JhtNetworkCheckTools;
+			sourceTree = "<group>";
+		};
+		65AB00F3263984B200CC4120 /* JhtDefaultManager */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00F5263984B200CC4120 /* JhtDefaultManager.h */,
+				65AB00F4263984B200CC4120 /* JhtDefaultManager.m */,
+			);
+			path = JhtDefaultManager;
+			sourceTree = "<group>";
+		};
+		65AB00F6263984B200CC4120 /* View  */ = {
+			isa = PBXGroup;
+			children = (
+				65AB0103263984B300CC4120 /* JhtLoadDocView */,
+				65AB00FD263984B200CC4120 /* JhtDocWebView */,
+				65AB0100263984B300CC4120 /* JhtDownloadView */,
+				65AB00F7263984B200CC4120 /* JhtDownTipsDumpingView */,
+			);
+			path = "View ";
+			sourceTree = "<group>";
+		};
+		65AB00F7263984B200CC4120 /* JhtDownTipsDumpingView */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00F8263984B200CC4120 /* JhtDownTipsDumpingView.m */,
+				65AB00F9263984B200CC4120 /* JhtDownTipsDumpingView.h */,
+				65AB00FA263984B200CC4120 /* JhtShowDumpingViewParamModel */,
+			);
+			path = JhtDownTipsDumpingView;
+			sourceTree = "<group>";
+		};
+		65AB00FA263984B200CC4120 /* JhtShowDumpingViewParamModel */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00FB263984B200CC4120 /* JhtShowDumpingViewParamModel.h */,
+				65AB00FC263984B200CC4120 /* JhtShowDumpingViewParamModel.m */,
+			);
+			path = JhtShowDumpingViewParamModel;
+			sourceTree = "<group>";
+		};
+		65AB00FD263984B200CC4120 /* JhtDocWebView */ = {
+			isa = PBXGroup;
+			children = (
+				65AB00FE263984B200CC4120 /* JhtDocWebView.h */,
+				65AB00FF263984B200CC4120 /* JhtDocWebView.m */,
+			);
+			path = JhtDocWebView;
+			sourceTree = "<group>";
+		};
+		65AB0100263984B300CC4120 /* JhtDownloadView */ = {
+			isa = PBXGroup;
+			children = (
+				65AB0101263984B300CC4120 /* JhtDownloadView.m */,
+				65AB0102263984B300CC4120 /* JhtDownloadView.h */,
+			);
+			path = JhtDownloadView;
+			sourceTree = "<group>";
+		};
+		65AB0103263984B300CC4120 /* JhtLoadDocView */ = {
+			isa = PBXGroup;
+			children = (
+				65AB0104263984B300CC4120 /* JhtLoadDocView.h */,
+				65AB0105263984B300CC4120 /* JhtLoadDocView.m */,
+			);
+			path = JhtLoadDocView;
+			sourceTree = "<group>";
+		};
 		8E0C437C225F1D2800F84032 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +303,10 @@
 		8EC6892521C7CD2C00B4AB3D /* JhtDocViewer_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				8EC6892621C7CD2C00B4AB3D /* JhtDocViewer.framework */,
+				65AB01122639856400CC4120 /* JhtDocViewer_Define.h */,
+				65AB00F6263984B200CC4120 /* View  */,
+				65AB00DF263984B200CC4120 /* Model */,
+				65AB00E9263984B200CC4120 /* Tools */,
 				8EC6892721C7CD2C00B4AB3D /* JhtDocViewer.bundle */,
 			);
 			path = JhtDocViewer_SDK;
@@ -348,6 +526,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -400,18 +579,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AB010B263984B300CC4120 /* JhtNetworkCheckTools.m in Sources */,
 				A57D5E571D473D7F00D10C1C /* AFSecurityPolicy.m in Sources */,
 				A55D70B21D44EFEA001D675C /* AppDelegate.m in Sources */,
 				A57D5E591D473D7F00D10C1C /* AFURLResponseSerialization.m in Sources */,
 				A55D70AF1D44EFEA001D675C /* main.m in Sources */,
+				65AB010C263984B300CC4120 /* JhtDefaultManager.m in Sources */,
 				A57D5E521D473D7F00D10C1C /* DocListViewController.m in Sources */,
 				A57D5E551D473D7F00D10C1C /* AFHTTPSessionManager.m in Sources */,
+				65AB010A263984B300CC4120 /* JhtDocFileOperations.m in Sources */,
+				65AB0109263984B300CC4120 /* JhtDownloadRequest.m in Sources */,
+				65AB0111263984B300CC4120 /* JhtLoadDocView.m in Sources */,
+				65AB0107263984B300CC4120 /* JhtLoadDocViewParamModel.m in Sources */,
+				65AB010E263984B300CC4120 /* JhtShowDumpingViewParamModel.m in Sources */,
 				A57D5E581D473D7F00D10C1C /* AFURLRequestSerialization.m in Sources */,
+				65AB010D263984B300CC4120 /* JhtDownTipsDumpingView.m in Sources */,
 				A5F2A12F1F9891890034EC52 /* LoadDocViewController.m in Sources */,
 				A57D5E5A1D473D7F00D10C1C /* AFURLSessionManager.m in Sources */,
 				A57D5E561D473D7F00D10C1C /* AFNetworkReachabilityManager.m in Sources */,
+				65AB0108263984B300CC4120 /* JhtFileModel.m in Sources */,
+				65AB0106263984B300CC4120 /* OtherOpenButtonParamModel.m in Sources */,
+				65AB010F263984B300CC4120 /* JhtDocWebView.m in Sources */,
 				8E0C437F225F1D2900F84032 /* Reachability.m in Sources */,
 				A57D5E531D473D7F00D10C1C /* JhtBaseViewController.m in Sources */,
+				65AB0110263984B300CC4120 /* JhtDownloadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

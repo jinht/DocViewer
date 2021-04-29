@@ -10,6 +10,11 @@
 //
 
 #import "LoadDocViewController.h"
+#import "JhtLoadDocView.h"
+#import "JhtDocFileOperations.h"
+#import "JhtLoadDocViewParamModel.h"
+#import "OtherOpenButtonParamModel.h"
+#import "JhtShowDumpingViewParamModel.h"
 
 @implementation LoadDocViewController {
     // 文本加载 View
@@ -32,7 +37,6 @@
 }
 
 
-
 #pragma mark - SetNav
 /** 设置导航栏 */
 - (void)ldSetNav {
@@ -44,14 +48,13 @@
 }
 
 
-
 #pragma mark - UI
 /** CreateUI */
 - (void)ldCreateUI {
     // 文本加载 View 配置Model
-    JhtLoadDocViewParamModel *loadDocViewParamModel = [[JhtLoadDocViewParamModel  alloc] init];
+    JhtLoadDocViewParamModel *loadDocViewParamModel = [[JhtLoadDocViewParamModel alloc] init];
     // 清理？天前的文件
-    loadDocViewParamModel.daysAgo = 1;
+    loadDocViewParamModel.daysAgo = 0;
     
     // 提示框Model
     JhtShowDumpingViewParamModel *showDumpingViewParamModel = [[JhtShowDumpingViewParamModel alloc] init];
@@ -71,27 +74,28 @@
     [self.view addSubview:_docView];
     
     [_docView finishedDownloadCompletionHandler:^(NSString *urlStr) {
-        NSLog(@"网络下载文件成功后保存在《本地的路径》：\n%@", urlStr);
+        NSLog(@"网络下载文件成功后保存在《本地的路径》: \n%@", urlStr);
     }];
-}
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    /*
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"test" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnTestClicked) forControlEvents:UIControlEventTouchUpInside];
+    btn.center = self.view.center;
+    [self.view addSubview:btn];
+    */
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)btnTestClicked {
+    NSLog(@"btnTestClicked");
+    
+    OtherOpenButtonParamModel *otherOpenButtonParamModel = [[OtherOpenButtonParamModel alloc] init];
+    otherOpenButtonParamModel.backgroundColor = [UIColor greenColor];
+    _docView.otherOpenButtonParamModel = otherOpenButtonParamModel;
 }
-*/
+ */
+ 
 
 @end

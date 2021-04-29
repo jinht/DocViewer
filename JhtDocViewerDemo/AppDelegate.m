@@ -10,8 +10,9 @@
 //
 
 #import "AppDelegate.h"
+#import "JhtNetworkCheckTools.h"
+#import "JhtDocFileOperations.h"
 #import "DocListViewController.h"
-#import <JhtDocViewer/JhtDocSDK.h>
 
 #define OpenFileName0 @"2.pptx"
 #define OpenFileName1 @"1.xlsx"
@@ -67,7 +68,7 @@
 #pragma mark - ApplicationDelegate
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
     if (options) {
-        NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
+        NSString *str = [NSString stringWithFormat:@"\n发送请求的应用程序的 Bundle ID: %@\n\n文件的NSURL: %@", options[UIApplicationOpenURLOptionsSourceApplicationKey], url];
         NSLog(@"%@", str);
         
         if (self.window && url) {

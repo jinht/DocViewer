@@ -21,6 +21,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
     
+    // 实例化数据源数组
     _baseSourceArray = [[NSMutableArray alloc] init];
     
     // CreateUI
@@ -31,24 +32,7 @@
 }
 
 
-
-#pragma mark - UI
-/** CreateUI */
-- (void)bsCreateGrowthBaseUI {
-    _baseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, FrameW, FrameH) style:UITableViewStylePlain];
-    _baseTableView.dataSource = self;
-    _baseTableView.delegate = self;
-    _baseTableView.scrollsToTop = YES;
-    _baseTableView.showsVerticalScrollIndicator = NO;
-    _baseTableView.showsHorizontalScrollIndicator = NO;
-    _baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_baseTableView];
-}
-
-
-
 #pragma mark - Navigation Tools
-/** nav_leftBarButtonItem */
 - (void)bsCreateNavigationBarLeftBtn {
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     NSString *leftBtnImagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtDocViewer.bundle/images/nav-back"];
@@ -60,12 +44,11 @@
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBar;
 }
-/** 默认导航栏左侧返回按钮触发事件(子类可以重写) */
+
 - (void)bsPopToFormerController {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-/** nav_titleView */
 - (void)bsCreateNavigationBarTitleViewWithLabelTitle:(NSString *)title {
     UILabel *navigationBarTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 44, 80)];
     navigationBarTitleLabel.text = title;
@@ -75,9 +58,6 @@
     self.navigationItem.titleView = navigationBarTitleLabel;
 }
 
-
-
-#pragma mark - 工具方法
 #pragma mark 右滑返回
 /** 右滑返回 */
 - (void)bsToRightSlidePop {
@@ -90,6 +70,20 @@
     }
 }
 
+
+#pragma mark - UI
+/** CreateUI */
+- (void)bsCreateGrowthBaseUI {
+    _baseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, FrameW, FrameH) style:UITableViewStylePlain];
+    
+    _baseTableView.dataSource = self;
+    _baseTableView.delegate = self;
+    _baseTableView.scrollsToTop = YES;
+    _baseTableView.showsVerticalScrollIndicator = NO;
+    _baseTableView.showsHorizontalScrollIndicator = NO;
+    _baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_baseTableView];
+}
 
 
 #pragma mark - UITableViewDelegate
@@ -106,6 +100,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 去除选中之后的效果
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

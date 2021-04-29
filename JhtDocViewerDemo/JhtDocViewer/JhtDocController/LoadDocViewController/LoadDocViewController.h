@@ -10,13 +10,14 @@
 //
 
 #import "JhtBaseViewController.h"
+@class JhtFileModel;
 
 /** 加载文本类 */
 @interface LoadDocViewController : JhtBaseViewController
 
 #pragma mark - property
 #pragma mark required
-/** 标题 */
+/** nav title */
 @property (nonatomic, strong) NSString *titleStr;
 
 /** 下载文件的model */
