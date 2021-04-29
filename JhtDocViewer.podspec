@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     
     s.name                       = 'JhtDocViewer'
-    s.version                    = '1.0.7'
+    s.version                    = '1.0.8'
     s.summary                    = '文档/文件查看器（支持本地或者其他app分享过来的word、excel、pdf、rtf等格式文件）'
     s.homepage                   = 'https://github.com/jinht/DocViewer'
     s.license                    = { :type => 'MIT', :file => 'LICENSE' }
