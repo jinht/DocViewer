@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target      = '8.0'
     s.source                     = { :git => 'https://github.com/jinht/DocViewer.git', :tag => s.version }
     s.resource                   = 'JhtDocViewer_SDK/JhtDocViewer.bundle'
-    s.ios.vendored_frameworks    = 'JhtDocViewer_SDK/JhtDocViewer.framework'
     s.frameworks                 = 'UIKit'
     s.dependency		 'AFNetworking'
     s.dependency		 'Reachability'
