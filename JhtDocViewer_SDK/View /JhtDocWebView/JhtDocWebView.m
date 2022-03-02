@@ -144,14 +144,59 @@
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED <= 90000
     // iOS9. One year later things are OK.
-    [self.wkWebView loadFileURL:url allowingReadAccessToURL:url];
+//    [self.wkWebView loadFileURL:url allowingReadAccessToURL:url];
 //    [self.wkWebView loadData:data MIMEType:url textEncodingName:@"UTF-8" baseURL:nil];
+        NSString *lastName =[[url lastPathComponent] lowercaseString];
+        if ([lastName containsString:@".txt"]) {
+        //如果为UTF8格式的则body不为空
+            NSString *body =[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+     //如果不是 则进行GBK编码再解码一次
+            if (!body) {
+                body =[NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
+            }
+            //不行用GB18030编码再解码一次
+            if (!body) {
+                body =[NSString stringWithContentsOfURL:url encoding:0x80000631 error:nil];
+            }
+            if (body) {
+                body =[body stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"];//替换换行符为HTML换行符
+                [self.wkWebView loadHTMLString:body baseURL:nil];
+                return;
+            }
+            [self.wkWebView loadFileURL:url allowingReadAccessToURL:url];
+        }else{
+            NSURLRequest *request =[NSURLRequest requestWithURL:url];
+            [self.wkWebView loadFileURL:url allowingReadAccessToURL:url];
+        }
     
 #else
     // iOS8. Things can be workaround-ed
+//    NSURL *fileURL = [self dwvFileURLForBuggyWKWebView:url];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:fileURL];
+//    [self.wkWebView loadRequest:request];
     NSURL *fileURL = [self dwvFileURLForBuggyWKWebView:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:fileURL];
-    [self.wkWebView loadRequest:request];
+    NSString *lastName =[[url lastPathComponent] lowercaseString];
+        if ([lastName containsString:@".txt"]) {
+        //如果为UTF8格式的则body不为空
+            NSString *body =[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+     //如果不是 则进行GBK编码再解码一次
+            if (!body) {
+                body =[NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
+            }
+            //不行用GB18030编码再解码一次
+            if (!body) {
+                body =[NSString stringWithContentsOfURL:url encoding:0x80000631 error:nil];
+            }
+            if (body) {
+                body =[body stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"];//替换换行符为HTML换行符
+                [self.wkWebView loadHTMLString:body baseURL:nil];
+                return;
+            }
+            [self.wkWebView loadFileURL:url allowingReadAccessToURL:url];
+        }else{
+            NSURLRequest *request = [NSURLRequest requestWithURL:fileURL];
+            [self.wkWebView loadRequest:request];
+        }
 #endif
 
     // 其他应用打开
